@@ -6,19 +6,23 @@ import clsx from 'clsx';
 
 type BadgeProps = {
 	className?: string;
-	type?: 'both' | 'code' | 'design';
+	type?: 'both' | 'develop' | 'design';
 	color?: 'primary' | 'white';
 };
 
 const imageMap = {
 	both: 'both',
-	code: 'left',
+	develop: 'left',
 	design: 'right',
 	primary: 'primary',
 	white: 'white',
 };
 
-const OcBadgeIndicator = ({ type = 'both', color = 'primary' }: BadgeProps) => {
+const OcBadgeIndicator = ({
+	type = 'both',
+	color = 'primary',
+	className = '',
+}: BadgeProps) => {
 	const badgeStyles = clsx(
 		{
 			'text-primary-400': color === 'primary',
@@ -30,7 +34,7 @@ const OcBadgeIndicator = ({ type = 'both', color = 'primary' }: BadgeProps) => {
 
 	const badgeLabel = useMemo(() => {
 		switch (true) {
-			case type === 'code':
+			case type === 'develop':
 				return 'DESARROLLO';
 			case type === 'design':
 				return 'DISEÑO';
@@ -40,7 +44,7 @@ const OcBadgeIndicator = ({ type = 'both', color = 'primary' }: BadgeProps) => {
 	}, [type]);
 
 	return (
-		<div className="flex gap-1 items-center">
+		<div className={`flex gap-1 items-center ${className}`}>
 			<Image
 				src={`/static/icons/brain-${imageMap[type]}-${imageMap[color]}.svg`}
 				alt="Icon"

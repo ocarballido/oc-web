@@ -7,24 +7,24 @@ type MainMamuProps = {
 
 const OcMainMenu = ({ className = '', path = '/' }: MainMamuProps) => {
 	return (
-		<div className={`${className}`}>
+		<nav className={`${className}`}>
 			<OcButtonLink
 				label="Trayectoría"
 				href="/trajectory"
 				color="white"
-				active={path === '/trajectory'}
+				active={path.includes('trajectory')}
 			/>
 			<OcButtonLink
 				label="Proyectos"
-				href="/projects"
+				href="/projects/both"
 				color="white"
-				active={path === '/projects'}
+				active={path.includes('projects')}
 			/>
 			<OcButtonLink
 				label="CV PDF"
 				href="/static/cv/CV_Oscar_Carballido_ES.pdf"
 			/>
-		</div>
+		</nav>
 	);
 };
 
