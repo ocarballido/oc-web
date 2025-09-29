@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 
 import { useMemo } from 'react';
@@ -6,7 +8,8 @@ import clsx from 'clsx';
 
 type BadgeProps = {
 	className?: string;
-	type?: 'both' | 'develop' | 'design';
+	code?: boolean;
+	design?: boolean;
 	color?: 'primary' | 'white';
 };
 
@@ -19,8 +22,9 @@ const imageMap = {
 };
 
 const OcBadgeIndicator = ({
-	type = 'both',
 	color = 'primary',
+	code,
+	design,
 	className = '',
 }: BadgeProps) => {
 	const badgeStyles = clsx(
@@ -32,21 +36,36 @@ const OcBadgeIndicator = ({
 		}
 	);
 
+	const badgeImage = useMemo(() => {
+		switch (true) {
+			case code && !design:
+				return 'left';
+			case !code && design:
+				return 'right';
+			case !code && !design:
+				return '';
+			default:
+				return 'both';
+		}
+	}, [code, design]);
+
 	const badgeLabel = useMemo(() => {
 		switch (true) {
-			case type === 'develop':
+			case code && !design:
 				return 'DESARROLLO';
-			case type === 'design':
+			case !code && design:
 				return 'DISEÑO';
+			case !code && !design:
+				return '';
 			default:
 				return 'DESARROLLO Y DISEÑO';
 		}
-	}, [type]);
+	}, [code, design]);
 
 	return (
 		<div className={`flex gap-1 items-center ${className}`}>
 			<Image
-				src={`/static/icons/brain-${imageMap[type]}-${imageMap[color]}.svg`}
+				src={`/static/icons/brain-${badgeImage}-${imageMap[color]}.svg`}
 				alt="Icon"
 				height={24}
 				width={24}

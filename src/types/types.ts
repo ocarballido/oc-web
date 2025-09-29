@@ -4,19 +4,23 @@ export type ProjectType = (typeof PROJECT_TYPES)[number];
 
 export type ProjectCard = {
 	id: string;
-	type: ProjectType;
 	year: string;
-	image: string;
+	thumbnail: string;
+	code: boolean;
+	design: boolean;
 	title: string;
 	shortDescription: string;
 };
 
 export type Project = {
 	id: string;
-	type: ProjectType;
+	code: boolean;
+	design: boolean;
 	year: string;
 	description: string;
-	image: string;
+	images: string[];
+	thumbnail: string;
+	link: string;
 	client: string;
 	role: string;
 	title: string;

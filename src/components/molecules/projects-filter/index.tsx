@@ -6,7 +6,7 @@ type FilterProps = {
 
 const OcProjectsFilter = ({ active }: FilterProps) => {
 	return (
-		<nav className="flex items-center justify-center">
+		<nav className="flex items-center justify-center sticky top-36 z-5">
 			<ul className="flex gap-1 p-1 bg-white rounded-4xl shadow-xs items-center justify-center w-full max-w-md">
 				<li className="flex-1">
 					<OcButtonLink
