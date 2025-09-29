@@ -63,7 +63,7 @@ const OcCardProject = ({
 							? 'both'
 							: !code && design
 							? 'design'
-							: 'code'
+							: 'develop'
 					}/${id}`}
 					label="Ver proyecto"
 					color="secondary"

@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 export const PROJECTS: readonly Project[] = [
 	{
-		id: uuidv4(),
+		id: 'app-bnbexplorer',
 		year: '2025',
 		title: 'App: BNBexplorer',
 		shortDescription:
@@ -14,14 +14,14 @@ export const PROJECTS: readonly Project[] = [
 		images: ['/static/projects/thumbnail-placeholder.png'],
 		code: true,
 		design: true,
-		thumbnail: '/static/projects/thumbnail-bnbexplorer.webp',
-		link: '',
+		thumbnail: '/static/projects/bnbexplorer/thumbnail-bnbexplorer.webp',
+		link: 'https://www.bnbexplorer.com/',
 		client: 'Proyecto personal',
 		role: 'Diseño UX/UI, Desarrollo front.',
 		technologies: ['Illustrator', 'Figma', 'Next JS', 'CSS', 'Supabase'],
 	},
 	{
-		id: uuidv4(),
+		id: 'party-budget',
 		year: '2019',
 		title: 'Party budget',
 		shortDescription:
@@ -31,14 +31,14 @@ export const PROJECTS: readonly Project[] = [
 		images: ['/static/projects/thumbnail-placeholder.png'],
 		code: true,
 		design: true,
-		thumbnail: '/static/projects/thumbnail-budget.webp',
+		thumbnail: '/static/projects/budget/thumbnail-budget.webp',
 		link: '',
 		client: 'Proyecto personal',
 		role: 'Diseño UX/UI, Desarrollo front.',
 		technologies: ['Figma', 'Javascript', 'HTML', 'CSS', 'Bootstrap'],
 	},
 	{
-		id: uuidv4(),
+		id: 'bkool-design-system',
 		year: '2019',
 		title: 'BKOOL Design System',
 		shortDescription:
@@ -48,14 +48,14 @@ export const PROJECTS: readonly Project[] = [
 		images: ['/static/projects/thumbnail-placeholder.png'],
 		code: true,
 		design: false,
-		thumbnail: '/static/projects/thumbnail-bkool.webp',
+		thumbnail: '/static/projects/bkool-design-system/thumbnail-bkool.webp',
 		link: '',
 		client: 'BKOOL',
 		role: 'Diseño UX/UI, Desarrollo front.',
 		technologies: ['Figma', 'Next JS', 'CSS'],
 	},
 	{
-		id: uuidv4(),
+		id: 'bkool-design-system-private',
 		year: '2019',
 		title: 'BKOOL Design System. Área privada',
 		shortDescription:
@@ -65,14 +65,14 @@ export const PROJECTS: readonly Project[] = [
 		images: ['/static/projects/thumbnail-placeholder.png'],
 		code: true,
 		design: false,
-		thumbnail: '/static/projects/thumbnail-bkool.webp',
+		thumbnail: '/static/projects/bkool-design-system/thumbnail-bkool.webp',
 		link: '',
 		client: 'BKOOL',
 		role: 'Diseño UX/UI, Desarrollo front.',
 		technologies: ['Figma', 'React', 'CSS', 'Storybook'],
 	},
 	{
-		id: uuidv4(),
+		id: 'bkool-fitness-class-creator',
 		year: '2014',
 		title: 'BKOOL. Creador de Clases Fitness.',
 		shortDescription:
@@ -82,7 +82,8 @@ export const PROJECTS: readonly Project[] = [
 		images: ['/static/projects/thumbnail-placeholder.png'],
 		code: true,
 		design: true,
-		thumbnail: '/static/projects/thumbnail-fitness-creator.webp',
+		thumbnail:
+			'/static/projects/fitness-creator/thumbnail-fitness-creator.webp',
 		link: '',
 		client: 'BKOOL',
 		role: 'Diseño UX/UI, Desarrollo front.',
@@ -96,7 +97,7 @@ export const PROJECTS: readonly Project[] = [
 		],
 	},
 	{
-		id: uuidv4(),
+		id: 'timer',
 		year: '2014',
 		title: 'Timer',
 		shortDescription:
@@ -106,7 +107,7 @@ export const PROJECTS: readonly Project[] = [
 		images: ['/static/projects/thumbnail-placeholder.png'],
 		code: true,
 		design: true,
-		thumbnail: '/static/projects/thumbnail-timer.webp',
+		thumbnail: '/static/projects/timer/thumbnail-timer.webp',
 		link: '',
 		client: 'Proyecto personal',
 		role: 'Diseño UX/UI, Desarrollo front.',
@@ -120,7 +121,7 @@ export const PROJECTS: readonly Project[] = [
 		],
 	},
 	{
-		id: uuidv4(),
+		id: 'ludita',
 		year: '2013',
 		title: 'Ludita',
 		shortDescription:
@@ -130,14 +131,14 @@ export const PROJECTS: readonly Project[] = [
 		images: ['/static/projects/thumbnail-placeholder.png'],
 		code: false,
 		design: true,
-		thumbnail: '/static/projects/thumbnail-ludita.webp',
+		thumbnail: '/static/projects/ludita/thumbnail-ludita.webp',
 		link: '',
 		client: 'Ludita.',
 		role: 'Diseño gráfico',
 		technologies: ['Illustrator'],
 	},
 	{
-		id: uuidv4(),
+		id: 'smartwatch-concept-design',
 		year: '2013',
 		title: 'Smartwatch, concept design',
 		shortDescription:
@@ -147,14 +148,14 @@ export const PROJECTS: readonly Project[] = [
 		images: ['/static/projects/thumbnail-placeholder.png'],
 		code: false,
 		design: true,
-		thumbnail: '/static/projects/thumbnail-smartwatch.webp',
+		thumbnail: '/static/projects/smartwatch/thumbnail-smartwatch.webp',
 		link: '',
 		client: 'Proyecto personal',
 		role: 'Diseño de producto y UX/UI.',
 		technologies: ['Illustrator', 'Photoshop'],
 	},
 	{
-		id: uuidv4(),
+		id: 'google-music-player',
 		year: '2013',
 		title: 'Google Music Player',
 		shortDescription:
@@ -164,14 +165,14 @@ export const PROJECTS: readonly Project[] = [
 		images: ['/static/projects/thumbnail-placeholder.png'],
 		code: false,
 		design: true,
-		thumbnail: '/static/projects/thumbnail-google-music.webp',
+		thumbnail: '/static/projects/google-music/thumbnail-google-music.webp',
 		link: '',
 		client: 'Proyecto personal',
 		role: 'Diseño de producto y UX/UI.',
 		technologies: ['Illustrator', 'Photoshop'],
 	},
 	{
-		id: uuidv4(),
+		id: 'ebeenet',
 		year: '2011',
 		title: 'ebeenet',
 		shortDescription:
@@ -181,14 +182,14 @@ export const PROJECTS: readonly Project[] = [
 		images: ['/static/projects/thumbnail-placeholder.png'],
 		code: false,
 		design: true,
-		thumbnail: '/static/projects/thumbnail-ebeenet.webp',
+		thumbnail: '/static/projects/ebeenet/thumbnail-ebeenet.webp',
 		link: '',
 		client: 'Proyecto personal',
 		role: 'Diseño gráfico',
 		technologies: ['Illustrator', 'Photoshop'],
 	},
 	{
-		id: uuidv4(),
+		id: 'caca-ninno',
 		year: '2010',
 		title: 'Caca Niño',
 		shortDescription:
@@ -198,14 +199,14 @@ export const PROJECTS: readonly Project[] = [
 		images: ['/static/projects/thumbnail-placeholder.png'],
 		code: false,
 		design: true,
-		thumbnail: '/static/projects/thumbnail-cacaninno.webp',
+		thumbnail: '/static/projects/cacaninno/thumbnail-cacaninno.webp',
 		link: '',
 		client: 'Génesis, galerías de arte',
 		role: 'Diseño gráfico',
 		technologies: ['Illustrator'],
 	},
 	{
-		id: uuidv4(),
+		id: 'casa-real',
 		year: '2009',
 		title: 'Casa Real',
 		shortDescription:
@@ -215,14 +216,14 @@ export const PROJECTS: readonly Project[] = [
 		images: ['/static/projects/thumbnail-placeholder.png'],
 		code: false,
 		design: true,
-		thumbnail: '/static/projects/thumbnail-casareal.webp',
+		thumbnail: '/static/projects/casareal/thumbnail-casareal.webp',
 		link: '',
 		client: 'Génesis, galerías de arte',
 		role: 'Diseño gráfico',
 		technologies: ['Illustrator'],
 	},
 	{
-		id: uuidv4(),
+		id: 'film-festival',
 		year: '2008',
 		title: '28 Festival de Cine Latinoamericano',
 		shortDescription:
@@ -232,14 +233,15 @@ export const PROJECTS: readonly Project[] = [
 		images: ['/static/projects/thumbnail-placeholder.png'],
 		code: false,
 		design: true,
-		thumbnail: '/static/projects/thumbnail-festival-cine.webp',
+		thumbnail:
+			'/static/projects/festival-cine/thumbnail-festival-cine.webp',
 		link: '',
 		client: 'Casa de las américas',
 		role: 'Diseño gráfico',
 		technologies: ['Illustrator'],
 	},
 	{
-		id: uuidv4(),
+		id: 'kihoku',
 		year: '2008',
 		title: 'Kihoku',
 		shortDescription:
@@ -249,7 +251,7 @@ export const PROJECTS: readonly Project[] = [
 		images: ['/static/projects/thumbnail-placeholder.png'],
 		code: false,
 		design: true,
-		thumbnail: '/static/projects/thumbnail-kihoku.webp',
+		thumbnail: '/static/projects/kihoku/thumbnail-kihoku.webp',
 		link: '',
 		client: 'Concurso.',
 		role: 'Diseño gráfico',

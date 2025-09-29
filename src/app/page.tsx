@@ -29,7 +29,7 @@ export default function Home() {
 			<div className="flex justify-center items-stretch rounded-2xl overflow-hidden flex-1 relative px-6 py-20 md:py-36 lg:py-48 bg-[url('/static/code-design-vertical-bg.webp')] md:bg-[url('/static/code-design-bg.webp')] bg-no-repeat bg-center bg-cover md:bg-auto before:content-[''] md:before:w-[50%] before:w-[100%] before:bg-(--background-light) before:absolute before:h-[50%] md:before:h-[100%] h-[100%] before:top-0 before:left-0 before:-z-10">
 				<div className="bg-white shadow-2xl rounded-2xl grid auto-rows-fr md:flex md:flex-row overflow-hidden max-w-[800px] w-full md:my-auto">
 					<div className="p-6 md:max-w-[400px] w-full flex flex-col gap-3 flex-1">
-						<OcBadgeIndicator type="develop" />
+						<OcBadgeIndicator code />
 						<h2 className="text-3xl font-normal text-primary-400">
 							Think Logically
 						</h2>
@@ -60,7 +60,7 @@ export default function Home() {
 						/>
 					</div>
 					<div className="p-6 bg-primary-400 md:max-w-[400px] w-full flex flex-col gap-3 flex-1">
-						<OcBadgeIndicator type="design" color="white" />
+						<OcBadgeIndicator design color="white" />
 						<h2 className="text-3xl font-normal text-white">
 							Think Creatively
 						</h2>
