@@ -101,7 +101,7 @@ const OcCardTrajectory = ({
 				className={`order-first md:order-last flex flex-1 items-center gap-5 text-6xl font-black text-(--background-light) max-w-[300px] mt-5 md:mt-0 ${beginStyles}`}
 			>
 				<span className="flex w-4 h-4 bg-primary-400 border-5 border-(--background-light) rounded-full z-1"></span>
-				{begin}
+				{end}
 			</div>
 		</div>
 	);

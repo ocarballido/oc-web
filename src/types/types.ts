@@ -27,3 +27,27 @@ export type Project = {
 	technologies: string[];
 	shortDescription: string;
 };
+
+export type Trajectory = {
+	id: string;
+	begin: string;
+	end: string;
+	company: string;
+	location: string;
+	role: string;
+	responsabilities: string[];
+	tools: string[];
+};
+
+export type Personal = {
+	title: string;
+	description: string;
+};
+
+export type ThinkMethod = {
+	type: ProjectType;
+	title: string;
+	description: string;
+	tools: string[];
+	link: string;
+};
