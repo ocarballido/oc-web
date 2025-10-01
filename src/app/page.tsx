@@ -30,31 +30,6 @@ export default function Home() {
 						tools={THINK_CREATIVELLY?.tools}
 						link={THINK_CREATIVELLY?.link}
 					/>
-					{/* <div className="p-6 bg-primary-400 md:max-w-[400px] w-full flex flex-col gap-3 flex-1">
-						<OcBadgeIndicator design color="white" />
-						<h2 className="text-3xl font-normal text-white">
-							Think Creatively
-						</h2>
-						<p className="text-white">
-							La importancia de que el usuario lo pase bien usando
-							un producto y que además, lo encuentre fácil de usar
-							y estéticamente atractivo, son mis objetivos en cada
-							proyecto. Dicen que la comida entra por los ojos, yo
-							creo que con el diseño pasa lo mismo.
-						</p>
-						<div className="flex gap-1 flex-wrap mt-auto mb-2">
-							<OcBadge label="Figma" />
-							<OcBadge label="Illustrator" />
-							<OcBadge label="Photoshop" />
-							<OcBadge label="Material Design" />
-							<OcBadge label="Branding" />
-						</div>
-						<OcButtonLink
-							label="Ver proyectos"
-							href="/projects/design"
-							color="white"
-						/>
-					</div> */}
 				</div>
 			</div>
 		</main>

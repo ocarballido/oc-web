@@ -23,7 +23,7 @@ const OcProjectSidebar = ({ project }: ProjectProps) => {
 				<h3 className="text-lg font-medium mb-2">Cliente:</h3>
 				{project?.link ? (
 					<Link
-						className="text-primary-400 underline flex items-center gap-1"
+						className="text-primary-400 text-sm font-medium underline flex items-center gap-1 mb-1"
 						href={project?.link}
 						target="_blank"
 					>
