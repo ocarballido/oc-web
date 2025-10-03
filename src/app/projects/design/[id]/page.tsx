@@ -13,13 +13,13 @@ import hygraph from '@/lib/cms/client';
 import { mapProject } from '@/lib/cms/mappers/single-project';
 
 type PageProps = {
-	params: { id: string };
+	params: Promise<{ id: string }>;
 };
 
 export const revalidate = 300;
 
 export default async function SingleProject({ params }: PageProps) {
-	const { id } = params;
+	const { id } = await params;
 	if (!id) notFound();
 
 	const data = await hygraph.request<
