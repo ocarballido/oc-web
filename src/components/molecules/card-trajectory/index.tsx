@@ -1,20 +1,16 @@
 import clsx from 'clsx';
 
+import { Trajectory } from '@/types/types';
+import { CMSTrajectory } from '@/lib/cms/types';
+
 import OcCard from '@/components/atoms/card';
 import OcBadgeTimeLine from '../badge-time-line';
 import OcBadge from '../badge';
 
-type OcCardTrajectoryProps = {
+type OcCardTrajectoryProps = CMSTrajectory & {
 	isFirst?: boolean;
 	isLast?: boolean;
 	rowReverse?: boolean;
-	begin: string;
-	end: string;
-	company: string;
-	location?: string;
-	role: string;
-	responsabilities: string[];
-	tools?: string[];
 };
 
 const OcCardTrajectory = ({
@@ -60,7 +56,10 @@ const OcCardTrajectory = ({
 			<OcCard
 				className={`flex flex-col gap-5 flex-1 max-w-[300px] ${cardStyles}`}
 			>
-				<OcBadgeTimeLine begin={begin} end={end} />
+				<OcBadgeTimeLine
+					begin={begin.toString()}
+					end={end.toString()}
+				/>
 				<div>
 					<h3 className="text-sm font-bold">Empresa:</h3>
 					<p className="text-sm opacity-70">
@@ -83,14 +82,13 @@ const OcCardTrajectory = ({
 				</div>
 				{tools && (
 					<div className="flex gap-1 flex-wrap  mt-auto mb-2">
-						{tools &&
-							tools.map((item, index) => (
-								<OcBadge
-									key={index}
-									label={item}
-									color="secondary"
-								/>
-							))}
+						{tools.map((item, index) => (
+							<OcBadge
+								key={index}
+								label={item.badgeTitle}
+								color="secondary"
+							/>
+						))}
 					</div>
 				)}
 			</OcCard>

@@ -4,8 +4,9 @@ export type ProjectType = (typeof PROJECT_TYPES)[number];
 
 export type ProjectCard = {
 	id: string;
-	year: string;
-	thumbnail: string;
+	className?: string;
+	year: number;
+	thumbnail?: string;
 	code: boolean;
 	design: boolean;
 	title: string;
@@ -30,8 +31,8 @@ export type Project = {
 
 export type Trajectory = {
 	id: string;
-	begin: string;
-	end: string;
+	begin: number;
+	end: number;
 	company: string;
 	location: string;
 	role: string;
