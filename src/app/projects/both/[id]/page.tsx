@@ -1,34 +1,56 @@
 import { notFound } from 'next/navigation';
 
+import type {
+	GetProjectByIdResponse,
+	GetProjectByIdVariables,
+} from '@/lib/cms/types';
+
 import OcProjectSidebar from '@/components/organisms/project-sidebar';
 import OcProjectContent from '@/components/organisms/project-content';
 
-import { PROJECTS } from '@/data/proyects';
+import { GET_PROJECT_BY_ID } from '@/lib/cms/queries';
+import hygraph from '@/lib/cms/client';
+import { mapProject } from '@/lib/cms/mappers/single-project';
 
 type PageProps = {
-	params: Promise<{ id: string }>;
+	params: { id: string };
 };
 
-const SingleProject = async ({ params }: PageProps) => {
-	const { id } = await params;
+export const revalidate = 300;
 
+export default async function SingleProject({ params }: PageProps) {
+	const { id } = params;
 	if (!id) notFound();
 
-	const project = await PROJECTS.find((project) => project.id === id);
+	const data = await hygraph.request<
+		GetProjectByIdResponse,
+		GetProjectByIdVariables
+	>(GET_PROJECT_BY_ID, { id });
 
-	const graySvg = `<svg xmlns="http://www.w3.org/2000/svg" width="4" height="4"><rect width="4" height="4" fill="#e6effd" /></svg>`;
-	const grayDataUrl = `data:image/svg+xml;base64,${Buffer.from(
-		graySvg
-	).toString('base64')}`;
+	const cmsProject = data?.project;
+	if (!cmsProject) notFound();
+
+	const project = mapProject(cmsProject);
 
 	return (
 		<main className="flex flex-col flex-1">
 			<div className="py-6 max-w-7xl w-full mx-auto flex flex-col md:flex-row gap-3 md:gap-6 items-start">
-				{project && <OcProjectSidebar project={project} />}
-				{project && <OcProjectContent project={project} />}
+				<OcProjectSidebar
+					title={project.title}
+					description={project.description}
+					client={project.client}
+					role={project.role}
+					code={project.code}
+					design={project.design}
+					year={project.year}
+					technologies={project.technologies}
+					link={project.link ?? undefined}
+				/>
+				<OcProjectContent
+					title={project.title ?? 'Proyecto'}
+					images={project.images}
+				/>
 			</div>
 		</main>
 	);
-};
-
-export default SingleProject;
+}

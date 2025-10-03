@@ -1,30 +1,3 @@
-export const GET_WELCOME = `
-	query GetWelcome {
-		welcome(where: {}) {
-			subtitle
-			title
-			content {
-			html
-			markdown
-			}
-			thinkCard {
-			... on ThinkCard {
-				id
-				link
-				title
-				tools {
-				... on Badge {
-					id
-					badgeTitle
-				}
-				}
-				type
-			}
-			}
-		}
-	}
-`;
-
 export const GET_PROJECTS = `
 	query GetProjects {
 		projects(orderBy: year_DESC) {
@@ -72,6 +45,33 @@ export const GET_DEVELOP_PROJECTS = `
             thumbnail {
                 url
             }
+		}
+	}
+`;
+
+export const GET_PROJECT_BY_ID = `
+	query GetProjectById($id: ID!) {
+		project(where: { id: $id }) {
+		id
+		title
+		shortDescription
+		description
+		client
+		role
+		code
+		design
+		year
+		images {
+			url
+		}
+		technologies {
+			... on Badge {
+			id
+			badgeTitle
+			}
+		}
+		link
+		thumbnail { url }
 		}
 	}
 `;

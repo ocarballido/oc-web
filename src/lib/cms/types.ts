@@ -2,11 +2,16 @@ export type CMSProject = {
 	id: string;
 	title: string | null;
 	shortDescription: string | null;
-	link?: string | null;
+	description: string | null;
+	client: string | null;
+	role: string | null;
 	code: boolean | null;
 	design: boolean | null;
-	year: number | null;
-	thumbnail: { url?: string | null } | null;
+	year: number | string | null; // ← acepta string o number
+	images: Array<CMSImage | null> | null; // ← array con nulls
+	technologies: Array<CMSBadge | null> | null;
+	link?: string | null;
+	thumbnail?: { url?: string | null } | null;
 };
 
 export type CMSBadge = { id?: string; badgeTitle: string };
@@ -21,3 +26,12 @@ export type CMSTrajectory = {
 	responsabilities: string[];
 	tools?: CMSBadge[] | [];
 };
+
+export type CMSImage = {
+	url: string | null;
+};
+
+export type CMSSingleProject = CMSProject;
+
+export type GetProjectByIdResponse = { project: CMSSingleProject | null };
+export type GetProjectByIdVariables = { id: string };

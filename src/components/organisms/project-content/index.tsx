@@ -1,20 +1,19 @@
 import OcImageResponsive from '@/components/atoms/image-responsive';
 
-import { Project } from '@/types/types';
+import { ProjectDetail } from '@/types/types';
 
-type ProjectProps = { project: Project };
+type ContentProps = Pick<ProjectDetail, 'title' | 'images'>;
 
-const OcProjectContent = ({ project }: ProjectProps) => {
+const OcProjectContent = ({ title, images }: ContentProps) => {
 	return (
 		<div className="flex-1 w-full">
 			<div className="relative rounded-2xl overflow-hidden">
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-1">
-					{project &&
-						project.images.length > 0 &&
-						project.images.map((image, index) => {
+					{images.length > 0 &&
+						images.map((image, index) => {
 							const isFirst = index === 0;
-							const isLast = index === project.images.length - 1;
-							const isOdd = project.images.length % 2 === 0;
+							const isLast = index === images.length - 1;
+							const isOdd = images.length % 2 === 0;
 
 							return (
 								<div
@@ -27,7 +26,7 @@ const OcProjectContent = ({ project }: ProjectProps) => {
 								>
 									<OcImageResponsive
 										imageUrl={image}
-										alt={project.title}
+										alt={title || 'Proyecto'}
 									/>
 								</div>
 							);

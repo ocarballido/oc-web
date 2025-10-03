@@ -52,3 +52,19 @@ export type ThinkMethod = {
 	tools: string[];
 	link: string;
 };
+
+export type ProjectDetail = {
+	id: string;
+	title: string | null;
+	shortDescription: string | null;
+	description: string | null;
+	client?: string | null;
+	role?: string | null;
+	code: boolean;
+	design: boolean;
+	year: number;
+	images: string[];
+	technologies: { id: string; badgeTitle: string }[];
+	link?: string | null;
+	thumbnail?: string | null;
+};
