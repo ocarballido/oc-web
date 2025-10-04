@@ -20,11 +20,11 @@ export default async function Home() {
 
 	return (
 		<main className="flex flex-col h-full flex-1">
-			<OcCard className="mt-6 max-w-7xl md:w-full lg:w-5xl xl:w-full mx-auto mb-3 lg:-mb-18 relative z-10">
+			<OcCard className="mt-6 max-w-5xl md:w-full lg:w-4xl xl:w-full mx-auto mb-3 lg:-mb-18 relative z-10">
 				<h1 className="text-primary-400 text-5xl font-light mb-5">
 					{welcomeContent.title}
 				</h1>
-				<p className="mb-3 opacity-80 font-normal text-xl">
+				<p className="mb-3 font-normal text-xl">
 					{welcomeContent.subtitle}
 				</p>
 				<p className="mb-3 opacity-80 font-normal text-base">

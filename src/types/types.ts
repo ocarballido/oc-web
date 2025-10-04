@@ -87,3 +87,10 @@ export type Welcome = {
 	content: string[];
 	thinkCards: ThinkCard[];
 };
+
+export type Card400 = {
+	link?: string;
+	image?: string | null;
+	type: ThinkCardType;
+	description?: string | null;
+};
