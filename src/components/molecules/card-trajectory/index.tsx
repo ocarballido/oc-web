@@ -1,6 +1,5 @@
 import clsx from 'clsx';
 
-import { Trajectory } from '@/types/types';
 import { CMSTrajectory } from '@/lib/cms/types';
 
 import OcCard from '@/components/atoms/card';

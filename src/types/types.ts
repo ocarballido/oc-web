@@ -49,8 +49,8 @@ export type ThinkMethod = {
 	type: ProjectType;
 	title: string;
 	description: string;
-	tools: string[];
-	link: string;
+	tools: string[] | [];
+	link: string | null;
 };
 
 export type ProjectDetail = {
@@ -67,4 +67,23 @@ export type ProjectDetail = {
 	technologies: { id: string; badgeTitle: string }[];
 	link?: string | null;
 	thumbnail?: string | null;
+};
+
+// Welcome types
+export type ThinkCardType = 'develop' | 'design';
+
+export type ThinkCard = {
+	id?: string;
+	link?: string;
+	title: string;
+	type: ThinkCardType;
+	description: string;
+	tools: Array<{ id: string; badgeTitle: string }>;
+};
+
+export type Welcome = {
+	title: string;
+	subtitle: string;
+	content: string[];
+	thinkCards: ThinkCard[];
 };

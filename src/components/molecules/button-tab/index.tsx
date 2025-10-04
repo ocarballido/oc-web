@@ -3,26 +3,29 @@ import Link from 'next/link';
 
 import clsx from 'clsx';
 
-type ButtonLinkProps = {
+type ButtonTabProps = {
 	active?: boolean;
 	className?: string;
 	color?: 'primary' | 'secondary' | 'white';
 	disabled?: boolean;
-	icon?: string;
+	iconBefore?: string;
+	iconAfter?: string;
 	label: string;
 	href: string;
 };
 
-const OcButtonLink = ({
+const OcButtonTab = ({
 	active = false,
 	className = '',
 	color = 'primary',
-	icon,
+	iconBefore,
+	iconAfter,
 	label,
 	href,
-}: ButtonLinkProps) => {
+}: ButtonTabProps) => {
 	const buttonStyles = clsx(
-		{ 'pl-4': icon },
+		{ 'pl-4': iconBefore },
+		{ 'pr-4': iconAfter },
 		{
 			'bg-primary-400 hover:bg-primary-500 focus:bg-primary-500 text-white':
 				color === 'primary' && !active,
@@ -51,11 +54,15 @@ const OcButtonLink = ({
 			className={`font-medium text-base rounded-full transition-all flex items-center justify-center gap-1 py-2 px-5 hover:cursor-pointer disabled:opacity-30 disabled:pointer-events-none ${buttonStyles} ${className}`}
 			href={href}
 		>
-			{icon && <Image src={icon} alt="Icon" height={16} width={16} />}
-
+			{iconBefore && (
+				<Image src={iconBefore} alt="Icon" height={24} width={24} />
+			)}
 			{label}
+			{iconAfter && (
+				<Image src={iconAfter} alt="Icon" height={24} width={24} />
+			)}
 		</Link>
 	);
 };
 
-export default OcButtonLink;
+export default OcButtonTab;

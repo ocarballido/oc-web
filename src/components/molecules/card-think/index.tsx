@@ -4,7 +4,7 @@ import OcBadgeIndicator from '../badge-indicator';
 import OcBadge from '../badge';
 import OcButtonLink from '../button-link';
 
-import type { ThinkMethod } from '@/types/types';
+import type { ThinkCard } from '@/types/types';
 
 const OcCardThink = ({
 	type,
@@ -12,7 +12,8 @@ const OcCardThink = ({
 	description,
 	tools,
 	link,
-}: ThinkMethod) => {
+	id,
+}: ThinkCard) => {
 	const cardStyles = clsx({
 		'bg-primary-400': type === 'design',
 	});
@@ -51,15 +52,15 @@ const OcCardThink = ({
 					tools.length > 0 &&
 					tools.map((tool) => (
 						<OcBadge
-							label={tool}
-							key={tool}
+							label={tool.badgeTitle}
+							key={tool.id}
 							color={type === 'develop' ? 'secondary' : 'primary'}
 						/>
 					))}
 			</div>
 			<OcButtonLink
 				label="Ver proyectos"
-				href={link}
+				href={link || ''}
 				color={type === 'develop' ? 'primary' : 'white'}
 			/>
 		</div>

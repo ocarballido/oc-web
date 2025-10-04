@@ -16,7 +16,7 @@ const OcMainMenu = ({ className = '', path = '/' }: MainMamuProps) => {
 			/>
 			<OcButtonLink
 				label="Proyectos"
-				href="/projects/both"
+				href="/projects/develop"
 				color="white"
 				active={path.includes('projects')}
 			/>

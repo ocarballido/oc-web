@@ -22,7 +22,10 @@ const OcProjectSidebar = ({
 }: SideBarProps) => {
 	return (
 		<OcCard className="w-full md:max-w-[350px] flex flex-col gap-6 md:sticky md:top-41.5">
-			<OcButtonLink label="Todos los proyectos" href="/projects/both" />
+			<OcButtonLink
+				label="Todos los proyectos"
+				href="/projects/develop"
+			/>
 			<OcBadgeIndicator code={code} design={design} />
 			<h2 className="text-3xl">{title}</h2>
 			<div>

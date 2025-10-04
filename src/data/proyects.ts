@@ -1,7 +1,5 @@
 import { Project } from '@/types/types';
 
-import { v4 as uuidv4 } from 'uuid';
-
 export const PROJECTS: readonly Project[] = [
 	{
 		id: 'app-bnbexplorer',

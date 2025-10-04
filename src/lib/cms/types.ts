@@ -35,3 +35,27 @@ export type CMSSingleProject = CMSProject;
 
 export type GetProjectByIdResponse = { project: CMSSingleProject | null };
 export type GetProjectByIdVariables = { id: string };
+
+export type CMSThinkCardType = 'develop' | 'design';
+
+export interface CMSThinkCard {
+	__typename?: 'ThinkCard';
+	id: string;
+	link: string | null;
+	description: string | null;
+	title: string | null;
+	type: CMSThinkCardType | null;
+	tools: Array<CMSBadge | null> | null;
+}
+
+export interface CMSWelcome {
+	id: string;
+	title: string | null;
+	subtitle: string | null;
+	content: string[] | null;
+	thinkCard: Array<CMSThinkCard | null> | null;
+}
+export interface GetWelcomesResponse {
+	welcomes: Array<CMSWelcome> | null;
+}
+export type GetWelcomesVariables = Record<string, never>;

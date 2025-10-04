@@ -95,3 +95,29 @@ export const GET_TRAJECTORIES = `
         }
     }
 `;
+
+export const GET_WELCOME = `
+	query GetWelcome {
+		welcomes {
+			id
+			thinkCard {
+				... on ThinkCard {
+					id
+					type
+					tools {
+						... on Badge {
+							id
+							badgeTitle
+						}
+					}
+					title
+					link
+					description
+				}
+			}
+			title
+			subtitle
+			content
+		}
+	}
+`;

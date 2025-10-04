@@ -17,5 +17,6 @@ const OcCard = forwardRef<HTMLDivElement, OcCardProps>(
 		</div>
 	)
 );
+OcCard.displayName = 'OcCard';
 
 export default OcCard;
