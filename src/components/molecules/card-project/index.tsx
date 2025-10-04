@@ -5,6 +5,8 @@ import OcBadgeIndicator from '../badge-indicator';
 import OcBadge from '../badge';
 import OcButtonLink from '../button-link';
 
+type Props = ProjectCard & { from: 'DEVELOP' | 'DESIGN' };
+
 const OcCardProject = ({
 	id,
 	className,
@@ -14,7 +16,8 @@ const OcCardProject = ({
 	thumbnail,
 	title,
 	shortDescription,
-}: ProjectCard) => {
+	from,
+}: Props) => {
 	const graySvg = `<svg xmlns="http://www.w3.org/2000/svg" width="4" height="4"><rect width="4" height="4" fill="#e6effd" /></svg>`;
 	const grayDataUrl =
 		'data:image/svg+xml;base64,' +
@@ -70,13 +73,7 @@ const OcCardProject = ({
 
 			<div className="p-2">
 				<OcButtonLink
-					href={`/projects/${
-						code && design
-							? 'both'
-							: !code && design
-							? 'design'
-							: 'develop'
-					}/${id}`}
+					href={`/projects/${from.toLowerCase()}/${id}`}
 					label="Ver proyecto"
 					color="secondary"
 				/>

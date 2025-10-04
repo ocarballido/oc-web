@@ -1,7 +1,6 @@
 import { notFound } from 'next/navigation';
 
-import OcProjectsFilter from '@/components/molecules/projects-filter';
-import OcCardProject from '@/components/molecules/card-project';
+import OcProjects from '@/components/organisms/projects';
 
 import type { CMSProject } from '@/lib/cms/types';
 import type { ProjectCard } from '@/types/types';
@@ -19,28 +18,5 @@ export default async function ProjectsDesign() {
 
 	if (!projects.length) notFound();
 
-	return (
-		<main className="flex flex-col flex-1">
-			<div className="py-6 max-w-7xl w-full mx-auto flex flex-col gap-6">
-				<OcProjectsFilter active="DESIGN" />
-				<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 items-start">
-					{projects.map((project, index) => (
-						<OcCardProject
-							key={project.id}
-							id={project.id}
-							year={project.year}
-							title={project.title}
-							shortDescription={project.shortDescription}
-							thumbnail={project.thumbnail}
-							code={project.code}
-							design={project.design}
-							className={
-								index === 0 ? 'md:col-span-2' : undefined
-							}
-						/>
-					))}
-				</div>
-			</div>
-		</main>
-	);
+	return <OcProjects projects={projects} filter="DESIGN" />;
 }
