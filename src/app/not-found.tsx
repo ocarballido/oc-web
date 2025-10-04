@@ -9,7 +9,7 @@ export default function NotFound({ type, description, image, link }: Card400) {
 				<div className="bg-white shadow-2xl rounded-2xl grid auto-rows-fr md:flex md:flex-row overflow-hidden max-w-[600px] w-full md:my-auto">
 					<OcCard400
 						type="develop"
-						image="/static/400.svg"
+						code="404"
 						link="/projects/develop"
 					/>
 					<OcCard400

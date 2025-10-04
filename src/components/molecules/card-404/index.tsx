@@ -6,7 +6,7 @@ import OcButtonLink from '../button-link';
 
 import type { Card400 } from '@/types/types';
 
-const OcCard400 = ({ type, image, description, link }: Card400) => {
+const OcCard400 = ({ type, image, description, link, code }: Card400) => {
 	const cardStyles = clsx({
 		'bg-primary-400': type === 'design',
 	});
@@ -33,6 +33,9 @@ const OcCard400 = ({ type, image, description, link }: Card400) => {
 				<p className={`font-medium ${descriptionStyles}`}>
 					{description}
 				</p>
+			)}
+			{code && (
+				<p className="font-black text-8xl text-primary-400">{code}</p>
 			)}
 			{image && (
 				<Image
