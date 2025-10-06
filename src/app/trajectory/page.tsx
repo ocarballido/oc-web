@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 import OcCardTrajectory from '@/components/molecules/card-trajectory';
@@ -6,6 +7,10 @@ import { CMSTrajectory } from '@/lib/cms/types';
 
 import { GET_TRAJECTORIES } from '@/lib/cms/queries';
 import hygraph from '@/lib/cms/client';
+
+export const metadata: Metadata = {
+	title: 'Oscarballido | Trayectoria',
+};
 
 export default async function Trajectory() {
 	const data = await hygraph.request<{ trajectories: CMSTrajectory[] }>(
