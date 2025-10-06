@@ -1,10 +1,17 @@
-import OcImageResponsive from '@/components/atoms/image-responsive';
+import Image from 'next/image';
 
 import { ProjectDetail } from '@/types/types';
 
 type ContentProps = Pick<ProjectDetail, 'title' | 'images'>;
 
 const OcProjectContent = ({ title, images }: ContentProps) => {
+	const graySvg = `<svg xmlns="http://www.w3.org/2000/svg" width="4" height="4"><rect width="4" height="4" fill="#e6effd" /></svg>`;
+	const grayDataUrl =
+		'data:image/svg+xml;base64,' +
+		(typeof window !== 'undefined'
+			? btoa(unescape(encodeURIComponent(graySvg)))
+			: Buffer.from(graySvg).toString('base64'));
+
 	return (
 		<div className="flex-1 w-full">
 			<div className="relative rounded-2xl overflow-hidden">
@@ -17,16 +24,21 @@ const OcProjectContent = ({ title, images }: ContentProps) => {
 
 							return (
 								<div
-									className={`aspect-square overflow-hidden rounded-lg bg-(--background-light) ${
+									className={`aspect-square overflow-hidden rounded-lg bg-(--background-light) relative ${
 										isFirst || (isLast && isOdd)
 											? 'md:col-span-2'
 											: ''
 									}`}
 									key={index}
 								>
-									<OcImageResponsive
-										imageUrl={image}
+									<Image
+										src={image}
+										fill
 										alt={title || 'Proyecto'}
+										className="w-full object-cover"
+										placeholder="blur"
+										blurDataURL={grayDataUrl}
+										sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
 									/>
 								</div>
 							);
