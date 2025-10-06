@@ -3,8 +3,6 @@ import { notFound } from 'next/navigation';
 import OcCard from '@/components/atoms/card';
 import OcCardThink from '@/components/molecules/card-think';
 
-import { PERSONAL, THINK_LOGICALLY, THINK_CREATIVELLY } from '@/data/personal';
-
 import { GET_WELCOME } from '@/lib/cms/queries';
 import { mapWelcomes } from '@/lib/cms/mappers/welcome';
 import hygraph from '@/lib/cms/client';

@@ -8,6 +8,7 @@ const OcLogo = () => {
 				alt="Oscarballido logo"
 				width={100}
 				height={72}
+				priority
 				src="/static/appbar/ocarballido-logo.svg"
 			/>
 			<p className="text-sm font-medium opacity-80">UI Developer</p>

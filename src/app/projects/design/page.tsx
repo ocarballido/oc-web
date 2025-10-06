@@ -1,3 +1,5 @@
+import { Metadata } from 'next';
+
 import { notFound } from 'next/navigation';
 
 import OcProjects from '@/components/organisms/projects';
@@ -8,6 +10,10 @@ import { toProjectCard } from '@/lib/cms/mappers/projects';
 
 import { GET_DESIGN_PROJECTS } from '@/lib/cms/queries';
 import hygraph from '@/lib/cms/client';
+
+export const metadata: Metadata = {
+	title: 'Proyectos | Diseño',
+};
 
 export default async function ProjectsDesign() {
 	const data = await hygraph.request<{ projects: CMSProject[] }>(
