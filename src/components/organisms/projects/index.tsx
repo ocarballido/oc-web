@@ -24,6 +24,7 @@ const OcProjects = ({ projects, filter }: ProyectsProps) => {
 								title={project.title}
 								shortDescription={project.shortDescription}
 								code={project.code}
+								thumbnail={project.thumbnail}
 								design={project.design}
 								from={filter}
 								className="md:col-span-full max-w-4xl mx-auto"

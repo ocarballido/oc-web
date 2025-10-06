@@ -13,6 +13,7 @@ const OcCardProjectCover = ({
 	code,
 	design,
 	year,
+	thumbnail,
 	title,
 	shortDescription,
 	from,
@@ -35,19 +36,32 @@ const OcCardProjectCover = ({
 				className ?? ''
 			}`}
 		>
-			<Image
-				src={
-					from === 'DEVELOP'
-						? '/static/splash-bg-grayed.webp'
-						: '/static/splash-bg-colored.webp'
-				}
-				fill
-				alt={safeTitle}
-				className="w-full object-cover"
-				placeholder="blur"
-				blurDataURL={grayDataUrl}
-				sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
-			/>
+			{thumbnail ? (
+				<Image
+					src={thumbnail}
+					fill
+					alt={safeTitle}
+					className="w-full object-cover"
+					placeholder="blur"
+					blurDataURL={grayDataUrl}
+					sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+				/>
+			) : (
+				<Image
+					src={
+						from === 'DEVELOP'
+							? '/static/splash-bg-grayed.webp'
+							: '/static/splash-bg-colored.webp'
+					}
+					fill
+					alt={safeTitle}
+					className="w-full object-cover"
+					placeholder="blur"
+					blurDataURL={grayDataUrl}
+					sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+				/>
+			)}
+
 			<div className="bg-white rounded-2xl px-3 py-1 text-xs font-semibold tracking-wide uppercase mb-1 w-fit text-primary-400 relative">
 				Más reciente
 			</div>
