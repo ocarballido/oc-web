@@ -1,11 +1,6 @@
-import type { Metadata } from 'next';
-import type { Viewport } from 'next';
+import type { Metadata, Viewport } from 'next';
 
 import BaseLayout from '@/components/layouts/base';
-
-export const viewport: Viewport = {
-	themeColor: 'black',
-};
 
 export const metadata: Metadata = {
 	title: {
@@ -34,11 +29,15 @@ export const metadata: Metadata = {
 		locale: 'es',
 		type: 'article',
 	},
-	themeColor: '#ffffff',
 	other: {
 		'color-scheme': 'light',
 		'supported-color-schemes': 'light',
 	},
+};
+
+export const viewport: Viewport = {
+	colorScheme: 'light',
+	themeColor: '#ffffff',
 };
 
 export default function RootLayout({
@@ -46,5 +45,13 @@ export default function RootLayout({
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
-	return <BaseLayout>{children}</BaseLayout>;
+	return (
+		<html
+			lang="es"
+			suppressHydrationWarning
+			style={{ colorScheme: 'light' }}
+		>
+			<BaseLayout>{children}</BaseLayout>
+		</html>
+	);
 }
