@@ -12,6 +12,8 @@ export const metadata: Metadata = {
 	title: 'Oscarballido | Trayectoria',
 };
 
+export const revalidate = 300;
+
 export default async function Trajectory() {
 	const data = await hygraph.request<{ trajectories: CMSTrajectory[] }>(
 		GET_TRAJECTORIES
