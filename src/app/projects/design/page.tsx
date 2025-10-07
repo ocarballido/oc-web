@@ -15,6 +15,8 @@ export const metadata: Metadata = {
 	title: 'Proyectos | Diseño',
 };
 
+export const revalidate = 60;
+
 export default async function ProjectsDesign() {
 	const data = await hygraph.request<{ projects: CMSProject[] }>(
 		GET_DESIGN_PROJECTS
