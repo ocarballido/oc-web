@@ -34,6 +34,7 @@ export const metadata: Metadata = {
 		locale: 'es',
 		type: 'article',
 	},
+	themeColor: '#ffffff',
 	other: {
 		'color-scheme': 'light',
 		'supported-color-schemes': 'light',

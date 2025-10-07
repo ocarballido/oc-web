@@ -17,6 +17,8 @@
 	--blue-700: #00266e;
 	--blue-800: #00143d;
 	--blue-900: #00040d;
+
+	color-scheme: light;
 }
 
 @keyframes fade-in {
