@@ -48,7 +48,7 @@ export function mapProject(cms: CMSProject): ProjectDetail {
 		role: cms.role ?? null,
 		code: Boolean(cms.code),
 		design: Boolean(cms.design),
-		year: toYear(cms.year),
+		date: new Date(cms.date).getFullYear().toString(),
 		images,
 		technologies,
 		link: cms.link ?? null,

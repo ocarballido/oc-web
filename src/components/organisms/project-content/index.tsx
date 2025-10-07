@@ -24,7 +24,7 @@ const OcProjectContent = ({ title, images }: ContentProps) => {
 
 							return (
 								<div
-									className={`aspect-square overflow-hidden rounded-lg bg-(--background-light) relative ${
+									className={`aspect-square overflow-hidden rounded-2xl bg-(--background-light) relative ${
 										isFirst || (isLast && isOdd)
 											? 'md:col-span-2'
 											: ''

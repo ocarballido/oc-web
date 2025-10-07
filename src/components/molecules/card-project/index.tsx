@@ -12,7 +12,7 @@ const OcCardProject = ({
 	className,
 	code,
 	design,
-	year,
+	date,
 	thumbnail,
 	title,
 	shortDescription,
@@ -24,8 +24,6 @@ const OcCardProject = ({
 		(typeof window !== 'undefined'
 			? btoa(unescape(encodeURIComponent(graySvg)))
 			: Buffer.from(graySvg).toString('base64'));
-
-	const safeYear = Number.isFinite(year) ? year : new Date().getFullYear();
 
 	const img = thumbnail && thumbnail.length > 0 ? thumbnail : undefined;
 	const safeTitle = title ?? '(Sin título)';
@@ -39,7 +37,7 @@ const OcCardProject = ({
 		>
 			<div className="flex justify-between items-center px-2 py-4">
 				<OcBadgeIndicator code={code} design={design} />
-				<OcBadge label={String(safeYear)} color="secondary" />
+				<OcBadge label={date} color="secondary" />
 			</div>
 
 			<div className="px-2 w-full h-[200px]">

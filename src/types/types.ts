@@ -5,11 +5,11 @@ export type ProjectType = (typeof PROJECT_TYPES)[number];
 export type ProjectCard = {
 	id: string;
 	className?: string;
-	year: number;
 	thumbnail?: string;
 	code: boolean;
 	design: boolean;
 	title: string;
+	date: string;
 	shortDescription: string;
 };
 
@@ -62,7 +62,7 @@ export type ProjectDetail = {
 	role?: string | null;
 	code: boolean;
 	design: boolean;
-	year: number;
+	date: string;
 	images: string[];
 	technologies: { id: string; badgeTitle: string }[];
 	link?: string | null;

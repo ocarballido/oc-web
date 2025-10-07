@@ -12,7 +12,7 @@ const OcCardProjectCover = ({
 	className,
 	code,
 	design,
-	year,
+	date,
 	thumbnail,
 	title,
 	shortDescription,
@@ -24,8 +24,6 @@ const OcCardProjectCover = ({
 		(typeof window !== 'undefined'
 			? btoa(unescape(encodeURIComponent(graySvg)))
 			: Buffer.from(graySvg).toString('base64'));
-
-	const safeYear = Number.isFinite(year) ? year : new Date().getFullYear();
 
 	const safeTitle = title ?? '(Sin título)';
 	const safeShort = shortDescription ?? '';
@@ -68,7 +66,7 @@ const OcCardProjectCover = ({
 			<div className="flex flex-col gap-3 p-6 bg-white relative rounded-xl">
 				<div className="flex justify-between items-center">
 					<OcBadgeIndicator code={code} design={design} />
-					<OcBadge label={String(safeYear)} color="secondary" />
+					<OcBadge label={date} color="secondary" />
 				</div>
 				<h3 className="text-sm font-bold">{safeTitle}</h3>
 				<p className="text-sm opacity-70 mb-3">{safeShort}</p>

@@ -19,7 +19,7 @@ const OcProjectSidebar = ({
 	role,
 	code,
 	design,
-	year,
+	date,
 	technologies,
 	link,
 }: SideBarProps) => {
@@ -58,7 +58,7 @@ const OcProjectSidebar = ({
 				) : (
 					<p className="opacity-70">{client}</p>
 				)}
-				{year && <OcBadge label={year.toString()} />}
+				<OcBadge label={date} />
 			</div>
 			<div>
 				<h3 className="text-lg font-medium mb-2">Role:</h3>

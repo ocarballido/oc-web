@@ -17,14 +17,14 @@ export const GET_PROJECTS = `
 
 export const GET_DESIGN_PROJECTS = `
 	query GetProjects {
-		projects(where: { design: true }, orderBy: year_DESC) {
+		projects(where: { design: true }, orderBy: date_DESC) {
 			id
 			title
 			shortDescription
 			link
 			code
 			design
-			year
+			date
             thumbnail {
                 url
             }
@@ -34,14 +34,14 @@ export const GET_DESIGN_PROJECTS = `
 
 export const GET_DEVELOP_PROJECTS = `
 	query GetProjects {
-		projects(where: { code: true }, orderBy: year_DESC) {
+		projects(where: { code: true }, orderBy: date_DESC) {
 			id
 			title
 			shortDescription
 			link
 			code
 			design
-			year
+			date
             thumbnail {
                 url
             }
@@ -59,8 +59,8 @@ export const GET_PROJECT_BY_ID = `
 		client
 		role
 		code
+		date
 		design
-		year
 		images {
 			url
 		}

@@ -20,7 +20,7 @@ const OcProjects = ({ projects, filter }: ProyectsProps) => {
 							<OcCardProjectCover
 								key={project.id}
 								id={project.id}
-								year={project.year}
+								date={project.date}
 								title={project.title}
 								shortDescription={project.shortDescription}
 								code={project.code}
@@ -33,7 +33,7 @@ const OcProjects = ({ projects, filter }: ProyectsProps) => {
 							<OcCardProject
 								key={project.id}
 								id={project.id}
-								year={project.year}
+								date={project.date}
 								title={project.title}
 								shortDescription={project.shortDescription}
 								thumbnail={project.thumbnail}

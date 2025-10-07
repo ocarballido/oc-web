@@ -61,7 +61,7 @@ export default async function SingleProject({ params }: PageProps) {
 					role={project.role}
 					code={project.code}
 					design={project.design}
-					year={project.year}
+					date={project.date}
 					technologies={project.technologies}
 					link={project.link ?? undefined}
 				/>

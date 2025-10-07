@@ -4,11 +4,11 @@ export type CMSProject = {
 	shortDescription: string | null;
 	description: string | null;
 	client: string | null;
+	date: string;
 	role: string | null;
 	code: boolean | null;
 	design: boolean | null;
-	year: number | string | null; // ← acepta string o number
-	images: Array<CMSImage | null> | null; // ← array con nulls
+	images: Array<CMSImage | null> | null;
 	technologies: Array<CMSBadge | null> | null;
 	link?: string | null;
 	thumbnail?: { url?: string | null } | null;
