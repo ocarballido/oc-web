@@ -26,10 +26,6 @@ const OcMainMenu = ({ className = '', path = '/' }: MainMamuProps) => {
 				color="white"
 				active={path.includes('projects')}
 			/>
-			<OcButtonLink
-				label="CV PDF"
-				href="/static/cv/CV_Oscar_Carballido_ES.pdf"
-			/>
 		</nav>
 	);
 };
