@@ -9,6 +9,12 @@ const OcMainMenu = ({ className = '', path = '/' }: MainMamuProps) => {
 	return (
 		<nav className={`${className}`}>
 			<OcButtonLink
+				label="Inicio"
+				href="/"
+				color="white"
+				active={path === '/'}
+			/>
+			<OcButtonLink
 				label="Trayectoría"
 				href="/trajectory"
 				color="white"

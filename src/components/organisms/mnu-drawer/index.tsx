@@ -25,7 +25,7 @@ const OcMenuDrawer = ({ isMenuOpen, handleMobileMenu, path }: DrawerProps) => {
 				/>
 			</div>
 			<div className="p-8 shadow-2xl min-w-[220px] rounded-2xl bg-white flex flex-col gap-2">
-				<OcButtonLink label="Inicio" href="/" color="white" />
+				{/* <OcButtonLink label="Inicio" href="/" color="white" /> */}
 				<OcMainMenu className="flex flex-col gap-2" path={path} />
 			</div>
 		</div>
