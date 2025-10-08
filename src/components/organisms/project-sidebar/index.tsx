@@ -28,37 +28,35 @@ const OcProjectSidebar = ({
 	return (
 		<OcCard className="w-full md:max-w-[350px] flex flex-col gap-6 md:sticky md:top-41.5">
 			<OcButtonLink
-				label="Todos los proyectos"
+				label={
+					pathname.includes('develop')
+						? 'Todo desarrollo'
+						: 'Todo diseño'
+				}
 				href={`/projects/${
 					pathname.includes('develop') ? 'develop' : 'design'
 				}`}
+				icon="/static/icons/arrow_back-white.svg"
 			/>
 			<OcBadgeIndicator code={code} design={design} />
 			<h2 className="text-3xl">{title}</h2>
 			<div>
-				<h3 className="text-lg font-medium mb-2">Descripción:</h3>
+				<OcBadge label={date} />
+				<h3 className="text-lg font-medium my-2">Descripción:</h3>
 				<p className="opacity-70">{description}</p>
 			</div>
 			<div>
 				<h3 className="text-lg font-medium mb-2">Cliente:</h3>
-				{link ? (
-					<Link
-						className="text-primary-400 text-sm font-medium underline flex items-center gap-1 mb-1"
+				<p className="opacity-70">{client}</p>
+				{link && (
+					<OcButtonLink
+						label="Ver proyecto"
 						href={link}
-						target="_blank"
-					>
-						{client}
-						<Image
-							alt="Icon arrow"
-							src="/static/icons/arrow-out.svg"
-							width={20}
-							height={20}
-						/>
-					</Link>
-				) : (
-					<p className="opacity-70">{client}</p>
+						icon="/static/icons/arrow-out.svg"
+						color="secondary"
+						className="mt-2"
+					/>
 				)}
-				<OcBadge label={date} />
 			</div>
 			<div>
 				<h3 className="text-lg font-medium mb-2">Role:</h3>

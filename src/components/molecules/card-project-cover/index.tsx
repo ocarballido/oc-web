@@ -13,6 +13,7 @@ const OcCardProjectCover = ({
 	code,
 	design,
 	date,
+	client,
 	thumbnail,
 	title,
 	shortDescription,
@@ -26,6 +27,7 @@ const OcCardProjectCover = ({
 			: Buffer.from(graySvg).toString('base64'));
 
 	const safeTitle = title ?? '(Sin título)';
+	const safeClient = client ?? null;
 	const safeShort = shortDescription ?? '';
 
 	return (
@@ -68,7 +70,12 @@ const OcCardProjectCover = ({
 					<OcBadgeIndicator code={code} design={design} />
 					<OcBadge label={date} color="secondary" />
 				</div>
-				<h3 className="text-sm font-bold">{safeTitle}</h3>
+				<div>
+					<h3 className="text-sm font-bold">{safeTitle}</h3>
+					<h4 className="text-xs opacity-60 font-medium">
+						{safeClient}
+					</h4>
+				</div>
 				<p className="text-sm opacity-70 mb-3">{safeShort}</p>
 				<OcButtonLink
 					href={`/projects/${from.toLowerCase()}/${id}`}

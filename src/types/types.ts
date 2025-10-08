@@ -9,6 +9,7 @@ export type ProjectCard = {
 	code: boolean;
 	design: boolean;
 	title: string;
+	client: string;
 	date: string;
 	shortDescription: string;
 };

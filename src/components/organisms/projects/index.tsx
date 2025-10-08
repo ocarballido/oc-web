@@ -22,6 +22,7 @@ const OcProjects = ({ projects, filter }: ProyectsProps) => {
 								id={project.id}
 								date={project.date}
 								title={project.title}
+								client={project.client}
 								shortDescription={project.shortDescription}
 								code={project.code}
 								thumbnail={project.thumbnail}
@@ -35,6 +36,7 @@ const OcProjects = ({ projects, filter }: ProyectsProps) => {
 								id={project.id}
 								date={project.date}
 								title={project.title}
+								client={project.client}
 								shortDescription={project.shortDescription}
 								thumbnail={project.thumbnail}
 								code={project.code}

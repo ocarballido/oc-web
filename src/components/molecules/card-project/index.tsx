@@ -13,6 +13,7 @@ const OcCardProject = ({
 	code,
 	design,
 	date,
+	client,
 	thumbnail,
 	title,
 	shortDescription,
@@ -27,6 +28,7 @@ const OcCardProject = ({
 
 	const img = thumbnail && thumbnail.length > 0 ? thumbnail : undefined;
 	const safeTitle = title ?? '(Sin título)';
+	const safeClient = client ?? null;
 	const safeShort = shortDescription ?? '';
 
 	return (
@@ -65,7 +67,12 @@ const OcCardProject = ({
 			</div>
 
 			<div className="flex flex-col gap-3 p-6">
-				<h3 className="text-sm font-bold">{safeTitle}</h3>
+				<div>
+					<h3 className="text-sm font-bold">{safeTitle}</h3>
+					<h4 className="text-xs opacity-60 font-medium">
+						{safeClient}
+					</h4>
+				</div>
 				<p className="text-sm opacity-70">{safeShort}</p>
 			</div>
 

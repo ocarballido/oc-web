@@ -13,6 +13,7 @@ export function toProjectCard(cms: CMSProject): ProjectCard {
 		code: Boolean(cms.code),
 		design: Boolean(cms.design),
 		title: cms.title ?? '(Sin título)',
+		client: cms.client ?? '',
 		date: new Date(cms.date).getFullYear().toString(),
 		shortDescription: cms.shortDescription ?? '',
 	};

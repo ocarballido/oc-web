@@ -8,7 +8,7 @@ import type { CMSProject } from '@/lib/cms/types';
 import type { ProjectCard } from '@/types/types';
 import { toProjectCard } from '@/lib/cms/mappers/projects';
 
-import { GET_DEVELOP_PROJECTS } from '@/lib/cms/queries';
+import { GET_PROJECTS_BY_TYPE } from '@/lib/cms/queries';
 import hygraph from '@/lib/cms/client';
 
 export const metadata: Metadata = {
@@ -19,7 +19,8 @@ export const revalidate = 300;
 
 export default async function ProjectsDevelop() {
 	const data = await hygraph.request<{ projects: CMSProject[] }>(
-		GET_DEVELOP_PROJECTS
+		GET_PROJECTS_BY_TYPE,
+		{ design: false, code: true }
 	);
 	const cmsProjects = data.projects ?? [];
 	const projects: ProjectCard[] = cmsProjects.map(toProjectCard);

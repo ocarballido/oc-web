@@ -1,16 +1,25 @@
-export const GET_PROJECTS = `
-	query GetProjects {
-		projects(orderBy: year_DESC) {
+export const GET_PROJECTS_BY_TYPE = `
+	query GetProjects($design: Boolean, $code: Boolean) {
+		projects(
+			where: { 
+				OR: [
+					{ design: $design }
+					{ code: $code }
+				] 
+			},
+			orderBy: date_DESC
+		) {
 			id
 			title
 			shortDescription
 			link
 			code
+			client
 			design
-			year
-            thumbnail {
-                url
-            }
+			date
+			thumbnail {
+				url
+			}
 		}
 	}
 `;
