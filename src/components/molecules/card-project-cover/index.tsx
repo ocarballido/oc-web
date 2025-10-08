@@ -72,7 +72,7 @@ const OcCardProjectCover = ({
 				</div>
 				<div>
 					<h3 className="text-md font-medium">{safeTitle}</h3>
-					<h4 className="text-xs uppercase opacity-60 font-medium">
+					<h4 className="text-xs uppercase opacity-60 font-medium tracking-wide">
 						{safeClient}
 					</h4>
 				</div>

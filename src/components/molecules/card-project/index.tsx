@@ -69,7 +69,7 @@ const OcCardProject = ({
 			<div className="flex flex-col gap-4 p-6">
 				<div>
 					<h3 className="text-md font-medium">{safeTitle}</h3>
-					<h4 className="text-xs uppercase opacity-60 font-medium">
+					<h4 className="text-xs uppercase opacity-60 font-medium tracking-wide">
 						{safeClient}
 					</h4>
 				</div>
@@ -80,14 +80,6 @@ const OcCardProject = ({
 					color="secondary"
 				/>
 			</div>
-
-			{/* <div className="p-1">
-				<OcButtonLink
-					href={`/projects/${from.toLowerCase()}/${id}`}
-					label="Ver proyecto"
-					color="secondary"
-				/>
-			</div> */}
 		</OcCard>
 	);
 };
