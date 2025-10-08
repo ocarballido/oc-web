@@ -42,11 +42,11 @@ const OcProjectSidebar = ({
 			<h2 className="text-3xl">{title}</h2>
 			<div>
 				<OcBadge label={date} />
-				<h3 className="text-lg font-medium my-2">Descripción:</h3>
+				<h3 className="text-lg font-medium mt-2 mb-1">Descripción:</h3>
 				<p className="opacity-70">{description}</p>
 			</div>
 			<div>
-				<h3 className="text-lg font-medium mb-2">Cliente:</h3>
+				<h3 className="text-lg font-medium mb-1">Cliente:</h3>
 				<p className="opacity-70">{client}</p>
 				{link && (
 					<OcButtonLink
@@ -60,7 +60,7 @@ const OcProjectSidebar = ({
 				)}
 			</div>
 			<div>
-				<h3 className="text-lg font-medium mb-2">Role:</h3>
+				<h3 className="text-lg font-medium mb-1">Role:</h3>
 				<p className="opacity-70">{role}</p>
 			</div>
 			<div>
