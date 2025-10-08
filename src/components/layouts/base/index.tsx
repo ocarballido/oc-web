@@ -2,6 +2,7 @@ import { ROBOTO } from '@/config/font';
 import '@/app/globals.css';
 
 import OcAppBar from '@/components/organisms/app-bar';
+import OcFooter from '@/components/molecules/footer';
 
 export default function BaseLayout({
 	children,
@@ -14,6 +15,7 @@ export default function BaseLayout({
 		>
 			<OcAppBar />
 			{children}
+			<OcFooter />
 		</body>
 	);
 }

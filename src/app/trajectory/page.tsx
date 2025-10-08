@@ -24,7 +24,7 @@ export default async function Trajectory() {
 
 	return (
 		<main className="flex flex-col flex-1">
-			<div className="py-6 max-w-7xl md:w-full lg:w-5xl xl:w-full mx-auto mb-3 lg:-mb-12">
+			<div className="pt-6 max-w-7xl md:w-full lg:w-5xl xl:w-full mx-auto">
 				{cmsTrajectories.map((item, index) => {
 					const isFirst = index === 0;
 					const isLast = index === cmsTrajectories.length - 1;
