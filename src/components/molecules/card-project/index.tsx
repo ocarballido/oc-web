@@ -37,12 +37,12 @@ const OcCardProject = ({
 				className ?? ''
 			}`}
 		>
-			<div className="flex justify-between items-center px-2 py-4">
+			<div className="flex justify-between items-center px-4 py-4">
 				<OcBadgeIndicator code={code} design={design} />
 				<OcBadge label={date} color="secondary" />
 			</div>
 
-			<div className="px-2 w-full h-[200px]">
+			<div className="px-1 w-full h-[200px]">
 				<div className="w-full h-full relative rounded-lg overflow-hidden bg-primary-10 flex items-center justify-center">
 					{img ? (
 						<Image
@@ -66,23 +66,28 @@ const OcCardProject = ({
 				</div>
 			</div>
 
-			<div className="flex flex-col gap-3 p-6">
+			<div className="flex flex-col gap-4 p-6">
 				<div>
-					<h3 className="text-sm font-bold">{safeTitle}</h3>
-					<h4 className="text-xs opacity-60 font-medium">
+					<h3 className="text-md font-medium">{safeTitle}</h3>
+					<h4 className="text-xs uppercase opacity-60 font-medium">
 						{safeClient}
 					</h4>
 				</div>
 				<p className="text-sm opacity-70">{safeShort}</p>
-			</div>
-
-			<div className="p-2">
 				<OcButtonLink
 					href={`/projects/${from.toLowerCase()}/${id}`}
 					label="Ver proyecto"
 					color="secondary"
 				/>
 			</div>
+
+			{/* <div className="p-1">
+				<OcButtonLink
+					href={`/projects/${from.toLowerCase()}/${id}`}
+					label="Ver proyecto"
+					color="secondary"
+				/>
+			</div> */}
 		</OcCard>
 	);
 };
