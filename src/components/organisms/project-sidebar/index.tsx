@@ -54,6 +54,7 @@ const OcProjectSidebar = ({
 						href={link}
 						icon="/static/icons/arrow-out.svg"
 						color="secondary"
+						target="_blank"
 						className="mt-2"
 					/>
 				)}

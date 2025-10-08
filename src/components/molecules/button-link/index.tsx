@@ -7,6 +7,7 @@ type ButtonLinkProps = {
 	active?: boolean;
 	className?: string;
 	color?: 'primary' | 'secondary' | 'white';
+	target?: '_blank' | '_self' | '_parent' | '_top';
 	disabled?: boolean;
 	icon?: string;
 	label: string;
@@ -19,6 +20,7 @@ const OcButtonLink = ({
 	color = 'primary',
 	icon,
 	label,
+	target,
 	href,
 }: ButtonLinkProps) => {
 	const buttonStyles = clsx(
@@ -50,6 +52,7 @@ const OcButtonLink = ({
 		<Link
 			className={`font-medium text-base rounded-full transition-all flex items-center justify-center gap-1 py-2 px-5 hover:cursor-pointer disabled:opacity-30 disabled:pointer-events-none ${buttonStyles} ${className}`}
 			href={href}
+			target={target}
 		>
 			{icon && <Image src={icon} alt="Icon" height={16} width={16} />}
 
