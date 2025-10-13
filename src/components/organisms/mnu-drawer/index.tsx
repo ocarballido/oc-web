@@ -1,5 +1,4 @@
 import OcButtonIcon from '@/components/molecules/button-icon';
-import OcButtonLink from '@/components/molecules/button-link';
 import OcMainMenu from '../main-menu';
 
 type DrawerProps = {
