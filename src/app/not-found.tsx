@@ -3,7 +3,7 @@ import OcCard400 from '@/components/molecules/card-404';
 export default function NotFound({ image }: { image: string }) {
 	return (
 		<main className="flex flex-col h-full flex-1">
-			<div className="flex justify-center items-stretch rounded-2xl overflow-hidden md:flex-1 relative px-6 py-20 md:py-36 lg:py-48 bg-[url('/static/code-design-vertical-bg.webp')] md:bg-[url('/static/code-design-bg.webp')] bg-no-repeat bg-center bg-cover md:bg-auto before:content-[''] md:before:w-[50%] before:w-[100%] before:bg-(--background-light) before:absolute before:h-[50%] md:before:h-[100%] h-[100%] before:top-0 before:left-0 before:-z-10 mt-3">
+			<div className="flex justify-center items-stretch rounded-2xl overflow-hidden flex-1 relative px-6 py-20 bg-[url('/static/code-design-vertical-bg.webp')] md:bg-[url('/static/code-design-bg.webp')] bg-no-repeat bg-center bg-cover md:bg-auto before:content-[''] md:before:w-[50%] before:w-[100%] before:bg-transparent before:absolute before:h-[50%] md:before:h-[100%] h-[100%] before:top-0 before:left-0 before:-z-10 bg-(--background-light) mt-3">
 				<div className="bg-white shadow-2xl rounded-2xl grid auto-rows-fr md:flex md:flex-row overflow-hidden max-w-[600px] w-full md:my-auto">
 					<OcCard400
 						type="develop"

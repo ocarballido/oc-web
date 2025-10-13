@@ -18,7 +18,7 @@ export default async function Home() {
 
 	return (
 		<main className="flex flex-col h-full flex-1">
-			<OcCard className="mt-6 max-w-5xl md:w-full lg:w-4xl xl:w-full mx-auto mb-3 lg:-mb-18 relative z-10">
+			<OcCard className="mt-6 max-w-5xl md:w-full lg:w-4xl xl:w-full mx-auto mb-3 lg:-mb-8 relative z-10">
 				<h1 className="text-primary-400 text-5xl font-light mb-5">
 					{welcomeContent.title}
 				</h1>
@@ -33,7 +33,7 @@ export default async function Home() {
 				</p>
 			</OcCard>
 			<div className="flex justify-center items-stretch rounded-2xl overflow-hidden flex-1 relative px-6 py-20 bg-[url('/static/code-design-vertical-bg.webp')] md:bg-[url('/static/code-design-bg.webp')] bg-no-repeat bg-center bg-cover md:bg-auto before:content-[''] md:before:w-[50%] before:w-[100%] before:bg-transparent before:absolute before:h-[50%] md:before:h-[100%] h-[100%] before:top-0 before:left-0 before:-z-10 bg-(--background-light)">
-				<div className="bg-white shadow-2xl rounded-2xl grid auto-rows-fr md:flex md:flex-row overflow-hidden max-w-[800px] w-full md:my-auto">
+				<div className="bg-white shadow-2xl rounded-2xl grid auto-rows-fr md:flex md:flex-row overflow-hidden max-w-[700px] w-full md:my-auto">
 					{welcomeContent.thinkCards.map((card) => (
 						<OcCardThink
 							key={card.id}
