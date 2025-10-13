@@ -1,8 +1,6 @@
 'use client';
 import { usePathname } from 'next/navigation';
 
-import Link from 'next/link';
-import Image from 'next/image';
 import OcCard from '@/components/atoms/card';
 import OcButtonLink from '@/components/molecules/button-link';
 import OcBadge from '@/components/molecules/badge';

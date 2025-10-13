@@ -6,14 +6,7 @@ import OcButtonLink from '../button-link';
 
 import type { ThinkCard } from '@/types/types';
 
-const OcCardThink = ({
-	type,
-	title,
-	description,
-	tools,
-	link,
-	id,
-}: ThinkCard) => {
+const OcCardThink = ({ type, title, description, tools, link }: ThinkCard) => {
 	const cardStyles = clsx({
 		'bg-primary-400': type === 'design',
 	});

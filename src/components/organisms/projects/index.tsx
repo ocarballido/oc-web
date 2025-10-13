@@ -1,6 +1,7 @@
 import OcProjectsFilter from '@/components/molecules/projects-filter';
 import OcCardProject from '@/components/molecules/card-project';
 import OcCardProjectCover from '@/components/molecules/card-project-cover';
+import { OcInView } from '@/components/atoms/in-view';
 
 import { ProjectCard } from '@/types/types';
 
@@ -31,21 +32,29 @@ const OcProjects = ({ projects, filter }: ProyectsProps) => {
 								className="md:col-span-full max-w-4xl mx-auto"
 							/>
 						) : (
-							<OcCardProject
+							<OcInView
 								key={project.id}
-								id={project.id}
-								date={project.date}
-								title={project.title}
-								client={project.client}
-								shortDescription={project.shortDescription}
-								thumbnail={project.thumbnail}
-								code={project.code}
-								design={project.design}
-								from={filter}
-								className={
-									index === 0 ? 'md:col-span-2' : undefined
-								}
-							/>
+								// delay={(index % 4) * 90}
+								durationMs={650}
+								once={false}
+							>
+								<OcCardProject
+									id={project.id}
+									date={project.date}
+									title={project.title}
+									client={project.client}
+									shortDescription={project.shortDescription}
+									thumbnail={project.thumbnail}
+									code={project.code}
+									design={project.design}
+									from={filter}
+									className={
+										index === 0
+											? 'md:col-span-2'
+											: undefined
+									}
+								/>
+							</OcInView>
 						)
 					)}
 				</div>

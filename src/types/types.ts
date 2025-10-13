@@ -93,6 +93,6 @@ export type Card400 = {
 	link?: string;
 	image?: string | null;
 	code?: string | null;
-	type: ThinkCardType;
+	type?: ThinkCardType;
 	description?: string | null;
 };

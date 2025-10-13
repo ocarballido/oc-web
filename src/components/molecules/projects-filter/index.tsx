@@ -1,4 +1,3 @@
-import OcButtonLink from '../button-link';
 import OcButtonTab from '../button-tab';
 
 type FilterProps = {

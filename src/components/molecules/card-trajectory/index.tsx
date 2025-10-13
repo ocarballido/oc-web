@@ -5,6 +5,7 @@ import { CMSTrajectory } from '@/lib/cms/types';
 import OcCard from '@/components/atoms/card';
 import OcBadgeTimeLine from '../badge-time-line';
 import OcBadge from '../badge';
+import { OcInView } from '@/components/atoms/in-view';
 
 type OcCardTrajectoryProps = CMSTrajectory & {
 	isFirst?: boolean;
@@ -52,45 +53,53 @@ const OcCardTrajectory = ({
 		<div
 			className={`flex flex-col md:items-center justify-center gap-1 md:gap-10 relative ${componentStyles}`}
 		>
-			<OcCard
-				className={`flex flex-col gap-5 flex-1 max-w-[300px] ${cardStyles}`}
+			<OcInView
+				// delay={(index % 4) * 90}
+				durationMs={650}
+				once={false}
 			>
-				<OcBadgeTimeLine
-					begin={begin.toString()}
-					end={end.toString()}
-				/>
-				<div>
-					<h3 className="text-sm font-bold">Empresa:</h3>
-					<p className="text-sm opacity-70">
-						{company} {location}
-					</p>
-				</div>
-				<div>
-					<h3 className="text-sm font-bold">Role:</h3>
-					<p className="text-sm opacity-70">{role}</p>
-				</div>
-				<div>
-					<h3 className="text-sm font-bold">Responsabilidades:</h3>
-					<ul className="list-disc pl-4">
-						{responsabilities.map((item, index) => (
-							<li key={index} className="text-sm opacity-70">
-								{item}
-							</li>
-						))}
-					</ul>
-				</div>
-				{tools && (
-					<div className="flex gap-1 flex-wrap  mt-auto mb-2">
-						{tools.map((item, index) => (
-							<OcBadge
-								key={index}
-								label={item.badgeTitle}
-								color="secondary"
-							/>
-						))}
+				<OcCard
+					className={`flex flex-col gap-5 flex-1 max-w-[300px] ${cardStyles}`}
+				>
+					<OcBadgeTimeLine
+						begin={begin.toString()}
+						end={end.toString()}
+					/>
+					<div>
+						<h3 className="text-sm font-bold">Empresa:</h3>
+						<p className="text-sm opacity-70">
+							{company} {location}
+						</p>
 					</div>
-				)}
-			</OcCard>
+					<div>
+						<h3 className="text-sm font-bold">Role:</h3>
+						<p className="text-sm opacity-70">{role}</p>
+					</div>
+					<div>
+						<h3 className="text-sm font-bold">
+							Responsabilidades:
+						</h3>
+						<ul className="list-disc pl-4">
+							{responsabilities.map((item, index) => (
+								<li key={index} className="text-sm opacity-70">
+									{item}
+								</li>
+							))}
+						</ul>
+					</div>
+					{tools && (
+						<div className="flex gap-1 flex-wrap  mt-auto mb-2">
+							{tools.map((item, index) => (
+								<OcBadge
+									key={index}
+									label={item.badgeTitle}
+									color="secondary"
+								/>
+							))}
+						</div>
+					)}
+				</OcCard>
+			</OcInView>
 			<span
 				className={`flex w-1 bg-(--background-light) absolute left-1.5 md:left-auto z-0 ${lineStyles}`}
 			></span>

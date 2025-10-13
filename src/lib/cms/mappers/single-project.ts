@@ -5,12 +5,6 @@ import type { ProjectDetail } from '@/types/types';
 const isObject = (v: unknown): v is Record<string, unknown> =>
 	typeof v === 'object' && v !== null;
 
-const toYear = (raw: unknown): number => {
-	if (typeof raw === 'number' && Number.isFinite(raw)) return raw;
-	const n = Number.parseInt(String(raw ?? ''), 10);
-	return Number.isFinite(n) ? n : new Date().getFullYear();
-};
-
 // image guard: que sea objeto y tenga url string no vacía
 const isImage = (x: unknown): x is CMSImage =>
 	isObject(x) &&
