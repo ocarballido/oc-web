@@ -50,8 +50,8 @@ const OcCardProjectCover = ({
 				<Image
 					src={
 						from === 'DEVELOP'
-							? '/static/splash-bg-grayed.webp'
-							: '/static/splash-bg-colored.webp'
+							? '/static/projects/splash-thumbnail-code.webp'
+							: '/static/projects/splash-thumbnail-design.webp'
 					}
 					fill
 					alt={safeTitle}
