@@ -26,6 +26,12 @@ const OcMainMenu = ({ className = '', path = '/' }: MainMamuProps) => {
 				color="white"
 				active={path.includes('projects')}
 			/>
+			<OcButtonLink
+				label="Habilidades"
+				href="/skills"
+				color="white"
+				active={path.includes('skills')}
+			/>
 		</nav>
 	);
 };

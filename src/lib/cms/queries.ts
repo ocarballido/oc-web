@@ -130,3 +130,20 @@ export const GET_WELCOME = `
 		}
 	}
 `;
+
+export const GET_SKILLS = `
+	query GetSkills {
+		skills {
+			skill {
+				type
+				categories {
+					... on SkillCategoryList {
+						id
+						list
+						title
+					}
+				}
+			}
+		}
+	}
+`;

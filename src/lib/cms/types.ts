@@ -59,3 +59,27 @@ export interface GetWelcomesResponse {
 	welcomes: Array<CMSWelcome> | null;
 }
 export type GetWelcomesVariables = Record<string, never>;
+
+export type CMSSkillCategoryList = {
+	__typename?: 'SkillCategoryList';
+	id: string;
+	title: string;
+	list: string[];
+};
+
+export type CMSSkillCard = {
+	__typename?: 'SkillCard';
+	id?: string;
+	type: CMSThinkCardType;
+	categories: CMSSkillCategoryList[];
+};
+
+export type CMSSkill = {
+	__typename?: 'Skill';
+	id: string;
+	skill: Array<CMSSkillCard> | null;
+};
+
+export interface GetSkillsResponse {
+	skills: Array<CMSSkill>;
+}
