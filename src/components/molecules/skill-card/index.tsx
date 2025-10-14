@@ -39,14 +39,14 @@ const OcSkillCard = ({ type, categories }: CMSSkillCard) => {
 					categories.length > 0 &&
 					categories.map((category) => (
 						<div key={category.id} className="w-full">
-							<h3 className="font-bold text-md mb-2">
+							<h3 className="font-bold text-sm mb-2">
 								{category.title}
 							</h3>
 							<ul>
 								{category.list.map((item) => (
 									<li
 										key={item}
-										className="font-normal text-sm mb-2"
+										className="font-medium opacity-70 text-sm mb-2"
 									>
 										{item}
 									</li>
