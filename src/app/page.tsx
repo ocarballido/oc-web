@@ -18,7 +18,7 @@ export default async function Home() {
 
 	return (
 		<main className="flex flex-col h-full flex-1 overflow-hidden">
-			<OcCard className="mt-6 max-w-5xl md:w-full lg:w-4xl xl:w-full mx-auto mb-3 lg:-mb-8 relative z-10">
+			<OcCard className="mt-6 max-w-5xl lg:w-4xl xl:w-full mx-3 lg:mx-auto mb-3 lg:-mb-8 relative z-10">
 				<h1 className="text-primary-400 text-5xl font-light mb-5">
 					{welcomeContent.title}
 				</h1>
