@@ -32,7 +32,7 @@ const OcCardProjectCover = ({
 
 	return (
 		<OcCard
-			className={`hover:shadow-2xl transition-all relative !pt-60 !pl-1 !pr-1 !pb-1 overflow-hidden ${
+			className={`hover:shadow-2xl transition-all relative !pt-60 !pl-3 !pr-3 !pb-3 overflow-hidden flex items-end ${
 				className ?? ''
 			}`}
 		>
@@ -62,7 +62,7 @@ const OcCardProjectCover = ({
 				/>
 			)}
 
-			<div className="bg-white rounded-2xl px-3 py-1 text-xs font-semibold tracking-wide uppercase mb-1 w-fit text-primary-400 relative">
+			<div className="bg-white rounded-2xl px-3 py-1 text-xs font-semibold tracking-wide uppercase mb-1 w-fit text-primary-400 absolute top-3 left-3">
 				Más reciente
 			</div>
 			<div className="flex flex-col gap-3 p-5 bg-white relative rounded-xl">

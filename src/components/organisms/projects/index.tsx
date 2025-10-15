@@ -29,7 +29,7 @@ const OcProjects = ({ projects, filter }: ProyectsProps) => {
 								thumbnail={project.thumbnail}
 								design={project.design}
 								from={filter}
-								className="md:col-span-full max-w-4xl mx-auto"
+								className="md:col-span-2 h-full"
 							/>
 						) : (
 							<OcInView
