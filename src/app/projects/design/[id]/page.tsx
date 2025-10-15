@@ -52,8 +52,8 @@ export default async function SingleProject({ params }: PageProps) {
 	const project = await getProjectById(id);
 
 	return (
-		<main className="flex flex-col flex-1">
-			<div className="pt-6 max-w-7xl w-full mx-auto flex flex-col md:flex-row gap-3 md:gap-6 items-start">
+		<main className="px-3 flex flex-col flex-1">
+			<div className="py-6 max-w-7xl w-full mx-auto flex flex-col md:flex-row gap-3 md:gap-6 items-start">
 				<OcProjectSidebar
 					title={project.title}
 					description={project.description}

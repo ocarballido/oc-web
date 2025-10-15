@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const OcFooter = () => {
 	return (
-		<footer className="pt-4 pb-4 bg-(--background-light) rounded-2xl mt-3">
+		<footer className="pt-4 mx-3 pb-4 bg-(--background-light) rounded-2xl mt-0">
 			<div className="max-w-5xl md:w-full lg:w-4xl xl:w-full mx-auto opacity-50 text-gray-900 text-center text-sm font-medium flex justify-center items-center gap-2 flex-col">
 				<p className="flex-1 text-left">
 					Oscar Carballido | UI Developer

@@ -8,7 +8,7 @@ type Options = {
 };
 
 export function useInView<T extends Element>({
-	rootMargin = '0px 0px -10% 0px', // entra un pelín antes de tocar el bottom
+	rootMargin = '0px 0px -20px 0px', // entra un pelín antes de tocar el bottom
 	threshold = 0.1,
 	once = true,
 }: Options = {}) {

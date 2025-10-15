@@ -28,7 +28,7 @@ const OcAppBar = () => {
 
 	return (
 		<Fragment>
-			<header className="bg-white/90 p-4 rounded-2xl flex justify-center sticky top-3 shadow-xs z-50 backdrop-blur-md">
+			<header className="bg-white/90 mx-3 p-4 rounded-2xl flex justify-center sticky top-3 shadow-xs z-50 backdrop-blur-md">
 				<div className="flex items-center justify-between max-w-7xl w-full">
 					<OcLogo />
 					<OcMainMenu
