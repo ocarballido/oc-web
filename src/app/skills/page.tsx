@@ -1,10 +1,18 @@
 import { notFound } from 'next/navigation';
 
+import { Metadata } from 'next';
+
 import OcSkillCard from '@/components/molecules/skill-card';
 
 import { GET_SKILLS } from '@/lib/cms/queries';
 import hygraph from '@/lib/cms/client';
 import { GetSkillsResponse } from '@/lib/cms/types';
+
+export const metadata: Metadata = {
+	title: 'Oscarballido | Habilidades',
+};
+
+export const revalidate = 300;
 
 export default async function Skills() {
 	const data = await hygraph.request<GetSkillsResponse>(GET_SKILLS);
