@@ -11,7 +11,6 @@ const OcLogo = () => {
 				priority
 				src="/static/appbar/ocarballido-logo.svg"
 			/>
-			<p className="text-sm font-medium opacity-80">UI Developer</p>
 		</Link>
 	);
 };
