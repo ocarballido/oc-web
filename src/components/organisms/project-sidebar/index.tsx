@@ -24,7 +24,7 @@ const OcProjectSidebar = ({
 	const pathname = usePathname();
 
 	return (
-		<OcCard className="w-full md:max-w-[350px] flex flex-col gap-6 md:sticky md:top-41.5">
+		<OcCard className="w-full md:max-w-[350px] flex flex-col gap-6 md:sticky md:top-35">
 			<OcButtonLink
 				label={
 					pathname.includes('develop')

@@ -9,6 +9,7 @@ import type {
 
 import OcProjectSidebar from '@/components/organisms/project-sidebar';
 import OcProjectContent from '@/components/organisms/project-content';
+import OcProjectSingle from '@/components/organisms/project-single';
 
 import { GET_PROJECT_BY_ID } from '@/lib/cms/queries';
 import hygraph from '@/lib/cms/client';
@@ -52,24 +53,22 @@ export default async function SingleProject({ params }: PageProps) {
 	const project = await getProjectById(id);
 
 	return (
-		<main className="px-3 flex flex-col flex-1">
-			<div className="py-6 max-w-7xl w-full mx-auto flex flex-col md:flex-row gap-4 items-start">
-				<OcProjectSidebar
-					title={project.title}
-					description={project.description}
-					client={project.client}
-					role={project.role}
-					code={project.code}
-					design={project.design}
-					date={project.date}
-					technologies={project.technologies}
-					link={project.link ?? undefined}
-				/>
-				<OcProjectContent
-					title={project.title ?? 'Proyecto'}
-					images={project.images}
-				/>
-			</div>
-		</main>
+		<OcProjectSingle>
+			<OcProjectSidebar
+				title={project.title}
+				description={project.description}
+				client={project.client}
+				role={project.role}
+				code={project.code}
+				design={project.design}
+				date={project.date}
+				technologies={project.technologies}
+				link={project.link ?? undefined}
+			/>
+			<OcProjectContent
+				title={project.title ?? 'Proyecto'}
+				images={project.images}
+			/>
+		</OcProjectSingle>
 	);
 }
