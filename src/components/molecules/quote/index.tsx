@@ -24,24 +24,24 @@ const OcQuote = ({
 	});
 
 	return (
-		<div className="flex flex-col max-w-[500px] gap-2 py-3">
+		<div className="flex flex-col max-w-[500px] gap-2 py-4">
 			<div
 				className={`p-2 rounded-full w-fit shrink-0 ${quoteSignStyles}`}
 			>
 				<Image
 					src={`/static/icons/quote_begin-${color}.svg`}
 					alt="Quote begin"
-					width={16}
-					height={16}
+					width={24}
+					height={24}
 				/>
 			</div>
 			<p
-				className={`font-medium text-sm/6 text-primary-200 ${typeStyles}`}
+				className={`font-normal text-sm/6 text-primary-200 ${typeStyles}`}
 			>
 				{quote}
 			</p>
 			<div
-				className={`p-2 rounded-full w-fit shrink-0 self-end flex justify-center ${quoteSignStyles}`}
+				className={`py-1 px-2 rounded-full w-fit shrink-0 self-end flex justify-center ${quoteSignStyles}`}
 			>
 				<p
 					className={`font-medium text-sm text-primary-200 mr-2 ml-1 ${typeStyles}`}
