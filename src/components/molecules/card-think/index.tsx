@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import OcBadgeIndicator from '../badge-indicator';
 import OcBadge from '../badge';
 import OcButtonLink from '../button-link';
+import OcQuote from '../quote';
 
 import type { ThinkCard } from '@/types/types';
 
@@ -39,7 +40,11 @@ const OcCardThink = ({ type, title, description, tools, link }: ThinkCard) => {
 				color={type === 'design' ? 'white' : 'primary'}
 			/>
 			<h2 className={`text-3xl font-normal ${titleStyles}`}>{title}</h2>
-			<p className={`${descriptionStyles} text-sm mb-3`}>{description}</p>
+			{/* <p className={`${descriptionStyles} text-sm mb-3`}>{description}</p> */}
+			<OcQuote
+				quote={description}
+				color={type === 'design' ? 'white' : 'primary'}
+			/>
 			<div className="flex gap-1 flex-wrap mt-auto mb-2">
 				{tools &&
 					tools.length > 0 &&
