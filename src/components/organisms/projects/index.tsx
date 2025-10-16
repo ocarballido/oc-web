@@ -34,7 +34,7 @@ const OcProjects = ({ projects, filter }: ProyectsProps) => {
 						) : (
 							<OcInView
 								key={project.id}
-								// delay={(index % 4) * 90}
+								delay={(index % 4) * 90}
 								durationMs={650}
 								once={false}
 							>
