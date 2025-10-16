@@ -59,7 +59,7 @@ export function OcInView({
 					'transition duration-700 ease-out',
 					inView ? 'opacity-100' : 'opacity-0',
 					// accesibilidad
-					'motion-reduce:opacity-100 motion-reduce:transition-none'
+					'motion-reduce:opacity-100 motion-reduce:transition-none h-full'
 				)}
 				style={style}
 			>

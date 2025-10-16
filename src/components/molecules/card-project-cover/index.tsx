@@ -32,7 +32,7 @@ const OcCardProjectCover = ({
 
 	return (
 		<OcCard
-			className={`hover:shadow-2xl transition-all relative !pt-60 !pl-3 !pr-3 !pb-3 overflow-hidden flex items-end ${
+			className={`hover:shadow-2xl hover:-translate-y-2 transition-all relative !pt-60 !pl-3 !pr-3 !pb-3 overflow-hidden flex items-end ${
 				className ?? ''
 			}`}
 		>
