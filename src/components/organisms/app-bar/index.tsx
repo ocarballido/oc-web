@@ -26,6 +26,18 @@ const OcAppBar = () => {
 		return () => window.removeEventListener('resize', handleResize);
 	}, [isMenuOpen]);
 
+	useEffect(() => {
+		if (isMenuOpen) {
+			document.body.style.overflow = 'hidden';
+		} else {
+			document.body.style.overflow = '';
+		}
+
+		return () => {
+			document.body.style.overflow = '';
+		};
+	}, [isMenuOpen]);
+
 	return (
 		<Fragment>
 			<header className="bg-white/90 mx-3 p-4 rounded-2xl flex justify-center sticky top-3 shadow-xs z-50 backdrop-blur-md">
