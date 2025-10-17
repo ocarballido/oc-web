@@ -12,7 +12,7 @@ type ProyectsProps = {
 
 const OcProjects = ({ projects, filter }: ProyectsProps) => {
 	return (
-		<main className="px-3 flex flex-col flex-1">
+		<main className="px-6 flex flex-col flex-1">
 			<div className="py-6 max-w-7xl w-full mx-auto flex flex-col gap-6">
 				<OcProjectsFilter active={filter} />
 				<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 items-start">

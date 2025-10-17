@@ -3,13 +3,40 @@ import Image from 'next/image';
 
 const OcFooter = () => {
 	return (
-		<footer className="pt-4 mx-3 pb-4 bg-(--background-light) rounded-2xl mt-0">
-			<div className="max-w-5xl md:w-full lg:w-4xl xl:w-full mx-auto text-slate-500 text-center text-sm font-medium flex justify-center items-center gap-2 flex-col">
-				<p className="flex-1 text-left">
-					Oscar Carballido | UI Developer
-				</p>
-				<nav className="">
-					<ul className="inline-flex gap-3">
+		<footer className="py-6 sm:py-4 px-4 mx-2 md:mx-3 bg-(--background-light) rounded-2xl mt-0">
+			<div className="max-w-7xl md:w-full lg:w-4xl xl:w-full mx-auto text-sm font-medium flex flex-col sm:flex-row items-center gap-4 justify-between">
+				<div className="flex flex-col sm:flex-row items-center gap-3">
+					<Link href="/" className="flex items-center gap-2">
+						<Image
+							src="/static/icons/oscarballido-symbol-black.svg"
+							width={36}
+							height={36}
+							alt="Oscarballido Logo"
+							className="opacity-25"
+						/>
+						<p className="text-left opacity-50 grow-0 w-auto">
+							Oscar Carballido | UI Developer
+						</p>
+					</Link>
+					<div className="flex gap-3 items-center py-2 px-3 bg-neutral-950/10 opacity-60 rounded-full">
+						<Image
+							src="/static/footer/nextjs.svg"
+							alt="NextJS logo"
+							className=""
+							width={50}
+							height={50}
+						/>
+						<span className="font-bold">+</span>
+						<Image
+							src="/static/footer/hygraph.svg"
+							alt="NextJS logo"
+							width={60}
+							height={50}
+						/>
+					</div>
+				</div>
+				<nav>
+					<ul className="inline-flex gap-3 opacity-50">
 						<li>
 							<Link
 								href="https://github.com/ocarballido"
@@ -22,7 +49,7 @@ const OcFooter = () => {
 									height={16}
 									width={16}
 									alt="Github icon"
-									className="opacity-50"
+									// className="opacity-50"
 								/>
 								GitHub
 							</Link>
@@ -39,7 +66,7 @@ const OcFooter = () => {
 									height={16}
 									width={16}
 									alt="Github icon"
-									className="opacity-50"
+									// className="opacity-50"
 								/>
 								LinkedIn
 							</Link>

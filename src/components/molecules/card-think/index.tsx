@@ -40,7 +40,6 @@ const OcCardThink = ({ type, title, description, tools, link }: ThinkCard) => {
 				color={type === 'design' ? 'white' : 'primary'}
 			/>
 			<h2 className={`text-3xl font-normal ${titleStyles}`}>{title}</h2>
-			{/* <p className={`${descriptionStyles} text-sm mb-3`}>{description}</p> */}
 			<OcQuote
 				quote={description}
 				color={type === 'design' ? 'white' : 'primary'}
