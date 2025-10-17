@@ -33,6 +33,7 @@ const OcQuote = ({
 					alt="Quote begin"
 					width={24}
 					height={24}
+					style={{ width: 'auto', height: 'auto' }}
 				/>
 			</div>
 			<p
@@ -53,6 +54,7 @@ const OcQuote = ({
 					alt="Quote end"
 					width={16}
 					height={16}
+					style={{ width: 'auto', height: 'auto' }}
 				/>
 			</div>
 		</div>

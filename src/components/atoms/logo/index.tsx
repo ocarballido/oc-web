@@ -10,6 +10,7 @@ const OcLogo = () => {
 				height={72}
 				priority
 				src="/static/appbar/ocarballido-logo.svg"
+				style={{ width: '100px', height: 'auto' }}
 			/>
 		</Link>
 	);

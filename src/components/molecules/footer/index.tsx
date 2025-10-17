@@ -15,6 +15,7 @@ const OcFooter = () => {
 							width={24}
 							height={24}
 							alt="Oscarballido Logo"
+							style={{ width: '24', height: 'auto' }}
 						/>
 						<p className="text-left opacity-50 grow-0 w-auto">
 							Oscar Carballido | UI Developer
@@ -27,6 +28,7 @@ const OcFooter = () => {
 							className=""
 							width={50}
 							height={50}
+							style={{ width: '50', height: 'auto' }}
 						/>
 						<span className="font-bold">+</span>
 						<Image
@@ -34,6 +36,7 @@ const OcFooter = () => {
 							alt="NextJS logo"
 							width={60}
 							height={50}
+							style={{ width: '60', height: 'auto' }}
 						/>
 					</div>
 				</div>
@@ -51,6 +54,7 @@ const OcFooter = () => {
 									height={16}
 									width={16}
 									alt="Github icon"
+									style={{ width: '16', height: 'auto' }}
 									// className="opacity-50"
 								/>
 								GitHub
@@ -68,6 +72,7 @@ const OcFooter = () => {
 									height={16}
 									width={16}
 									alt="Github icon"
+									style={{ width: '16', height: 'auto' }}
 									// className="opacity-50"
 								/>
 								LinkedIn

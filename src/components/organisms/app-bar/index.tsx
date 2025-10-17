@@ -7,6 +7,7 @@ import OcLogo from '@/components/atoms/logo';
 import OcButtonIcon from '@/components/molecules/button-icon';
 import OcMainMenu from '../main-menu';
 import OcMenuDrawer from '../mnu-drawer';
+import ThemeSwitch from '@/components/molecules/theme-swith';
 
 const OcAppBar = () => {
 	const pathname = usePathname();
@@ -47,6 +48,7 @@ const OcAppBar = () => {
 						className="hidden md:flex gap-2"
 						path={pathname}
 					/>
+					<ThemeSwitch />
 					<OcButtonIcon
 						icon="/static/icons/menu-primary.svg"
 						color="white"
