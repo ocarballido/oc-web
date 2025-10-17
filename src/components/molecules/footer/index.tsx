@@ -12,7 +12,7 @@ const OcFooter = () => {
 							width={36}
 							height={36}
 							alt="Oscarballido Logo"
-							className="opacity-25"
+							className="opacity-15"
 						/>
 						<p className="text-left opacity-50 grow-0 w-auto">
 							Oscar Carballido | UI Developer
