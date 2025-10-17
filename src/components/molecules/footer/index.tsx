@@ -6,13 +6,15 @@ const OcFooter = () => {
 		<footer className="py-6 sm:py-4 px-4 mx-2 md:mx-3 bg-(--background-light) rounded-2xl mt-0">
 			<div className="max-w-7xl md:w-full lg:w-4xl xl:w-full mx-auto text-sm font-medium flex flex-col sm:flex-row items-center gap-4 justify-between">
 				<div className="flex flex-col sm:flex-row items-center gap-3">
-					<Link href="/" className="flex items-center gap-2">
+					<Link
+						href="/"
+						className="flex flex-col sm:flex-row items-center gap-2"
+					>
 						<Image
-							src="/static/icons/oscarballido-symbol-black.svg"
-							width={36}
-							height={36}
+							src="/static/icons/oc-symbol.svg"
+							width={24}
+							height={24}
 							alt="Oscarballido Logo"
-							className="opacity-15"
 						/>
 						<p className="text-left opacity-50 grow-0 w-auto">
 							Oscar Carballido | UI Developer
