@@ -101,12 +101,12 @@ const OcCardTrajectory = ({
 				</OcCard>
 			</OcInView>
 			<span
-				className={`flex w-1 bg-[#D5E2F3] dark:bg-[#151f37] absolute left-1.5 md:left-auto z-0 ${lineStyles}`}
+				className={`flex w-1 bg-[#D5E2F3] dark:bg-[#293b54] absolute left-1.5 md:left-auto z-0 ${lineStyles}`}
 			></span>
 			<div
-				className={`order-first md:order-last flex flex-1 items-center gap-5 text-6xl font-black text-[#D5E2F3] dark:text-[#151f37] max-w-[300px] mt-5 md:mt-0 ${beginStyles}`}
+				className={`order-first md:order-last flex flex-1 items-center gap-5 text-6xl font-black text-[#D5E2F3] dark:text-[#293b54] max-w-[300px] mt-5 md:mt-0 ${beginStyles}`}
 			>
-				<span className="flex w-4 h-4 bg-primary-400 border-5 border-[#D5E2F3] dark:border-[#151f37] rounded-full z-1"></span>
+				<span className="flex w-4 h-4 bg-primary-400 border-5 border-[#D5E2F3] dark:border-[#293b54] rounded-full z-1"></span>
 				{end}
 			</div>
 		</div>

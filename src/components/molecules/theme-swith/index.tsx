@@ -41,43 +41,96 @@ export default function ThemeSwitch() {
 		);
 
 	return (
-		<button
+		<div
+			className="rounded-full p-2 bg-primary-10 dark:bg-[#293B54] ml-2 w-[41px] h-[40px] hover:cursor-pointer"
 			onClick={() =>
 				setTheme(resolvedTheme === 'light' ? 'dark' : 'light')
 			}
-			type="button"
-			className="rounded-full overflow-hidden p-2 bg-primary-10 dark:bg-[#293B54] w-[40px] h-[40px] hover:cursor-pointer ml-2"
 		>
-			<div
-				className={` flex gap-2 items-center flex-1 transition-all ${
-					resolvedTheme === 'light'
-						? '-translate-x-8'
-						: 'translate-x-0'
-				}`}
-			>
-				<Image
-					src={`/static/icons/dark_mode-primary.svg`}
-					alt="Dark mode icon"
-					width={24}
-					height={24}
-					className="transition-all"
-					style={{
-						width: 'auto',
-						height: 'auto',
-					}}
-				/>
-				<Image
-					src={`/static/icons/light_mode-primary.svg`}
-					alt="Dark mode icon"
-					width={24}
-					height={24}
-					className="transition-all"
-					style={{
-						width: 'auto',
-						height: 'auto',
-					}}
-				/>
-			</div>
-		</button>
+			{resolvedTheme === 'light' ? (
+				<svg
+					width="24"
+					height="24"
+					viewBox="0 0 24 24"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<mask
+						id="mask0_495_164"
+						maskUnits="userSpaceOnUse"
+						x="0"
+						y="0"
+						width="24"
+						height="24"
+					>
+						<rect width="24" height="24" fill="#D9D9D9" />
+					</mask>
+					<g mask="url(#mask0_495_164)">
+						<path
+							d="M12 17C10.6167 17 9.4375 16.5125 8.4625 15.5375C7.4875 14.5625 7 13.3833 7 12C7 10.6167 7.4875 9.4375 8.4625 8.4625C9.4375 7.4875 10.6167 7 12 7C13.3833 7 14.5625 7.4875 15.5375 8.4625C16.5125 9.4375 17 10.6167 17 12C17 13.3833 16.5125 14.5625 15.5375 15.5375C14.5625 16.5125 13.3833 17 12 17ZM5 13H1V11H5V13ZM23 13H19V11H23V13ZM11 5V1H13V5H11ZM11 23V19H13V23H11ZM6.4 7.75L3.875 5.325L5.3 3.85L7.7 6.35L6.4 7.75ZM18.7 20.15L16.275 17.625L17.6 16.25L20.125 18.675L18.7 20.15ZM16.25 6.4L18.675 3.875L20.15 5.3L17.65 7.7L16.25 6.4ZM3.85 18.7L6.375 16.275L7.75 17.6L5.325 20.125L3.85 18.7Z"
+							fill="#0063EA"
+						/>
+					</g>
+				</svg>
+			) : (
+				<svg
+					width="24"
+					height="24"
+					viewBox="0 0 24 24"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<mask
+						id="mask0_495_155"
+						maskUnits="userSpaceOnUse"
+						x="0"
+						y="0"
+						width="24"
+						height="24"
+					>
+						<rect width="24" height="24" fill="#D9D9D9" />
+					</mask>
+					<g mask="url(#mask0_495_155)">
+						<path
+							d="M12 21C9.5 21 7.375 20.125 5.625 18.375C3.875 16.625 3 14.5 3 12C3 9.5 3.875 7.375 5.625 5.625C7.375 3.875 9.5 3 12 3C12.2333 3 12.4625 3.00833 12.6875 3.025C12.9125 3.04167 13.1333 3.06667 13.35 3.1C12.6667 3.58333 12.1208 4.2125 11.7125 4.9875C11.3042 5.7625 11.1 6.6 11.1 7.5C11.1 9 11.625 10.275 12.675 11.325C13.725 12.375 15 12.9 16.5 12.9C17.4167 12.9 18.2583 12.6958 19.025 12.2875C19.7917 11.8792 20.4167 11.3333 20.9 10.65C20.9333 10.8667 20.9583 11.0875 20.975 11.3125C20.9917 11.5375 21 11.7667 21 12C21 14.5 20.125 16.625 18.375 18.375C16.625 20.125 14.5 21 12 21Z"
+							fill="#0063EA"
+						/>
+					</g>
+				</svg>
+			)}
+		</div>
 	);
+	// return (
+	// 	<div
+	// 		onClick={() =>
+	// 			setTheme(resolvedTheme === 'light' ? 'dark' : 'light')
+	// 		}
+	// 		className={`rounded-full flex gap-3 overflow-hidden p-2 bg-primary-10 dark:bg-[#293B54] w-[41px] h-[40px] hover:cursor-pointer ml-2 ${
+	// 			resolvedTheme === 'light' ? '-translate-x-8' : 'translate-x-0'
+	// 		}`}
+	// 	>
+	// 		<Image
+	// 			src={`/static/icons/dark_mode-primary.svg`}
+	// 			alt="Dark mode icon"
+	// 			width={24}
+	// 			height={24}
+	// 			className="transition-all"
+	// 			style={{
+	// 				width: '24px',
+	// 				height: '24px',
+	// 			}}
+	// 		/>
+	// 		<Image
+	// 			src={`/static/icons/light_mode-primary.svg`}
+	// 			alt="Dark mode icon"
+	// 			width={24}
+	// 			height={24}
+	// 			className="transition-all"
+	// 			style={{
+	// 				width: '24px',
+	// 				height: '24px',
+	// 			}}
+	// 		/>
+	// 	</div>
+	// );
 }
