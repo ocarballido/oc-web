@@ -19,7 +19,7 @@ export default async function Home() {
 
 	return (
 		<main className="flex flex-col h-full flex-1 overflow-hidden gap-1 justify-center w-full max-w-[1440px] mx-auto">
-			<OcCard className="mt-6 max-w-[500px] md:max-w-[700px] self-center mx-6 sm:mx-auto relative z-10">
+			<OcCard className="mt-6 max-w-[500px] md:max-w-[700px] self-center mx-6 sm:mx-auto relative z-10 dark:text-[#a0b8e3]">
 				<OcBadge label={welcomeContent.title} color="secondary" />
 				<p className="mb-3 font-medium text-bas mt-4">
 					{welcomeContent.subtitle}
@@ -31,8 +31,8 @@ export default async function Home() {
 					{welcomeContent.content[1]}
 				</p>
 			</OcCard>
-			<div className="flex justify-center rounded-2xl overflow-visible relative px-6 pb-4 before:bg-no-repeat before:bg-center before:bg-cover before:xl:bg-size-[100%] before:content-[''] before:w-[100%] before:bg-transparent before:absolute before:top-[50%] before:translate-y-[-50%] before:left-0 before:-z-10 before:bg-[url('/static/splash-01-vertical.webp')] before:md:bg-[url('/static/splash-01-horizontal.webp')] before:aspect-auto before:md:h-auto before:md:aspect-square before:h-full">
-				<div className="bg-white shadow-2xl rounded-2xl grid auto-rows-fr md:flex md:flex-row overflow-hidden max-w-[500px] md:max-w-[700px] w-full">
+			<div className="flex justify-center rounded-2xl overflow-visible relative px-6 pb-4 before:bg-no-repeat before:bg-center before:bg-cover before:xl:bg-size-[100%] before:content-[''] before:w-[100%] before:bg-transparent before:absolute before:top-[50%] before:translate-y-[-50%] before:left-0 before:-z-10 before:bg-[url('/static/splash-01-vertical.webp')] dark:before:bg-[url('/static/splash-01-vertical-dark.webp')] before:md:bg-[url('/static/splash-01-horizontal.webp')] dark:before:md:bg-[url('/static/splash-01-horizontal-dark.webp')] before:aspect-auto before:md:h-auto before:md:aspect-square before:h-full">
+				<div className="bg-white dark:bg-(--background-light) shadow-2xl rounded-2xl grid auto-rows-fr md:flex md:flex-row overflow-hidden max-w-[500px] md:max-w-[700px] w-full">
 					{welcomeContent.thinkCards.map((card) => (
 						<OcCardThink
 							key={card.id}

@@ -24,7 +24,7 @@ const OcProjectSidebar = ({
 	const pathname = usePathname();
 
 	return (
-		<OcCard className="w-full md:max-w-[350px] flex flex-col gap-6 md:sticky md:top-35">
+		<OcCard className="w-full md:max-w-[350px] flex flex-col gap-6 md:sticky md:top-35 dark:text-[#a0b8e3]">
 			<OcButtonLink
 				label={
 					pathname.includes('develop')
@@ -41,11 +41,11 @@ const OcProjectSidebar = ({
 			<div>
 				<OcBadge label={date} />
 				<h3 className="text-lg font-medium mt-2 mb-1">Descripción:</h3>
-				<p className="opacity-70">{description}</p>
+				<p className="opacity-70 dark:opacity-80">{description}</p>
 			</div>
 			<div>
 				<h3 className="text-lg font-medium mb-1">Cliente:</h3>
-				<p className="opacity-70">{client}</p>
+				<p className="opacity-70 dark:opacity-80">{client}</p>
 				{link && (
 					<OcButtonLink
 						label="Ver proyecto"
@@ -59,7 +59,7 @@ const OcProjectSidebar = ({
 			</div>
 			<div>
 				<h3 className="text-lg font-medium mb-1">Role:</h3>
-				<p className="opacity-70">{role}</p>
+				<p className="opacity-70 dark:opacity-80">{role}</p>
 			</div>
 			<div>
 				<h3 className="text-lg font-medium mb-2">Tecnologías:</h3>

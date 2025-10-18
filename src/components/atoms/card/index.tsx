@@ -10,7 +10,7 @@ const OcCard = forwardRef<HTMLDivElement, OcCardProps>(
 	({ children, className, ...rest }, ref) => (
 		<div
 			ref={ref}
-			className={`p-6 rounded-2xl bg-white ${className}`}
+			className={`p-6 rounded-2xl bg-white dark:bg-(--background-light) ${className}`}
 			{...rest}
 		>
 			{children}

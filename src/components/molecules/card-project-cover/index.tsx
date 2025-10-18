@@ -32,7 +32,7 @@ const OcCardProjectCover = ({
 
 	return (
 		<OcCard
-			className={`hover:shadow-2xl hover:-translate-y-2 transition-all relative !pt-60 !pl-3 !pr-3 !pb-3 overflow-hidden flex items-end ${
+			className={`hover:shadow-2xl hover:-translate-y-2 transition-all relative !pt-60 !pl-3 !pr-3 !pb-3 overflow-hidden flex items-end dark:text-[#95add9] ${
 				className ?? ''
 			}`}
 		>
@@ -62,10 +62,10 @@ const OcCardProjectCover = ({
 				/>
 			)}
 
-			<div className="bg-white rounded-2xl px-3 py-1 text-xs font-semibold tracking-wide uppercase mb-1 w-fit text-primary-400 absolute top-3 left-3">
+			<div className="bg-white dark:bg-(--background) bg rounded-2xl px-3 py-1 text-xs font-semibold tracking-wide uppercase mb-1 w-fit text-primary-400 absolute top-3 left-3">
 				Más reciente
 			</div>
-			<div className="flex flex-col gap-3 p-5 bg-white relative rounded-xl">
+			<div className="flex flex-col gap-3 p-5 bg-white dark:bg-(--background-light) relative rounded-xl">
 				<div className="flex justify-between items-center">
 					<OcBadgeIndicator code={code} design={design} />
 					<OcBadge label={date} color="secondary" />

@@ -7,6 +7,7 @@ import OcLogo from '@/components/atoms/logo';
 import OcButtonIcon from '@/components/molecules/button-icon';
 import OcMainMenu from '../main-menu';
 import OcMenuDrawer from '../mnu-drawer';
+import ThemeSwitch from '@/components/molecules/theme-swith';
 
 const OcAppBar = () => {
 	const pathname = usePathname();
@@ -40,7 +41,7 @@ const OcAppBar = () => {
 
 	return (
 		<Fragment>
-			<header className="bg-white/90 mx-2 md:mx-3 p-4 rounded-2xl flex justify-center sticky top-2 md:top-3 shadow-xs z-50 backdrop-blur-md">
+			<header className="bg-white/90 dark:bg-(--background-light)/90 mx-2 md:mx-3 p-4 rounded-2xl flex justify-center sticky top-2 md:top-3 shadow-xs z-50 backdrop-blur-md items-center">
 				<div className="flex items-center justify-between max-w-7xl w-full">
 					<OcLogo />
 					<OcMainMenu
@@ -54,6 +55,7 @@ const OcAppBar = () => {
 						onClick={handleMobileMenu}
 					/>
 				</div>
+				<ThemeSwitch />
 			</header>
 			<OcMenuDrawer
 				isMenuOpen={isMenuOpen}

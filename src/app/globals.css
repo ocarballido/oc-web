@@ -21,6 +21,28 @@
 	color-scheme: light;
 }
 
+.dark {
+	--background: #0f172a;
+	--background-light: #1e293b;
+	--foreground: #f4f4f4;
+
+	/* Blue (ajústalos a tu gusto para contraste en dark) */
+	--blue-10: #00050d;
+	--blue-50: #001b3d;
+	--blue-100: #01326e;
+	--blue-200: #0d4b9e;
+	--blue-300: #2166cf;
+	--blue-400: #3b82f6;
+	--blue-500: #4690ff;
+	--blue-600: #579fff;
+	--blue-700: #6dafff;
+	--blue-800: #8fc0ff;
+	--blue-900: #b3d3ff;
+
+	/* Hace que scrollbars/controles usen el esquema oscuro nativo */
+	color-scheme: dark;
+}
+
 @keyframes fade-in {
 	from {
 		opacity: 0;
@@ -61,6 +83,8 @@
 		--foreground: #ededed;
 	}
 } */
+
+@custom-variant dark (&:where(.dark, .dark *));
 
 body {
 	background: var(--background);

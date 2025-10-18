@@ -33,7 +33,7 @@ const OcCardProject = ({
 
 	return (
 		<OcCard
-			className={`!p-0 hover:shadow-2xl hover:-translate-y-2 transition-all ${
+			className={`!p-0 hover:shadow-2xl hover:-translate-y-2 transition-all dark:text-[#95add9] ${
 				className ?? ''
 			}`}
 		>

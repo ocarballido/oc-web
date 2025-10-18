@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const OcFooter = () => {
 	return (
-		<footer className="py-6 sm:py-4 px-4 mx-2 md:mx-3 bg-(--background-light) rounded-2xl mt-0">
+		<footer className="py-6 sm:py-4 px-4 mx-2 md:mx-3 bg-(--background-light) rounded-2xl mt-0 dark:text-[#a0b8e3]">
 			<div className="max-w-7xl md:w-full lg:w-4xl xl:w-full mx-auto text-sm font-medium flex flex-col sm:flex-row items-center gap-4 justify-between">
 				<div className="flex flex-col sm:flex-row items-center gap-3">
 					<Link
@@ -11,22 +11,33 @@ const OcFooter = () => {
 						className="flex flex-col sm:flex-row items-center gap-2"
 					>
 						<Image
+							src="/static/icons/oscarballido-symbol-dark.svg"
+							width={24}
+							height={24}
+							alt="Oscarballido Logo"
+							className="hidden dark:block"
+							style={{ width: '24', height: 'auto' }}
+						/>
+						<Image
 							src="/static/icons/oc-symbol.svg"
 							width={24}
 							height={24}
 							alt="Oscarballido Logo"
+							className="block dark:hidden"
+							style={{ width: '24', height: 'auto' }}
 						/>
 						<p className="text-left opacity-50 grow-0 w-auto">
 							Oscar Carballido | UI Developer
 						</p>
 					</Link>
-					<div className="flex gap-3 items-center py-2 px-3 bg-neutral-950/10 opacity-60 rounded-full">
+					<div className="flex gap-3 items-center py-2 px-3 bg-neutral-950/10 dark:bg-[#293b54] dark:opacity-100 opacity-60 rounded-full">
 						<Image
 							src="/static/footer/nextjs.svg"
 							alt="NextJS logo"
 							className=""
 							width={50}
 							height={50}
+							style={{ width: '50', height: 'auto' }}
 						/>
 						<span className="font-bold">+</span>
 						<Image
@@ -34,6 +45,7 @@ const OcFooter = () => {
 							alt="NextJS logo"
 							width={60}
 							height={50}
+							style={{ width: '60', height: 'auto' }}
 						/>
 					</div>
 				</div>
@@ -51,7 +63,16 @@ const OcFooter = () => {
 									height={16}
 									width={16}
 									alt="Github icon"
-									// className="opacity-50"
+									className="hidden dark:block"
+									style={{ width: '16', height: 'auto' }}
+								/>
+								<Image
+									src="/static/icons/github-black.svg"
+									height={16}
+									width={16}
+									alt="Github icon"
+									className="block dark:hidden"
+									style={{ width: '16', height: 'auto' }}
 								/>
 								GitHub
 							</Link>
@@ -68,7 +89,7 @@ const OcFooter = () => {
 									height={16}
 									width={16}
 									alt="Github icon"
-									// className="opacity-50"
+									style={{ width: '16', height: 'auto' }}
 								/>
 								LinkedIn
 							</Link>

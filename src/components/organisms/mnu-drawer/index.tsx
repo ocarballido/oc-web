@@ -10,7 +10,7 @@ type DrawerProps = {
 const OcMenuDrawer = ({ isMenuOpen, handleMobileMenu, path }: DrawerProps) => {
 	return (
 		<div
-			className={`fixed w-full h-full bg-(--background-light) flex justify-center items-center bg-[url('/static/splash-01-vertical.webp')] bg-no-repeat bg-center bg-cover transition-all left-0 top-0 duration-300 z-50 ${
+			className={`fixed w-full h-full bg-(--background-light) flex justify-center items-center bg-[url('/static/splash-01-vertical.webp')] dark:bg-[url('/static/splash-01-vertical-dark.webp')] bg-no-repeat bg-center bg-cover transition-all left-0 top-0 duration-300 z-50 ${
 				isMenuOpen ? 'ranslate-x-0' : '-translate-x-full'
 			}`}
 			onClick={handleMobileMenu}
@@ -23,7 +23,7 @@ const OcMenuDrawer = ({ isMenuOpen, handleMobileMenu, path }: DrawerProps) => {
 					onClick={handleMobileMenu}
 				/>
 			</div>
-			<div className="p-8 shadow-2xl min-w-[220px] rounded-2xl bg-white flex flex-col gap-2">
+			<div className="p-8 shadow-2xl min-w-[220px] rounded-2xl bg-white dark:bg-(--background-light) flex flex-col gap-2">
 				{/* <OcButtonLink label="Inicio" href="/" color="white" /> */}
 				<OcMainMenu className="flex flex-col gap-2" path={path} />
 			</div>

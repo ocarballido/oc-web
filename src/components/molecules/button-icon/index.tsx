@@ -28,8 +28,8 @@ const OcButtonIcon = ({
 				color === 'secondary' && !active,
 		},
 		{
-			'bg-white hover:bg-primary-10 focus:bg-primary-10 text-primary-400':
-				color === 'white',
+			'bg-white hover:bg-primary-10 focus:bg-primary-10 text-primary-400 dark:bg-(--background-light) dark:hover:bg-[#293B54] dark:focus:bg-[#293B54]':
+				color === 'white' && !active,
 		},
 		{
 			'bg-primary-500 text-white': color === 'primary' && active,

@@ -14,7 +14,7 @@ const OcCardThink = ({ type, title, description, tools, link }: ThinkCard) => {
 
 	const titleStyles = clsx(
 		{
-			'text-primary-400': type === 'develop',
+			'text-primary-400 dark:text-[#3B82F6]': type === 'develop',
 		},
 		{
 			'text-white': type === 'design',
@@ -59,6 +59,15 @@ const OcCardThink = ({ type, title, description, tools, link }: ThinkCard) => {
 				label="Ver proyectos"
 				href={link || ''}
 				color={type === 'develop' ? 'primary' : 'white'}
+				className={`hidden dark:flex ${
+					type === 'design' && 'dark:bg-white dark:!text-primary-400'
+				}`}
+			/>
+			<OcButtonLink
+				label="Ver proyectos"
+				href={link || ''}
+				color={type === 'develop' ? 'primary' : 'white'}
+				className="block dark:hidden"
 			/>
 		</div>
 	);

@@ -7,7 +7,7 @@ type FilterProps = {
 const OcProjectsFilter = ({ active }: FilterProps) => {
 	return (
 		<nav className="flex items-center justify-center sticky top-29.5 z-5">
-			<ul className="flex gap-1 p-1 bg-white rounded-4xl shadow-xs items-center justify-center w-full max-w-xs backdrop-blur-md">
+			<ul className="flex gap-1 p-1 bg-white dark:bg-(--background-light) rounded-4xl shadow-xs items-center justify-center w-full max-w-xs backdrop-blur-md">
 				<li className="flex-1">
 					<OcButtonTab
 						label="Desarrollo"
