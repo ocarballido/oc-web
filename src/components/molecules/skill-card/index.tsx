@@ -10,9 +10,12 @@ const OcSkillCard = ({ type, categories }: CMSSkillCard) => {
 		'bg-primary-400': type === 'design',
 	});
 
-	const contentStyles = clsx({
-		'text-white': type === 'design',
-	});
+	const contentStyles = clsx(
+		{
+			'text-white': type === 'design',
+		},
+		{ 'dark:text-[#95add9]': type === 'develop' }
+	);
 
 	const titleStyles = clsx(
 		{

@@ -14,12 +14,12 @@ const OcQuote = ({
 	author = 'Oscar Carballido',
 }: QuoteProps) => {
 	const typeStyles = clsx({
-		'text-primary-300': color === 'primary',
+		'text-primary-300 dark:text-primary-400': color === 'primary',
 		'text-white/90': color === 'white',
 	});
 
 	const quoteSignStyles = clsx({
-		'bg-primary-10': color === 'primary',
+		'bg-primary-10 dark:bg-[#293B54]': color === 'primary',
 		'bg-white/20': color === 'white',
 	});
 
@@ -42,10 +42,10 @@ const OcQuote = ({
 				{quote}
 			</p>
 			<div
-				className={`py-1 px-2 rounded-full w-fit shrink-0 self-end flex justify-center ${quoteSignStyles}`}
+				className={`py-1 px-2 rounded-full w-fit shrink-0 self-end flex items-center justify-center ${quoteSignStyles}`}
 			>
 				<p
-					className={`font-medium text-sm text-primary-200 mr-2 ml-1 ${typeStyles}`}
+					className={`font-medium text-sm text-primary-200 mr-2 ml-1 mb-0 ${typeStyles}`}
 				>
 					{author}
 				</p>

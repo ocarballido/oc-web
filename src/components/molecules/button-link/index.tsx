@@ -30,11 +30,11 @@ const OcButtonLink = ({
 				color === 'primary' && !active,
 		},
 		{
-			'bg-primary-10 hover:bg-primary-50 focus:bg-primary-50 text-primary-400':
+			'bg-primary-10 hover:bg-primary-50 focus:bg-primary-50 text-primary-400 dark:bg-[#293b54] dark:hover:bg-primary-50 focus:bg-primary-50 text-primary-400':
 				color === 'secondary' && !active,
 		},
 		{
-			'bg-white hover:bg-primary-10 focus:bg-primary-10 text-primary-400':
+			'bg-white hover:bg-primary-10 focus:bg-primary-10 text-primary-400 dark:bg-transparent dark:hover:bg-[#293B54] dark:focus:bg-[#293B54] dark:text-[#95add9]':
 				color === 'white' && !active,
 		},
 		{
@@ -44,7 +44,8 @@ const OcButtonLink = ({
 			'bg-primary-10 text-primary-400': color === 'secondary' && active,
 		},
 		{
-			'bg-primary-10 text-primary-400': color === 'white' && active,
+			'bg-primary-10 text-primary-400 dark:bg-[#293B54] dark:text-[#95add9]':
+				color === 'white' && active,
 		}
 	);
 

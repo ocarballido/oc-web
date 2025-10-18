@@ -41,14 +41,13 @@ const OcAppBar = () => {
 
 	return (
 		<Fragment>
-			<header className="bg-white/90 mx-2 md:mx-3 p-4 rounded-2xl flex justify-center sticky top-2 md:top-3 shadow-xs z-50 backdrop-blur-md">
+			<header className="bg-white/90 dark:bg-(--background-light)/90 mx-2 md:mx-3 p-4 rounded-2xl flex justify-center sticky top-2 md:top-3 shadow-xs z-50 backdrop-blur-md items-center">
 				<div className="flex items-center justify-between max-w-7xl w-full">
 					<OcLogo />
 					<OcMainMenu
 						className="hidden md:flex gap-2"
 						path={pathname}
 					/>
-					<ThemeSwitch />
 					<OcButtonIcon
 						icon="/static/icons/menu-primary.svg"
 						color="white"
@@ -56,6 +55,7 @@ const OcAppBar = () => {
 						onClick={handleMobileMenu}
 					/>
 				</div>
+				<ThemeSwitch />
 			</header>
 			<OcMenuDrawer
 				isMenuOpen={isMenuOpen}
