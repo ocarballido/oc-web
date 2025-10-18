@@ -11,10 +11,19 @@ const OcFooter = () => {
 						className="flex flex-col sm:flex-row items-center gap-2"
 					>
 						<Image
+							src="/static/icons/oscarballido-symbol-dark.svg"
+							width={24}
+							height={24}
+							alt="Oscarballido Logo"
+							className="hidden dark:block"
+							style={{ width: '24', height: 'auto' }}
+						/>
+						<Image
 							src="/static/icons/oc-symbol.svg"
 							width={24}
 							height={24}
 							alt="Oscarballido Logo"
+							className="block dark:hidden"
 							style={{ width: '24', height: 'auto' }}
 						/>
 						<p className="text-left opacity-50 grow-0 w-auto">
