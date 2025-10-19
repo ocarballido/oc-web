@@ -49,6 +49,15 @@ const OcCard400 = ({ type, image, description, link, code }: Card400) => {
 				label="Ver proyectos"
 				href={link || ''}
 				color={type === 'develop' ? 'primary' : 'white'}
+				className={`hidden dark:flex ${
+					type === 'design' && 'dark:bg-white dark:!text-primary-400'
+				}`}
+			/>
+			<OcButtonLink
+				label="Ver proyectos"
+				href={link || ''}
+				color={type === 'develop' ? 'primary' : 'white'}
+				className="block dark:hidden"
 			/>
 		</div>
 	);

@@ -51,7 +51,7 @@ const OcAppBar = () => {
 					<OcButtonIcon
 						icon="/static/icons/menu-primary.svg"
 						color="white"
-						className="flex md:hidden"
+						className="flex md:hidden !bg-transparent"
 						onClick={handleMobileMenu}
 					/>
 				</div>

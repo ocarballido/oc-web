@@ -10,7 +10,7 @@ type DrawerProps = {
 const OcMenuDrawer = ({ isMenuOpen, handleMobileMenu, path }: DrawerProps) => {
 	return (
 		<div
-			className={`fixed w-full h-full bg-(--background-light) flex justify-center items-center bg-[url('/static/splash-01-vertical.webp')] dark:bg-[url('/static/splash-01-vertical-dark.webp')] bg-no-repeat bg-center bg-cover transition-all left-0 top-0 duration-300 z-50 ${
+			className={`fixed w-full h-full bg-(--background-light) flex justify-center items-center bg-[url('/static/splash-light-colored-vertical.webp')] dark:bg-[url('/static/splash-dark-colored-vertical.webp')] bg-no-repeat bg-center bg-cover transition-all left-0 top-0 duration-300 z-50 ${
 				isMenuOpen ? 'ranslate-x-0' : '-translate-x-full'
 			}`}
 			onClick={handleMobileMenu}

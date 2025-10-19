@@ -47,19 +47,26 @@ const OcCardProjectCover = ({
 					sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
 				/>
 			) : (
-				<Image
-					src={
-						from === 'DEVELOP'
-							? '/static/projects/splash-thumbnail-code.webp'
-							: '/static/projects/splash-thumbnail-design.webp'
-					}
-					fill
-					alt={safeTitle}
-					className="w-full object-cover"
-					placeholder="blur"
-					blurDataURL={grayDataUrl}
-					sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
-				/>
+				<>
+					<Image
+						src="/static/splash-dark-colored-horizontal.webp"
+						fill
+						alt={safeTitle}
+						className="w-full object-cover hidden dark:block"
+						placeholder="blur"
+						blurDataURL={grayDataUrl}
+						sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+					/>
+					<Image
+						src="/static/splash-light-colored-horizontal.webp"
+						fill
+						alt={safeTitle}
+						className="w-full object-cover block dark:hidden"
+						placeholder="blur"
+						blurDataURL={grayDataUrl}
+						sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+					/>
+				</>
 			)}
 
 			<div className="bg-white dark:bg-(--background) bg rounded-2xl px-3 py-1 text-xs font-semibold tracking-wide uppercase mb-1 w-fit text-primary-400 absolute top-3 left-3">

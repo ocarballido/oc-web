@@ -10,7 +10,7 @@ const OcLogo = () => {
 				height={72}
 				priority
 				src="/static/appbar/ocarballido-logo-dark.svg"
-				className="hidden dark:block"
+				className="hidden dark:block opacity-60"
 				style={{ width: '100px', height: 'auto' }}
 			/>
 			<Image

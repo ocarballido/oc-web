@@ -23,7 +23,7 @@ export default async function Skills() {
 
 	return (
 		<main className="py-6 flex flex-col h-full flex-1 overflow-hidden w-full max-w-[1440px] mx-auto">
-			<div className="flex justify-center items-stretch rounded-2xl overflow-visible flex-1 relative px-6 py-0 md:py-20 before:bg-no-repeat before:bg-center before:bg-cover before:xl:bg-size-[100%] before:content-[''] before:w-[100%] before:bg-transparent before:absolute before:top-[50%] before:translate-y-[-50%] before:left-0 before:-z-10 before:bg-[url('/static/splash-01-vertical.webp')] before:sm:bg-[url('/static/splash-01-horizontal.webp')] before:aspect-auto before:md:h-auto before:md:aspect-square before:h-full dark:before:bg-[url('/static/splash-01-vertical-dark.webp')] dark:before:md:bg-[url('/static/splash-01-horizontal-dark.webp')]">
+			<div className="flex justify-center items-stretch rounded-2xl overflow-visible flex-1 relative px-6 py-0 md:py-20 before:bg-no-repeat before:bg-center before:bg-cover before:xl:bg-size-[100%] before:content-[''] before:w-[100%] before:bg-transparent before:absolute before:top-[50%] before:translate-y-[-50%] before:left-0 before:-z-10 before:aspect-auto before:md:h-auto before:md:aspect-square before:h-full before:bg-[url('/static/splash-light-colored-vertical.webp')] dark:before:bg-[url('/static/splash-dark-colored-vertical.webp')] before:md:bg-[url('/static/splash-light-colored-horizontal.webp')] dark:before:md:bg-[url('/static/splash-dark-colored-horizontal.webp')]">
 				<div className="bg-white dark:bg-(--background-light) shadow-2xl rounded-2xl grid auto-rows-fr sm:flex sm:flex-row overflow-hidden max-w-[700px] w-full sm:my-auto">
 					{skills.map((skill, index) => (
 						<OcSkillCard
