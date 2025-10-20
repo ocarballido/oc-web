@@ -3,6 +3,8 @@
 import { Fragment, useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 
+import clsx from 'clsx';
+
 import OcLogo from '@/components/atoms/logo';
 import OcButtonIcon from '@/components/molecules/button-icon';
 import OcMainMenu from '../main-menu';
@@ -12,6 +14,11 @@ import ThemeSwitch from '@/components/molecules/theme-swith';
 const OcAppBar = () => {
 	const pathname = usePathname();
 	const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+	const [scrolled, setScrolled] = useState<boolean>(false);
+
+	const badgeStyles = clsx(
+		scrolled ? 'shadow-lg/5 dark:shadow-lg/20' : 'shadow-none'
+	);
 
 	const handleMobileMenu = () => {
 		setIsMenuOpen(!isMenuOpen);
@@ -39,9 +46,20 @@ const OcAppBar = () => {
 		};
 	}, [isMenuOpen]);
 
+	useEffect(() => {
+		const handleScroll = (): void => {
+			setScrolled(window.scrollY > 16);
+		};
+
+		window.addEventListener('scroll', handleScroll);
+		return () => window.removeEventListener('scroll', handleScroll);
+	}, []);
+
 	return (
 		<Fragment>
-			<header className="bg-white/90 dark:bg-(--background-light)/90 mx-2 md:mx-3 p-4 rounded-2xl flex justify-center sticky top-2 md:top-3 shadow-xs z-50 backdrop-blur-md items-center">
+			<header
+				className={`bg-white/90 dark:bg-(--background-light)/90 mx-2 md:mx-3 p-4 rounded-2xl flex justify-center sticky top-2 md:top-3 z-50 backdrop-blur-md items-center transition-shadow duration-300 ${badgeStyles}`}
+			>
 				<div className="flex items-center justify-between max-w-7xl w-full">
 					<OcLogo />
 					<OcMainMenu
