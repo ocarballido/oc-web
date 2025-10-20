@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const OcFooter = () => {
 	return (
-		<footer className="py-6 sm:py-4 px-4 mx-2 md:mx-3 bg-(--background-light) rounded-2xl mt-0 text-gray-500 dark:text-[#a0b8e3]/70">
+		<footer className="py-6 sm:py-4 px-4 mx-2 md:mx-3 bg-(--background-light) dark:bg-[#0a0f19] rounded-2xl mt-0 text-gray-500 dark:text-[#a0b8e3]/70">
 			<div className="max-w-7xl md:w-full lg:w-4xl xl:w-full mx-auto text-sm font-medium flex flex-col sm:flex-row items-center gap-4 justify-between">
 				<div className="flex flex-col sm:flex-row items-center gap-3">
 					<Link
@@ -30,7 +30,7 @@ const OcFooter = () => {
 							Oscar Carballido | UI Developer
 						</p>
 					</Link>
-					<div className="flex gap-3 items-center py-2 px-3 bg-primary-10 dark:bg-[#293b54] rounded-full">
+					<div className="flex gap-3 items-center py-2 px-3 bg-primary-10 dark:bg-(--background-light) rounded-full">
 						<Image
 							src="/static/footer/nextjs.svg"
 							alt="NextJS logo"
