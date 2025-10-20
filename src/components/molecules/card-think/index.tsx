@@ -21,15 +21,6 @@ const OcCardThink = ({ type, title, description, tools, link }: ThinkCard) => {
 		}
 	);
 
-	const descriptionStyles = clsx(
-		{
-			'opacity-70': type === 'develop',
-		},
-		{
-			'text-white': type === 'design',
-		}
-	);
-
 	return (
 		<div
 			className={`p-6 md:max-w-[400px] w-full flex flex-col gap-3 flex-1 ${cardStyles}`}
