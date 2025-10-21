@@ -28,9 +28,7 @@ const OcProjectSidebar = ({
 			<div className="flex gap-1 items-center">
 				<OcButtonLink
 					label={
-						pathname.includes('develop')
-							? 'Todo desarrollo'
-							: 'Todo diseño'
+						pathname.includes('develop') ? 'Desarrollo' : 'Diseño'
 					}
 					href={`/projects/${
 						pathname.includes('develop') ? 'develop' : 'design'
