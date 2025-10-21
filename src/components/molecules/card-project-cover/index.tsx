@@ -4,6 +4,7 @@ import OcCard from '@/components/atoms/card';
 import OcBadgeIndicator from '../badge-indicator';
 import OcBadge from '../badge';
 import OcButtonLink from '../button-link';
+import OcButtonIconLink from '../button-icon-link';
 
 type Props = ProjectCard & { from: 'DEVELOP' | 'DESIGN' };
 
@@ -14,6 +15,7 @@ const OcCardProjectCover = ({
 	design,
 	date,
 	client,
+	link,
 	thumbnail,
 	title,
 	shortDescription,
@@ -84,11 +86,32 @@ const OcCardProjectCover = ({
 					</h4>
 				</div>
 				<p className="text-sm opacity-70 mb-3">{safeShort}</p>
-				<OcButtonLink
-					href={`/projects/${from.toLowerCase()}/${id}`}
-					label="Ver proyecto"
-					color="secondary"
-				/>
+				<div className="flex gap-1 items-center">
+					<OcButtonLink
+						href={`/projects/${from.toLowerCase()}/${id}`}
+						label="Ver proyecto"
+						color="secondary"
+						className="flex-1"
+					/>
+					{link && (
+						<>
+							<OcButtonIconLink
+								href={link}
+								color="secondary"
+								icon="/static/icons/open_in_new-primary.svg"
+								target="_blank"
+								className="flex dark:hidden"
+							/>
+							<OcButtonIconLink
+								href={link}
+								color="secondary"
+								icon="/static/icons/open_in_new-secondary-dark.svg"
+								target="_blank"
+								className="hidden dark:flex"
+							/>
+						</>
+					)}
+				</div>
 			</div>
 		</OcCard>
 	);

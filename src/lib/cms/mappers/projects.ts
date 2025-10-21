@@ -14,6 +14,7 @@ export function toProjectCard(cms: CMSProject): ProjectCard {
 		design: Boolean(cms.design),
 		title: cms.title ?? '(Sin título)',
 		client: cms.client ?? '',
+		link: cms.link ?? '',
 		date: new Date(cms.date).getFullYear().toString(),
 		shortDescription: cms.shortDescription ?? '',
 	};

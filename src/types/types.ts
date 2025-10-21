@@ -6,6 +6,7 @@ export type ProjectCard = {
 	id: string;
 	className?: string;
 	thumbnail?: string;
+	link?: string;
 	code: boolean;
 	design: boolean;
 	title: string;

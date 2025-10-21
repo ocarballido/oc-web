@@ -24,6 +24,7 @@ const OcProjects = ({ projects, filter }: ProyectsProps) => {
 								date={project.date}
 								title={project.title}
 								client={project.client}
+								link={project.link}
 								shortDescription={project.shortDescription}
 								code={project.code}
 								thumbnail={project.thumbnail}
@@ -46,6 +47,7 @@ const OcProjects = ({ projects, filter }: ProyectsProps) => {
 									shortDescription={project.shortDescription}
 									thumbnail={project.thumbnail}
 									code={project.code}
+									link={project.link}
 									design={project.design}
 									from={filter}
 									className={

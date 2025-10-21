@@ -30,7 +30,7 @@ const OcButtonLink = ({
 				color === 'primary' && !active,
 		},
 		{
-			'bg-primary-10 hover:bg-primary-50 focus:bg-primary-50 text-primary-400 dark:bg-[#293b54] dark:hover:bg-primary-50 focus:bg-primary-50 text-primary-400':
+			'bg-primary-10 hover:bg-primary-50/60 focus:bg-primary-50 text-primary-400 dark:bg-[#293b54] dark:hover:bg-primary-50/50 focus:bg-primary-50 dark:text-[#95add9]':
 				color === 'secondary' && !active,
 		},
 		{
