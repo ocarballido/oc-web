@@ -11,7 +11,7 @@ export default function ThemeSwitch() {
 
 	if (!mounted)
 		return (
-			<div className="rounded-full p-2 bg-primary-10 dark:bg-[#293B54] ml-2 w-[41px] h-[40px] animate-pulse">
+			<div className="rounded-full p-2 bg-primary-10 dark:bg-[#293B54] ml-2 w-[40px] h-[40px] animate-pulse">
 				<svg
 					width="24"
 					height="24"
@@ -41,12 +41,18 @@ export default function ThemeSwitch() {
 
 	return (
 		<div
-			className="rounded-full p-2 bg-primary-10 dark:bg-[#293B54] ml-2 w-[41px] h-[40px] hover:cursor-pointer"
+			className="rounded-full p-2 bg-primary-10 dark:bg-[#293B54] ml-2 w-[40px] h-[40px] hover:cursor-pointer overflow-hidden"
 			onClick={() =>
 				setTheme(resolvedTheme === 'light' ? 'dark' : 'light')
 			}
 		>
-			{resolvedTheme === 'light' ? (
+			<div
+				className={`w-[56px] h-[24px] flex gap-[8px] transition-all ${
+					resolvedTheme === 'light'
+						? 'translate-x-0'
+						: '-translate-x-8'
+				}`}
+			>
 				<svg
 					width="24"
 					height="24"
@@ -71,7 +77,6 @@ export default function ThemeSwitch() {
 						/>
 					</g>
 				</svg>
-			) : (
 				<svg
 					width="24"
 					height="24"
@@ -96,40 +101,7 @@ export default function ThemeSwitch() {
 						/>
 					</g>
 				</svg>
-			)}
+			</div>
 		</div>
 	);
-	// return (
-	// 	<div
-	// 		onClick={() =>
-	// 			setTheme(resolvedTheme === 'light' ? 'dark' : 'light')
-	// 		}
-	// 		className={`rounded-full flex gap-3 overflow-hidden p-2 bg-primary-10 dark:bg-[#293B54] w-[41px] h-[40px] hover:cursor-pointer ml-2 ${
-	// 			resolvedTheme === 'light' ? '-translate-x-8' : 'translate-x-0'
-	// 		}`}
-	// 	>
-	// 		<Image
-	// 			src={`/static/icons/dark_mode-primary.svg`}
-	// 			alt="Dark mode icon"
-	// 			width={24}
-	// 			height={24}
-	// 			className="transition-all"
-	// 			style={{
-	// 				width: '24px',
-	// 				height: '24px',
-	// 			}}
-	// 		/>
-	// 		<Image
-	// 			src={`/static/icons/light_mode-primary.svg`}
-	// 			alt="Dark mode icon"
-	// 			width={24}
-	// 			height={24}
-	// 			className="transition-all"
-	// 			style={{
-	// 				width: '24px',
-	// 				height: '24px',
-	// 			}}
-	// 		/>
-	// 	</div>
-	// );
 }

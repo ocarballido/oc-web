@@ -60,20 +60,22 @@ const OcAppBar = () => {
 			<header
 				className={`bg-white/90 dark:bg-(--background-light)/90 mx-2 md:mx-3 p-4 rounded-2xl flex justify-center sticky top-2 md:top-3 z-50 backdrop-blur-md items-center transition-shadow duration-300 ${badgeStyles}`}
 			>
-				<div className="flex items-center justify-between max-w-7xl w-full">
+				<div className="flex items-center justify-center max-w-7xl flex-1 w-full">
 					<OcLogo />
 					<OcMainMenu
-						className="hidden md:flex gap-2"
+						className="hidden md:flex gap-2 ml-auto"
 						path={pathname}
 					/>
-					<OcButtonIcon
-						icon="/static/icons/menu-primary.svg"
-						color="white"
-						className="flex md:hidden !bg-transparent"
-						onClick={handleMobileMenu}
-					/>
+					<div className="flex items-center ml-auto md:ml-0">
+						<OcButtonIcon
+							icon="/static/icons/menu-primary.svg"
+							color="white"
+							className="flex md:hidden !bg-transparent"
+							onClick={handleMobileMenu}
+						/>
+						<ThemeSwitch />
+					</div>
 				</div>
-				<ThemeSwitch />
 			</header>
 			<OcMenuDrawer
 				isMenuOpen={isMenuOpen}
