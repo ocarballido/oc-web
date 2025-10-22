@@ -1,12 +1,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import clsx from 'clsx';
+import { ReactNode } from 'react';
 
 type ButtonProps = {
 	className?: string;
 	color?: 'primary' | 'secondary' | 'white';
 	target?: '_blank' | '_self' | '_parent' | '_top';
-	icon: string;
+	icon: ReactNode;
 	href: string;
 };
 
@@ -23,7 +24,7 @@ const OcButtonIconLink = ({
 				color === 'primary',
 		},
 		{
-			'bg-primary-10 hover:bg-primary-50 focus:bg-primary-50 text-primary-400 dark:bg-[#293b54] dark:hover:bg-primary-50/50 focus:bg-primary-50':
+			'bg-primary-10 hover:bg-primary-50 focus:bg-primary-50 text-primary-400 dark:bg-[#293b54] dark:hover:bg-[#354a68] focus:bg-[#354a68]':
 				color === 'secondary',
 		},
 		{
@@ -38,7 +39,8 @@ const OcButtonIconLink = ({
 			href={href}
 			target={target}
 		>
-			<Image src={icon} alt="Icon" height={24} width={24} />
+			{/* <Image src={icon} alt="Icon" height={24} width={24} /> */}
+			{icon}
 		</Link>
 	);
 };

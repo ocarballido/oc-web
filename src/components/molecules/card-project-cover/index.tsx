@@ -5,6 +5,7 @@ import OcBadgeIndicator from '../badge-indicator';
 import OcBadge from '../badge';
 import OcButtonLink from '../button-link';
 import OcButtonIconLink from '../button-icon-link';
+import OcIconOpenInNew from '@/components/atoms/icon/open-in-new';
 
 type Props = ProjectCard & { from: 'DEVELOP' | 'DESIGN' };
 
@@ -94,22 +95,12 @@ const OcCardProjectCover = ({
 						className="flex-1"
 					/>
 					{link && (
-						<>
-							<OcButtonIconLink
-								href={link}
-								color="secondary"
-								icon="/static/icons/open_in_new-primary.svg"
-								target="_blank"
-								className="flex dark:hidden"
-							/>
-							<OcButtonIconLink
-								href={link}
-								color="secondary"
-								icon="/static/icons/open_in_new-secondary-dark.svg"
-								target="_blank"
-								className="hidden dark:flex"
-							/>
-						</>
+						<OcButtonIconLink
+							href={link}
+							color="secondary"
+							icon={<OcIconOpenInNew />}
+							target="_blank"
+						/>
 					)}
 				</div>
 			</div>

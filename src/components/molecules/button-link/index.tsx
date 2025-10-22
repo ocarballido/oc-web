@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import clsx from 'clsx';
+import { ReactNode } from 'react';
 
 type ButtonLinkProps = {
 	active?: boolean;
@@ -9,7 +10,7 @@ type ButtonLinkProps = {
 	color?: 'primary' | 'secondary' | 'white';
 	target?: '_blank' | '_self' | '_parent' | '_top';
 	disabled?: boolean;
-	icon?: string;
+	icon?: ReactNode;
 	label: string;
 	href: string;
 };
@@ -30,11 +31,11 @@ const OcButtonLink = ({
 				color === 'primary' && !active,
 		},
 		{
-			'bg-primary-10 hover:bg-primary-50/60 focus:bg-primary-50 text-primary-400 dark:bg-[#293b54] dark:hover:bg-primary-50/50 focus:bg-primary-50 dark:text-[#95add9]':
+			'bg-primary-10 hover:bg-primary-50/60 focus:bg-primary-50 text-primary-400 dark:bg-[#293b54] dark:hover:bg-[#354a68] dark:focus:bg-[#354a68] dark:text-[#95add9]':
 				color === 'secondary' && !active,
 		},
 		{
-			'bg-white hover:bg-primary-10 focus:bg-primary-10 text-primary-400 dark:bg-transparent dark:hover:bg-[#293B54] dark:focus:bg-[#293B54] dark:text-[#95add9]':
+			'bg-white hover:bg-primary-10 focus:bg-primary-10 text-primary-400':
 				color === 'white' && !active,
 		},
 		{
@@ -44,8 +45,7 @@ const OcButtonLink = ({
 			'bg-primary-10 text-primary-400': color === 'secondary' && active,
 		},
 		{
-			'bg-primary-10 text-primary-400 dark:bg-[#293B54] dark:text-[#95add9]':
-				color === 'white' && active,
+			'bg-primary-10 text-primary-400': color === 'white' && active,
 		}
 	);
 
@@ -55,7 +55,7 @@ const OcButtonLink = ({
 			href={href}
 			target={target}
 		>
-			{icon && <Image src={icon} alt="Icon" height={16} width={16} />}
+			{icon || null}
 
 			{label}
 		</Link>

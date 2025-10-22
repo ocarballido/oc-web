@@ -10,6 +10,7 @@ import OcButtonIcon from '@/components/molecules/button-icon';
 import OcMainMenu from '../main-menu';
 import OcMenuDrawer from '../mnu-drawer';
 import ThemeSwitch from '@/components/molecules/theme-swith';
+import OcIconMenu from '@/components/atoms/icon/menu';
 
 const OcAppBar = () => {
 	const pathname = usePathname();
@@ -68,9 +69,9 @@ const OcAppBar = () => {
 					/>
 					<div className="flex items-center ml-auto md:ml-0">
 						<OcButtonIcon
-							icon="/static/icons/menu-primary.svg"
-							color="white"
-							className="flex md:hidden !bg-transparent"
+							icon={<OcIconMenu />}
+							color="secondary"
+							className="flex md:hidden"
 							onClick={handleMobileMenu}
 						/>
 						<ThemeSwitch />

@@ -5,6 +5,8 @@ import OcCard from '@/components/atoms/card';
 import OcButtonLink from '@/components/molecules/button-link';
 import OcBadge from '@/components/molecules/badge';
 import OcBadgeIndicator from '@/components/molecules/badge-indicator';
+import OcIconArrowLeftAlt from '@/components/atoms/icon/arrow-left-alt';
+import OcIconOpenInNew from '@/components/atoms/icon/open-in-new';
 
 import type { ProjectDetail } from '@/types/types';
 
@@ -33,28 +35,18 @@ const OcProjectSidebar = ({
 					href={`/projects/${
 						pathname.includes('develop') ? 'develop' : 'design'
 					}`}
-					icon="/static/icons/arrow_back-white.svg"
+					icon={<OcIconArrowLeftAlt color="white" />}
 					className="flex-1"
 				/>
 				{link && (
-					<>
-						<OcButtonLink
-							label="Visitar"
-							href={link}
-							icon="/static/icons/open_in_new-primary.svg"
-							color="secondary"
-							target="_blank"
-							className="flex-1 flex dark:hidden"
-						/>
-						<OcButtonLink
-							label="Visitar"
-							href={link}
-							icon="/static/icons/open_in_new-secondary-dark.svg"
-							color="secondary"
-							target="_blank"
-							className="flex-1 hidden dark:flex"
-						/>
-					</>
+					<OcButtonLink
+						label="Visitar"
+						href={link}
+						icon={<OcIconOpenInNew color="primary" />}
+						color="secondary"
+						target="_blank"
+						className="flex-1"
+					/>
 				)}
 			</div>
 			<OcBadgeIndicator code={code} design={design} />

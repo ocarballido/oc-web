@@ -1,12 +1,13 @@
 import Image from 'next/image';
 import clsx from 'clsx';
+import { ReactNode } from 'react';
 
 type ButtonProps = {
 	active?: boolean;
 	className?: string;
 	color?: 'primary' | 'secondary' | 'white';
 	disabled?: boolean;
-	icon: string;
+	icon: ReactNode;
 	onClick?: React.MouseEventHandler<HTMLButtonElement>;
 };
 
@@ -24,18 +25,18 @@ const OcButtonIcon = ({
 				color === 'primary' && !active,
 		},
 		{
-			'bg-primary-10 hover:bg-primary-50 focus:bg-primary-50 text-primary-400':
+			'bg-primary-10 hover:bg-primary-50 focus:bg-primary-50 dark:bg-[#293b54] dark:hover:bg-[#354a68] focus:bg-[#354a68]':
 				color === 'secondary' && !active,
 		},
 		{
-			'bg-white hover:bg-primary-10 focus:bg-primary-10 text-primary-400 dark:bg-(--background-light) dark:hover:bg-[#293B54] dark:focus:bg-[#293B54]':
+			'bg-white hover:bg-primary-10 focus:bg-primary-10 dark:bg-(--background-light) dark:hover:bg-[#293B54] dark:focus:bg-[#293B54]':
 				color === 'white' && !active,
 		},
 		{
 			'bg-primary-500 text-white': color === 'primary' && active,
 		},
 		{
-			'bg-primary-10 text-primary-400': color === 'secondary' && active,
+			'bg-primary-10': color === 'secondary' && active,
 		}
 	);
 
@@ -45,7 +46,7 @@ const OcButtonIcon = ({
 			onClick={onClick}
 			disabled={disabled}
 		>
-			<Image src={icon} alt="Icon" height={24} width={24} />
+			{icon}
 		</button>
 	);
 };

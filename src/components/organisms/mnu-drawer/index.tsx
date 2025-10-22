@@ -1,5 +1,6 @@
 import OcButtonIcon from '@/components/molecules/button-icon';
 import OcMainMenu from '../main-menu';
+import OcIconClose from '@/components/atoms/icon/close';
 
 type DrawerProps = {
 	isMenuOpen: boolean;
@@ -17,7 +18,7 @@ const OcMenuDrawer = ({ isMenuOpen, handleMobileMenu, path }: DrawerProps) => {
 		>
 			<div className="absolute right-[28px] top-[57px] flex">
 				<OcButtonIcon
-					icon="/static/icons/close-white.svg"
+					icon={<OcIconClose color="white" />}
 					color="primary"
 					className="flex"
 					onClick={handleMobileMenu}

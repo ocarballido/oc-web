@@ -1,4 +1,5 @@
 import OcButtonLink from '@/components/molecules/button-link';
+import OcLinkMenu from '@/components/molecules/link-menu';
 
 type MainMamuProps = {
 	className?: string;
@@ -8,28 +9,21 @@ type MainMamuProps = {
 const OcMainMenu = ({ className = '', path = '/' }: MainMamuProps) => {
 	return (
 		<nav className={`${className}`}>
-			<OcButtonLink
-				label="Inicio"
-				href="/"
-				color="white"
-				active={path === '/'}
-			/>
-			<OcButtonLink
+			<OcLinkMenu label="Inicio" href="/" active={path === '/'} />
+			<OcLinkMenu
 				label="Trayectoría"
 				href="/trajectory"
-				color="white"
 				active={path.includes('trajectory')}
 			/>
-			<OcButtonLink
+			<OcLinkMenu
 				label="Proyectos"
 				href="/projects/develop"
-				color="white"
 				active={path.includes('projects')}
+				className="not-hover:bg-transparent "
 			/>
-			<OcButtonLink
+			<OcLinkMenu
 				label="Habilidades"
 				href="/skills"
-				color="white"
 				active={path.includes('skills')}
 			/>
 		</nav>

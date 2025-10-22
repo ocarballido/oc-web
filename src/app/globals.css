@@ -27,17 +27,17 @@
 	--foreground: #f4f4f4;
 
 	/* Blue (ajústalos a tu gusto para contraste en dark) */
-	--blue-10: #00050d;
-	--blue-50: #001b3d;
-	--blue-100: #01326e;
-	--blue-200: #0d4b9e;
-	--blue-300: #2166cf;
+	--blue-900: #00050d;
+	--blue-800: #001b3d;
+	--blue-700: #01326e;
+	--blue-600: #0d4b9e;
+	--blue-500: #2166cf;
 	--blue-400: #3b82f6;
-	--blue-500: #4690ff;
-	--blue-600: #579fff;
-	--blue-700: #6dafff;
-	--blue-800: #8fc0ff;
-	--blue-900: #b3d3ff;
+	--blue-300: #4690ff;
+	--blue-200: #579fff;
+	--blue-100: #6dafff;
+	--blue-50: #8fc0ff;
+	--blue-10: #b3d3ff;
 
 	/* Hace que scrollbars/controles usen el esquema oscuro nativo */
 	color-scheme: dark;
