@@ -15,16 +15,14 @@ const OcFooter = () => {
 							width={24}
 							height={24}
 							alt="Oscarballido Logo"
-							className="hidden dark:block"
-							style={{ width: '24', height: 'auto' }}
+							className="hidden dark:block w-[24px] h-[24px]"
 						/>
 						<Image
 							src="/static/icons/oc-symbol.svg"
 							width={24}
 							height={24}
 							alt="Oscarballido Logo"
-							className="block dark:hidden"
-							style={{ width: '24', height: 'auto' }}
+							className="block dark:hidden w-[24px] h-[24px]"
 						/>
 						<p className="text-left grow-0 w-auto">
 							Oscar Carballido | UI Developer
@@ -34,35 +32,31 @@ const OcFooter = () => {
 						<Image
 							src="/static/footer/nextjs.svg"
 							alt="NextJS logo"
-							className="opacity-40 block dark:hidden"
+							className="opacity-40 block dark:hidden w-[50px] h-[20px]"
 							width={50}
-							height={50}
-							style={{ width: '50', height: 'auto' }}
+							height={20}
 						/>
 						<Image
 							src="/static/footer/nextjs-dark.svg"
 							alt="NextJS logo"
-							className="hidden dark:block opacity-70"
+							className="hidden dark:block opacity-70 w-[50px] h-[20px]"
 							width={50}
-							height={50}
-							style={{ width: '50', height: 'auto' }}
+							height={20}
 						/>
 						<span className="font-bold">+</span>
 						<Image
 							src="/static/footer/hygraph.svg"
 							alt="NextJS logo"
 							width={60}
-							height={50}
-							className="opacity-40 block dark:hidden"
-							style={{ width: '60', height: 'auto' }}
+							height={20}
+							className="opacity-40 block dark:hidden w-[60px] h-[20px]"
 						/>
 						<Image
 							src="/static/footer/hygraph-dark.svg"
 							alt="NextJS logo"
 							width={60}
-							height={50}
-							className="opacity-70 hidden dark:block"
-							style={{ width: '60', height: 'auto' }}
+							height={20}
+							className="opacity-70 hidden dark:block w-[60px] h-[20px]"
 						/>
 					</div>
 				</div>
@@ -80,16 +74,14 @@ const OcFooter = () => {
 									height={16}
 									width={16}
 									alt="Github icon"
-									className="hidden dark:block opacity-70"
-									style={{ width: '16', height: 'auto' }}
+									className="hidden dark:block opacity-70 w-[16px] h-[16px]"
 								/>
 								<Image
 									src="/static/icons/github-black.svg"
 									height={16}
 									width={16}
 									alt="Github icon"
-									className="block dark:hidden opacity-40"
-									style={{ width: '16', height: 'auto' }}
+									className="block dark:hidden opacity-40 w-[16px] h-[16px]"
 								/>
 								GitHub
 							</Link>
@@ -106,16 +98,14 @@ const OcFooter = () => {
 									height={16}
 									width={16}
 									alt="Github icon"
-									className="hidden dark:block opacity-70"
-									style={{ width: '16', height: 'auto' }}
+									className="hidden dark:block opacity-70 w-[16px] h-[16px]"
 								/>
 								<Image
 									src="/static/icons/linkedin-black.svg"
 									height={16}
 									width={16}
 									alt="Github icon"
-									className="block dark:hidden opacity-40"
-									style={{ width: '16', height: 'auto' }}
+									className="block dark:hidden opacity-40 w-[16px] h-[16px]"
 								/>
 								LinkedIn
 							</Link>
