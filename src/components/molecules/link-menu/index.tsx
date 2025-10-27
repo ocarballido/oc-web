@@ -24,7 +24,7 @@ const OcLinkMenu = ({
 				!active,
 		},
 		{
-			'bg-primary-10 text-primary-400 dark:bg-[#293B54] dark:text-[#95add9] transition-none':
+			'!bg-primary-10 !text-primary-400 dark:!bg-[#293B54] dark:!text-[#95add9] !transition-none':
 				active,
 		}
 	);

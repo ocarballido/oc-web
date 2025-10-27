@@ -1,4 +1,3 @@
-import OcButtonLink from '@/components/molecules/button-link';
 import OcLinkMenu from '@/components/molecules/link-menu';
 
 type MainMamuProps = {
