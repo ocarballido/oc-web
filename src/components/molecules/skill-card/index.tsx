@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import OcBadgeIndicator from '../badge-indicator';
 
 import type { CMSSkillCard } from '@/lib/cms/types';
-import Image from 'next/image';
+import OcIconVerified from '@/components/atoms/icon/verified';
 
 const OcSkillCard = ({ type, categories }: CMSSkillCard) => {
 	const cardStyles = clsx({
@@ -44,16 +44,11 @@ const OcSkillCard = ({ type, categories }: CMSSkillCard) => {
 					categories.map((category) => (
 						<div key={category.id} className="w-full">
 							<h3 className="font-medium uppercase text-sm mb-2 flex items-center gap-1">
-								<Image
-									alt={category.title}
-									src={`/static/icons/verified-${
-										type === 'design'
-											? 'secondary'
-											: 'primary'
-									}.svg`}
-									width={24}
-									height={24}
-									className="-ml-1"
+								<OcIconVerified
+									changePrimary={false}
+									color={
+										type === 'design' ? 'white' : 'primary'
+									}
 								/>
 								{category.title}
 							</h3>
