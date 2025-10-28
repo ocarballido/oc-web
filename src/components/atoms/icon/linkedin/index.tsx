@@ -2,12 +2,19 @@ import clsx from 'clsx';
 
 type IconProps = {
 	size?: number;
+	changePrimary?: boolean;
 	color?: 'primary' | 'secondary' | 'white';
 };
 
-const OcIconLinkedin = ({ color = 'primary', size = 24 }: IconProps) => {
+const OcIconLinkedin = ({
+	color = 'primary',
+	changePrimary = true,
+	size = 24,
+}: IconProps) => {
 	const iconStyles = clsx({
-		'fill-primary-400 dark:fill-[#A0B8E3]': color === 'primary',
+		'fill-primary-400': color === 'primary',
+		'fill-primary-400 dark:fill-[#A0B8E3]':
+			color === 'primary' && changePrimary,
 		'fill-primary-10 dark:fill-[#293b54]': color === 'secondary',
 		'fill-white': color === 'white',
 	});
