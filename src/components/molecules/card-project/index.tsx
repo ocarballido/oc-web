@@ -72,14 +72,9 @@ const OcCardProject = ({
 
 			<div className="flex flex-col gap-4 p-6">
 				<div>
-					<h3 className="text-md">{safeTitle}</h3>
-					<h4 className="text-xs uppercase text-primary-400 font-semibold tracking-wider flex gap-1 items-center">
-						<Image
-							src="/static/icons/verified-primary.svg"
-							width={16}
-							height={16}
-							alt="Client icon"
-						/>
+					<h3 className="text-md mb-1">{safeTitle}</h3>
+					<h4 className="text-xs uppercase text-primary-400 font-medium tracking-wider inline-flex gap-1 items-center py-1 px-1 rounded-lg bg-primary-10 dark:bg-[#293b54]">
+						<OcIconVerified size={16} changePrimary={false} />
 						{safeClient}
 					</h4>
 				</div>

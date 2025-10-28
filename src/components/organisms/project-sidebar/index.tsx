@@ -1,13 +1,13 @@
 'use client';
 import { usePathname } from 'next/navigation';
 
-import Image from 'next/image';
 import OcCard from '@/components/atoms/card';
 import OcButtonLink from '@/components/molecules/button-link';
 import OcBadge from '@/components/molecules/badge';
 import OcBadgeIndicator from '@/components/molecules/badge-indicator';
 import OcIconArrowLeftAlt from '@/components/atoms/icon/arrow-left-alt';
 import OcIconOpenInNew from '@/components/atoms/icon/open-in-new';
+import OcIconVerified from '@/components/atoms/icon/verified';
 
 import type { ProjectDetail } from '@/types/types';
 
@@ -50,21 +50,18 @@ const OcProjectSidebar = ({
 					/>
 				)}
 			</div>
-			<OcBadgeIndicator code={code} design={design} />
+			<div className="flex justify-between items-center">
+				<OcBadgeIndicator code={code} design={design} />
+				<OcBadge label={date} color="secondary" />
+			</div>
 			<div>
 				<h2 className="text-3xl mb-2">{title}</h2>
-				<h4 className="text-xs uppercase text-primary-400 font-semibold tracking-wider flex gap-1 items-center">
-					<Image
-						src="/static/icons/verified-primary.svg"
-						width={16}
-						height={16}
-						alt="Client icon"
-					/>
+				<h4 className="text-xs uppercase text-primary-400 font-medium tracking-wider inline-flex gap-1 items-center py-1 px-1 rounded-lg bg-primary-10 dark:bg-[#293b54]">
+					<OcIconVerified size={16} changePrimary={false} />
 					{client}
 				</h4>
 			</div>
 			<div>
-				<OcBadge label={date} />
 				<h3 className="text-lg font-medium mt-2 mb-1">Descripción:</h3>
 				<p className="opacity-70 dark:opacity-80">{description}</p>
 			</div>

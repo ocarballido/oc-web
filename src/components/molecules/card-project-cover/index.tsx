@@ -6,6 +6,7 @@ import OcBadge from '../badge';
 import OcButtonLink from '../button-link';
 import OcButtonIconLink from '../button-icon-link';
 import OcIconOpenInNew from '@/components/atoms/icon/open-in-new';
+import OcIconVerified from '@/components/atoms/icon/verified';
 
 type Props = ProjectCard & { from: 'DEVELOP' | 'DESIGN' };
 
@@ -81,14 +82,9 @@ const OcCardProjectCover = ({
 					<OcBadge label={date} color="secondary" />
 				</div>
 				<div>
-					<h3 className="text-md">{safeTitle}</h3>
-					<h4 className="text-xs uppercase text-primary-400 font-semibold tracking-wider flex gap-1 items-center">
-						<Image
-							src="/static/icons/verified-primary.svg"
-							width={16}
-							height={16}
-							alt="Client icon"
-						/>
+					<h3 className="text-md mb-1">{safeTitle}</h3>
+					<h4 className="text-xs uppercase text-primary-400 font-medium tracking-wider inline-flex gap-1 items-center py-1 px-1 rounded-lg bg-primary-10 dark:bg-[#293b54]">
+						<OcIconVerified size={16} changePrimary={false} />
 						{safeClient}
 					</h4>
 				</div>
