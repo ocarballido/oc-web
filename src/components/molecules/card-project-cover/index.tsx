@@ -81,8 +81,14 @@ const OcCardProjectCover = ({
 					<OcBadge label={date} color="secondary" />
 				</div>
 				<div>
-					<h3 className="text-md font-medium">{safeTitle}</h3>
-					<h4 className="text-xs uppercase opacity-60 font-medium tracking-wide">
+					<h3 className="text-md">{safeTitle}</h3>
+					<h4 className="text-xs uppercase text-primary-400 font-semibold tracking-wider flex gap-1 items-center">
+						<Image
+							src="/static/icons/verified-primary.svg"
+							width={16}
+							height={16}
+							alt="Client icon"
+						/>
 						{safeClient}
 					</h4>
 				</div>
