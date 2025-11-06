@@ -64,30 +64,6 @@ const OcFooter = () => {
 					<ul className="inline-flex gap-3">
 						<li>
 							<Link
-								href="https://github.com/ocarballido"
-								className="flex gap-1 items-center"
-								target="_blank"
-								scroll={false}
-							>
-								<Image
-									src="/static/icons/github-dark.svg"
-									height={16}
-									width={16}
-									alt="Github icon"
-									className="hidden dark:block opacity-70 w-[16px] h-[16px]"
-								/>
-								<Image
-									src="/static/icons/github-black.svg"
-									height={16}
-									width={16}
-									alt="Github icon"
-									className="block dark:hidden opacity-40 w-[16px] h-[16px]"
-								/>
-								GitHub
-							</Link>
-						</li>
-						<li>
-							<Link
 								href="https://es.linkedin.com/in/oscar-armando-carballido-perdomo-56b47b39"
 								className="flex gap-1 items-center"
 								target="_blank"
