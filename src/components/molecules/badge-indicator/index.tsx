@@ -14,10 +14,8 @@ type BadgeProps = {
 };
 
 const imageMap = {
-	both: 'both',
-	develop: 'left',
-	design: 'right',
 	primary: 'primary',
+	primaryDark: 'primary-dark',
 	white: 'white',
 };
 
@@ -29,7 +27,7 @@ const OcBadgeIndicator = ({
 }: BadgeProps) => {
 	const badgeStyles = clsx(
 		{
-			'text-primary-400': color === 'primary',
+			'text-primary-400 dark:text-[#95add9]': color === 'primary',
 		},
 		{
 			'text-white': color === 'white',
@@ -65,10 +63,20 @@ const OcBadgeIndicator = ({
 	return (
 		<div className={`flex gap-1 items-center ${className}`}>
 			<Image
-				src={`/static/icons/brain-${badgeImage}-${imageMap[color]}.svg`}
+				src={`/static/icons/brain-${badgeImage}-${color}.svg`}
 				alt="Icon"
 				height={24}
 				width={24}
+				className="dark:hidden block"
+			/>
+			<Image
+				src={`/static/icons/brain-${badgeImage}-${
+					color === 'primary' ? 'primary-dark' : color
+				}.svg`}
+				alt="Icon"
+				height={24}
+				width={24}
+				className="dark:block hidden"
 			/>
 			<p
 				className={`text-primary-400 font-bold text-xs tracking-wider ${badgeStyles}`}
