@@ -9,6 +9,8 @@ import { mapWelcomes } from '@/lib/cms/mappers/welcome';
 import hygraph from '@/lib/cms/client';
 import { GetWelcomesResponse } from '@/lib/cms/types';
 
+export const revalidate = 300;
+
 export default async function Home() {
 	const data = await hygraph.request<GetWelcomesResponse>(GET_WELCOME);
 	const welcomes = mapWelcomes(data?.welcomes);
