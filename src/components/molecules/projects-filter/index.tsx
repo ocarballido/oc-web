@@ -23,7 +23,7 @@ const OcProjectsFilter = ({ active }: FilterProps) => {
 						label="Diseño"
 						href="/projects/design"
 						color="white"
-						iconAfter="/static/icons/brain-right-primary.svg"
+						iconBefore="/static/icons/brain-right-primary.svg"
 						className="w-full"
 						active={active === 'DESIGN'}
 					/>

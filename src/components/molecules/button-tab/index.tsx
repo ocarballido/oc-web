@@ -35,7 +35,7 @@ const OcButtonTab = ({
 				color === 'secondary' && !active,
 		},
 		{
-			'bg-white dark:bg-transparent hover:bg-primary-10 dark:hover:bg-[#293B54] focus:bg-primary-10 text-primary-400':
+			'bg-white dark:bg-transparent hover:bg-primary-10 dark:hover:bg-[#293B54] dark:focus:bg-[#293B54] focus:bg-primary-10 text-primary-400':
 				color === 'white' && !active,
 		},
 		{
