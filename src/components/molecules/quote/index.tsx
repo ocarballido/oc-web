@@ -26,7 +26,7 @@ const OcQuote = ({
 	return (
 		<div className="flex flex-col max-w-[500px] gap-2 py-4">
 			<div
-				className={`p-2 rounded-full w-fit shrink-0 ${quoteSignStyles}`}
+				className={`p-1 rounded-full w-fit shrink-0 ${quoteSignStyles}`}
 			>
 				<Image
 					src={`/static/icons/quote_begin-${color}.svg`}
