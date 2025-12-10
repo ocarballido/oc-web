@@ -25,6 +25,11 @@ const OcMainMenu = ({ className = '', path = '/' }: MainMamuProps) => {
 				href="/skills"
 				active={path.includes('skills')}
 			/>
+			<OcLinkMenu
+				label="Descargar CV"
+				href="/static/docs/CV_Oscar_Carballido_ES-2025.pdf"
+				target="_blank"
+			/>
 		</nav>
 	);
 };

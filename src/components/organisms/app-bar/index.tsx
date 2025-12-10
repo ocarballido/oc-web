@@ -64,7 +64,7 @@ const OcAppBar = () => {
 				<div className="flex items-center justify-center max-w-7xl flex-1 w-full">
 					<OcLogo />
 					<OcMainMenu
-						className="hidden md:flex gap-2 ml-auto"
+						className="hidden md:flex gap-1 ml-auto"
 						path={pathname}
 					/>
 					<div className="flex items-center ml-auto md:ml-0">

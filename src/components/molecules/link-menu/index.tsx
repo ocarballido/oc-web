@@ -31,7 +31,7 @@ const OcLinkMenu = ({
 
 	return (
 		<Link
-			className={`font-medium text-base rounded-full transition-colors flex items-center justify-center gap-1 py-2 px-5 hover:cursor-pointer ${buttonStyles} ${className}`}
+			className={`font-medium text-base rounded-full transition-colors flex items-center justify-center gap-1 py-2 px-4 hover:cursor-pointer ${buttonStyles} ${className}`}
 			href={href}
 			target={target}
 		>
