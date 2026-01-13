@@ -42,16 +42,18 @@ export const viewport: Viewport = {
 
 export default function RootLayout({
 	children,
-}: Readonly<{
+	params,
+}: {
 	children: React.ReactNode;
-}>) {
+	params: Promise<{ locale: string }>;
+}) {
 	return (
 		<html
 			lang="es"
 			suppressHydrationWarning
 			style={{ colorScheme: 'light' }}
 		>
-			<BaseLayout>{children}</BaseLayout>
+			<BaseLayout params={params}>{children}</BaseLayout>
 		</html>
 	);
 }

@@ -1,3 +1,5 @@
+import { useTranslations } from 'next-intl';
+
 import { ProjectCard } from '@/types/types';
 import Image from 'next/image';
 import OcCard from '@/components/atoms/card';
@@ -23,6 +25,8 @@ const OcCardProjectCover = ({
 	shortDescription,
 	from,
 }: Props) => {
+	const t = useTranslations('CardCover');
+
 	const graySvg = `<svg xmlns="http://www.w3.org/2000/svg" width="4" height="4"><rect width="4" height="4" fill="#e6effd" /></svg>`;
 	const grayDataUrl =
 		'data:image/svg+xml;base64,' +
@@ -74,7 +78,7 @@ const OcCardProjectCover = ({
 			)}
 
 			<div className="bg-white dark:bg-(--background) bg rounded-2xl px-3 py-1 text-xs font-semibold tracking-wide uppercase mb-1 w-fit text-primary-400 absolute top-3 left-3">
-				Más reciente
+				{t('recent')}
 			</div>
 			<div className="flex flex-col gap-3 p-5 bg-white dark:bg-(--background-light) relative rounded-xl">
 				<div className="flex justify-between items-center">
@@ -92,7 +96,7 @@ const OcCardProjectCover = ({
 				<div className="flex gap-1 items-center">
 					<OcButtonLink
 						href={`/projects/${from.toLowerCase()}/${id}`}
-						label="Ver proyecto"
+						label={t('seeProject')}
 						color="secondary"
 						className="flex-1"
 					/>

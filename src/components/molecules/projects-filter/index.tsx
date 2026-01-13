@@ -1,3 +1,5 @@
+import { useTranslations } from 'next-intl';
+
 import OcButtonTab from '../button-tab';
 
 type FilterProps = {
@@ -5,12 +7,14 @@ type FilterProps = {
 };
 
 const OcProjectsFilter = ({ active }: FilterProps) => {
+	const t = useTranslations('projectFilter');
+
 	return (
 		<nav className="flex items-center justify-center sticky top-29.5 z-5">
 			<ul className="flex gap-1 p-1 bg-white dark:bg-(--background-light) rounded-4xl shadow-xs items-center justify-center w-full max-w-xs backdrop-blur-md">
 				<li className="flex-1">
 					<OcButtonTab
-						label="Desarrollo"
+						label={t('develop')}
 						href="/projects/develop"
 						color="white"
 						iconBefore="/static/icons/brain-left-primary.svg"
@@ -20,7 +24,7 @@ const OcProjectsFilter = ({ active }: FilterProps) => {
 				</li>
 				<li className="flex-1">
 					<OcButtonTab
-						label="Diseño"
+						label={t('design')}
 						href="/projects/design"
 						color="white"
 						iconBefore="/static/icons/brain-right-primary.svg"

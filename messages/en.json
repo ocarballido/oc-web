@@ -1,0 +1,41 @@
+{
+	"HomePage": {
+		"title": "Hello world!"
+	},
+	"AppBar": {
+		"home": "Home",
+		"trajectory": "Trajectory",
+		"projects": "Projects",
+		"skills": "Skills",
+		"cv": "CV"
+	},
+	"Indicator": {
+		"development": "DEVELOPMENT",
+		"design": "DESIGN",
+		"developmentAnddesign": "DEVELOPMENT AND DESIGN"
+	},
+	"HomeThinkCard": {
+		"seeProjects": "View projects"
+	},
+	"TrajectoryCard": {
+		"company": "Company:",
+		"role": "Role:",
+		"responsabilities": "Responsibilities:"
+	},
+	"SingleProjectSidebar": {
+		"develop": "Develop",
+		"design": "Design",
+		"visit": "Visit",
+		"description": "Description:",
+		"role": "Role:",
+		"tech": "Technologies:"
+	},
+	"CardCover": {
+		"recent": "More recent",
+		"seeProject": "View project"
+	},
+	"projectFilter": {
+		"develop": "Develop",
+		"design": "Design"
+	}
+}

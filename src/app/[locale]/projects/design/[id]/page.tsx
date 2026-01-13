@@ -1,5 +1,4 @@
-// app/projects/[id]/page.tsx
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 import type {
@@ -15,13 +14,20 @@ import { GET_PROJECT_BY_ID } from '@/lib/cms/queries';
 import hygraph from '@/lib/cms/client';
 import { mapProject } from '@/lib/cms/mappers/single-project';
 
+import { DEFAULT_LOCALE } from '@/config/config-constants';
+
 export const revalidate = 300;
 
-async function getProjectById(id: string) {
+type Locale = 'es' | 'en';
+
+async function getProjectById(id: string, locale: Locale) {
 	const data = await hygraph.request<
 		GetProjectByIdResponse,
 		GetProjectByIdVariables
-	>(GET_PROJECT_BY_ID, { id });
+	>(GET_PROJECT_BY_ID, {
+		id,
+		locales: [locale, DEFAULT_LOCALE], // fallback
+	});
 
 	const cmsProject = data?.project;
 	if (!cmsProject) notFound();
@@ -29,28 +35,28 @@ async function getProjectById(id: string) {
 	return mapProject(cmsProject);
 }
 
-type MetaProps = { params: Promise<{ id: string }> };
+type MetaProps = { params: Promise<{ locale: Locale; id: string }> };
 
 export async function generateMetadata({
 	params,
 }: MetaProps): Promise<Metadata> {
-	const { id } = await params;
+	const { locale, id } = await params;
 	if (!id) notFound();
 
-	const project = await getProjectById(id);
+	const project = await getProjectById(id, locale);
 
 	return {
 		title: project.title ?? 'Proyecto',
 	};
 }
 
-type PageProps = { params: Promise<{ id: string }> };
+type PageProps = { params: Promise<{ locale: Locale; id: string }> };
 
 export default async function SingleProject({ params }: PageProps) {
-	const { id } = await params;
+	const { locale, id } = await params;
 	if (!id) notFound();
 
-	const project = await getProjectById(id);
+	const project = await getProjectById(id, locale);
 
 	return (
 		<OcProjectSingle>

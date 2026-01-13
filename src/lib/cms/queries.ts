@@ -1,27 +1,28 @@
 export const GET_PROJECTS_BY_TYPE = `
-	query GetProjects($design: Boolean, $code: Boolean) {
-		projects(
-			where: { 
-				OR: [
-					{ design: $design }
-					{ code: $code }
-				] 
-			},
-			orderBy: date_DESC
-		) {
-			id
-			title
-			shortDescription
-			link
-			code
-			client
-			design
-			date
-			thumbnail {
-				url
-			}
-		}
-	}
+	query GetProjects($design: Boolean, $code: Boolean, $locales: [Locale!]!) {
+    projects(
+      locales: $locales
+      where: {
+        OR: [
+          { design: $design }
+          { code: $code }
+        ]
+      }
+      orderBy: date_DESC
+    ) {
+      id
+      title
+      shortDescription
+      link
+      code
+      client
+      design
+      date
+      thumbnail {
+        url
+      }
+    }
+  }
 `;
 
 export const GET_DESIGN_PROJECTS = `
@@ -59,35 +60,37 @@ export const GET_DEVELOP_PROJECTS = `
 `;
 
 export const GET_PROJECT_BY_ID = `
-	query GetProjectById($id: ID!) {
-		project(where: { id: $id }) {
-		id
-		title
-		shortDescription
-		description
-		client
-		role
-		code
-		date
-		design
-		images {
-			url
-		}
-		technologies {
-			... on Badge {
+	query GetProjectById($id: ID!, $locales: [Locale!]!) {
+		project(where: { id: $id }, locales: $locales) {
 			id
-			badgeTitle
+			title
+			shortDescription
+			description
+			client
+			role
+			code
+			date
+			design
+			images {
+				url
 			}
-		}
-		link
-		thumbnail { url }
+			technologies {
+				... on Badge {
+				id
+					badgeTitle
+				}
+			}
+			link
+			thumbnail {
+				url
+			}
 		}
 	}
 `;
 
 export const GET_TRAJECTORIES = `
-	query GetTrajectories {
-        trajectories {
+	query GetTrajectories($locales: [Locale!]!) {
+		trajectories(locales: $locales) {
             begin
             company
             end
@@ -102,26 +105,26 @@ export const GET_TRAJECTORIES = `
             }
             }
         }
-    }
+	}
 `;
 
 export const GET_WELCOME = `
-	query GetWelcome {
-		welcomes {
+	query GetWelcome($locales: [Locale!]!) {
+		welcomes(locales: $locales) {
 			id
 			thinkCard {
 				... on ThinkCard {
+				id
+				type
+				tools {
+					... on Badge {
 					id
-					type
-					tools {
-						... on Badge {
-							id
-							badgeTitle
-						}
+					badgeTitle
 					}
-					title
-					link
-					description
+				}
+				title
+				link
+				description
 				}
 			}
 			title
@@ -132,8 +135,8 @@ export const GET_WELCOME = `
 `;
 
 export const GET_SKILLS = `
-	query GetSkills {
-		skills {
+	query GetSkills($locales: [Locale!]!) {
+		skills(locales: $locales) {
 			skill {
 				type
 				categories {

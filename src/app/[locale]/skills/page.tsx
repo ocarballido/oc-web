@@ -8,14 +8,24 @@ import { GET_SKILLS } from '@/lib/cms/queries';
 import hygraph from '@/lib/cms/client';
 import { GetSkillsResponse } from '@/lib/cms/types';
 
+import { DEFAULT_LOCALE } from '@/config/config-constants';
+
 export const metadata: Metadata = {
 	title: 'Oscarballido | Habilidades',
 };
 
+type Props = {
+	params: Promise<{ locale: 'es' | 'en' }>;
+};
+
 export const revalidate = 300;
 
-export default async function Skills() {
-	const data = await hygraph.request<GetSkillsResponse>(GET_SKILLS);
+export default async function Skills({ params }: Props) {
+	const { locale } = await params;
+
+	const data = await hygraph.request<GetSkillsResponse>(GET_SKILLS, {
+		locales: [locale, DEFAULT_LOCALE], // si tu enum en Hygraph es ES/EN
+	});
 
 	const skills = data.skills[0].skill;
 

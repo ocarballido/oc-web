@@ -1,3 +1,5 @@
+import { useTranslations } from 'next-intl';
+
 import clsx from 'clsx';
 
 import OcBadgeIndicator from '../badge-indicator';
@@ -8,6 +10,8 @@ import OcQuote from '../quote';
 import type { ThinkCard } from '@/types/types';
 
 const OcCardThink = ({ type, title, description, tools, link }: ThinkCard) => {
+	const t = useTranslations('HomeThinkCard');
+
 	const cardStyles = clsx({
 		'bg-primary-400': type === 'design',
 	});
@@ -47,7 +51,7 @@ const OcCardThink = ({ type, title, description, tools, link }: ThinkCard) => {
 					))}
 			</div>
 			<OcButtonLink
-				label="Ver proyectos"
+				label={t('seeProjects')}
 				href={link || ''}
 				color={type === 'develop' ? 'primary' : 'white'}
 				className={`hidden dark:flex ${
@@ -55,7 +59,7 @@ const OcCardThink = ({ type, title, description, tools, link }: ThinkCard) => {
 				}`}
 			/>
 			<OcButtonLink
-				label="Ver proyectos"
+				label={t('seeProjects')}
 				href={link || ''}
 				color={type === 'develop' ? 'primary' : 'white'}
 				className="block dark:hidden"
