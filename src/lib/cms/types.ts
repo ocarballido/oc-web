@@ -34,7 +34,10 @@ export type CMSImage = {
 export type CMSSingleProject = CMSProject;
 
 export type GetProjectByIdResponse = { project: CMSSingleProject | null };
-export type GetProjectByIdVariables = { id: string };
+export type GetProjectByIdVariables = {
+	id: string;
+	locales: ('es' | 'en')[];
+};
 
 export type CMSThinkCardType = 'develop' | 'design';
 

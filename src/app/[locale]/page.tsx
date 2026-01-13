@@ -9,10 +9,20 @@ import { mapWelcomes } from '@/lib/cms/mappers/welcome';
 import hygraph from '@/lib/cms/client';
 import { GetWelcomesResponse } from '@/lib/cms/types';
 
+import { DEFAULT_LOCALE } from '@/config/config-constants';
+
 export const revalidate = 300;
 
-export default async function Home() {
-	const data = await hygraph.request<GetWelcomesResponse>(GET_WELCOME);
+type Props = {
+	params: Promise<{ locale: 'es' | 'en' }>;
+};
+
+export default async function Home({ params }: Props) {
+	const { locale } = await params;
+
+	const data = await hygraph.request<GetWelcomesResponse>(GET_WELCOME, {
+		locales: [locale, DEFAULT_LOCALE], // si tu enum en Hygraph es ES/EN
+	});
 	const welcomes = mapWelcomes(data?.welcomes);
 
 	if (!welcomes.length) notFound();

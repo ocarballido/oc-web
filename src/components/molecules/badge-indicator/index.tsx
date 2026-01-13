@@ -1,5 +1,7 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
+
 import Image from 'next/image';
 
 import { useMemo } from 'react';
@@ -27,6 +29,8 @@ const OcBadgeIndicator = ({
 	design,
 	className = '',
 }: BadgeProps) => {
+	const t = useTranslations('Indicator');
+
 	const badgeStyles = clsx(
 		{
 			'text-primary-400': color === 'primary',
@@ -52,15 +56,15 @@ const OcBadgeIndicator = ({
 	const badgeLabel = useMemo(() => {
 		switch (true) {
 			case code && !design:
-				return 'DESARROLLO';
+				return t('development');
 			case !code && design:
-				return 'DISEÑO';
+				return t('design');
 			case !code && !design:
 				return '';
 			default:
-				return 'DESARROLLO Y DISEÑO';
+				return t('developmentAnddesign');
 		}
-	}, [code, design]);
+	}, [code, design, t]);
 
 	return (
 		<div className={`flex gap-1 items-center ${className}`}>

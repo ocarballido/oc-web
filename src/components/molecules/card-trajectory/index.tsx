@@ -1,3 +1,5 @@
+import { useTranslations } from 'next-intl';
+
 import clsx from 'clsx';
 
 import { CMSTrajectory } from '@/lib/cms/types';
@@ -25,6 +27,8 @@ const OcCardTrajectory = ({
 	responsabilities,
 	tools,
 }: OcCardTrajectoryProps) => {
+	const t = useTranslations('TrajectoryCard');
+
 	const componentStyles = clsx({
 		'md:flex-row-reverse': rowReverse,
 		'my-0 md:-my-[80px]': !isFirst && !isLast,
@@ -66,18 +70,18 @@ const OcCardTrajectory = ({
 						end={end.toString()}
 					/>
 					<div>
-						<h3 className="text-sm font-bold">Empresa:</h3>
+						<h3 className="text-sm font-bold">{t('company')}</h3>
 						<p className="text-sm opacity-70">
 							{company} {location}
 						</p>
 					</div>
 					<div>
-						<h3 className="text-sm font-bold">Role:</h3>
+						<h3 className="text-sm font-bold">{t('role')}</h3>
 						<p className="text-sm opacity-70">{role}</p>
 					</div>
 					<div>
 						<h3 className="text-sm font-bold">
-							Responsabilidades:
+							{t('responsabilities')}
 						</h3>
 						<ul className="list-disc pl-4">
 							{responsabilities.map((item, index) => (
