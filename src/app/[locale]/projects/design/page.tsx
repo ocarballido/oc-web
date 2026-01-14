@@ -1,5 +1,7 @@
-import type { Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
+import { hasLocale } from 'next-intl';
 import { notFound } from 'next/navigation';
+import { routing } from '@/i18n/routing';
 
 import OcProjects from '@/components/organisms/projects';
 
@@ -12,9 +14,13 @@ import hygraph from '@/lib/cms/client';
 
 import { DEFAULT_LOCALE } from '@/config/config-constants';
 
-export const metadata: Metadata = {
-	title: 'Proyectos | Diseño',
-};
+export async function generateMetadata() {
+	const t = await getTranslations('MetadataDesign');
+
+	return {
+		title: t('title'),
+	};
+}
 
 export const revalidate = 300;
 
@@ -38,6 +44,10 @@ export default async function ProjectsDesign({ params }: PageProps) {
 
 	const cmsProjects = data.projects ?? [];
 	const projects: ProjectCard[] = cmsProjects.map(toProjectCard);
+
+	if (!hasLocale(routing.locales, locale)) {
+		notFound();
+	}
 
 	if (!projects.length) notFound();
 

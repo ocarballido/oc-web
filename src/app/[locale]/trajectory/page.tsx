@@ -1,5 +1,7 @@
-import type { Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
+import { hasLocale } from 'next-intl';
 import { notFound } from 'next/navigation';
+import { routing } from '@/i18n/routing';
 
 import OcCardTrajectory from '@/components/molecules/card-trajectory';
 
@@ -9,13 +11,17 @@ import { GET_TRAJECTORIES } from '@/lib/cms/queries';
 import { DEFAULT_LOCALE } from '@/config/config-constants';
 import hygraph from '@/lib/cms/client';
 
-export const metadata: Metadata = {
-	title: 'Oscarballido | Trayectoria',
-};
-
 type Props = {
 	params: Promise<{ locale: 'es' | 'en' }>;
 };
+
+export async function generateMetadata() {
+	const t = await getTranslations('MetadataTrajectory');
+
+	return {
+		title: t('title'),
+	};
+}
 
 export const revalidate = 300;
 
@@ -32,6 +38,10 @@ export default async function Trajectory({ params }: Props) {
 	const cmsTrajectories = data.trajectories ?? [];
 
 	if (!cmsTrajectories.length) notFound();
+
+	if (!hasLocale(routing.locales, locale)) {
+		notFound();
+	}
 
 	return (
 		<main className="flex flex-col flex-1 px-3">
