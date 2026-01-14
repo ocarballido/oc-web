@@ -1,6 +1,7 @@
+import { getTranslations } from 'next-intl/server';
+import { hasLocale } from 'next-intl';
 import { notFound } from 'next/navigation';
-
-import { Metadata } from 'next';
+import { routing } from '@/i18n/routing';
 
 import OcSkillCard from '@/components/molecules/skill-card';
 
@@ -10,9 +11,13 @@ import { GetSkillsResponse } from '@/lib/cms/types';
 
 import { DEFAULT_LOCALE } from '@/config/config-constants';
 
-export const metadata: Metadata = {
-	title: 'Oscarballido | Habilidades',
-};
+export async function generateMetadata() {
+	const t = await getTranslations('MetadataSkills');
+
+	return {
+		title: t('title'),
+	};
+}
 
 type Props = {
 	params: Promise<{ locale: 'es' | 'en' }>;
@@ -28,6 +33,10 @@ export default async function Skills({ params }: Props) {
 	});
 
 	const skills = data.skills[0].skill;
+
+	if (!hasLocale(routing.locales, locale)) {
+		notFound();
+	}
 
 	if (!skills || skills.length === 0) notFound();
 

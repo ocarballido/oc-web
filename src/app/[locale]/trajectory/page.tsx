@@ -37,11 +37,11 @@ export default async function Trajectory({ params }: Props) {
 
 	const cmsTrajectories = data.trajectories ?? [];
 
-	if (!cmsTrajectories.length) notFound();
-
 	if (!hasLocale(routing.locales, locale)) {
 		notFound();
 	}
+
+	if (!cmsTrajectories.length) notFound();
 
 	return (
 		<main className="flex flex-col flex-1 px-3">
