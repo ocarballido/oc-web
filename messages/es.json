@@ -37,5 +37,19 @@
 	"projectFilter": {
 		"develop": "Desarrollo",
 		"design": "Diseño"
+	},
+	"MetadataCommon": {
+		"title": "Oscar Carballido | UI Developer",
+		"keywords": "ui developer, frontend developer, diseñador ui, desarrollo frontend, diseño de interfaces, desarrollo de interfaces, ui design, ux design, ui development, diseño y desarrollo web, design systems, figma, react, next.js, tailwind, html css javascript",
+		"description": "UI Developer especializado en diseño de interfaces y desarrollo frontend. Creatividad y lógica unidas para crear experiencias digitales funcionales, accesibles y visualmente coherentes."
+	},
+	"MetadataTrajectory": {
+		"title": "Oscar Carballido | Trayectoria"
+	},
+	"MetadataDevelop": {
+		"title": "Proyectos | Desarrollo"
+	},
+	"MetadataDesign": {
+		"title": "Proyectos | Diseño"
 	}
 }
