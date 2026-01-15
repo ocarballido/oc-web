@@ -7,6 +7,7 @@
 		"trajectory": "Trajectory",
 		"projects": "Projects",
 		"skills": "Skills",
+		"about": "About me",
 		"cv": "CV"
 	},
 	"Indicator": {
@@ -54,5 +55,28 @@
 	},
 	"MetadataSkills": {
 		"title": "Oscar Carballido | Skills"
+	},
+	"MetadataAbout": {
+		"title": "Oscar Carballido | About me"
+	},
+	"About": {
+		"title": "Designer by training and Developer by choice.",
+		"subtitle": "I'm a hybrid professional specializing in interface design and frontend development. I enjoy transforming visual ideas into real, functional, and accessible digital experiences. I combine aesthetic creativity with programming logic to approach each project holistically, from initial concept to code implementation.",
+		"description": "Throughout my career, I've worked on branding projects, mobile, web, and desktop applications, always with a special focus on creating and maintaining design systems. I firmly believe in the importance of visual and technical consistency as the foundation for building robust, scalable, and intuitive digital products."
+	},
+	"MyWork": {
+		"title": "How I work",
+		"description": "I design and build frontend interfaces based on design systems, creating reusable components and consistent, accessible, well-structured experiences."
+	},
+	"MyValues": {
+		"title": "What you can expect from working with me",
+		"description": "A hybrid profile that bridges design and development, focused on visual consistency, interface quality, and clean, scalable frontend code."
+	},
+	"MyFit": {
+		"title": "Where I fit best",
+		"description": "Digital products where design matters: web applications and SaaS products that require solid design systems and carefully implemented frontend interfaces."
+	},
+	"MoreAboutMe": {
+		"buttonLabel": "More about me"
 	}
 }
