@@ -10,6 +10,7 @@ type ButtonLinkProps = {
 	target?: '_blank' | '_self' | '_parent' | '_top';
 	disabled?: boolean;
 	icon?: ReactNode;
+	iconRight?: ReactNode;
 	label: string;
 	href: string;
 };
@@ -19,12 +20,14 @@ const OcButtonLink = ({
 	className = '',
 	color = 'primary',
 	icon,
+	iconRight,
 	label,
 	target,
 	href,
 }: ButtonLinkProps) => {
 	const buttonStyles = clsx(
 		{ 'pl-4': icon },
+		{ 'pr-4': iconRight },
 		{
 			'bg-primary-400 hover:bg-primary-500 focus:bg-primary-500 text-white':
 				color === 'primary' && !active,
@@ -57,6 +60,8 @@ const OcButtonLink = ({
 			{icon || null}
 
 			{label}
+
+			{iconRight || null}
 		</Link>
 	);
 };

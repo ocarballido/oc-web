@@ -32,10 +32,15 @@ const OcMainMenu = ({ className = '', path = '/' }: MainMamuProps) => {
 				className="not-hover:bg-transparent "
 			/>
 			<OcLinkMenu
+				label={t('about')}
+				href="/about-me"
+				active={path.includes('about-me')}
+			/>
+			{/* <OcLinkMenu
 				label={t('skills')}
 				href="/skills"
 				active={path.includes('skills')}
-			/>
+			/> */}
 			<a
 				className={`font-medium text-base rounded-full transition-colors flex items-center justify-center gap-1 py-2 px-4 hover:cursor-pointer bg-transparent hover:bg-primary-10 focus:bg-primary-10 text-primary-400 dark:hover:bg-[#293B54] dark:focus:bg-[#293B54] dark:text-[#95add9]`}
 				href={cvHref}

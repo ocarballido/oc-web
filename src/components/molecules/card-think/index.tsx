@@ -13,7 +13,9 @@ const OcCardThink = ({ type, title, description, tools, link }: ThinkCard) => {
 	const t = useTranslations('HomeThinkCard');
 
 	const cardStyles = clsx({
-		'bg-primary-400': type === 'design',
+		'bg-primary-400/80 backdrop-blur-md': type === 'design',
+		'bg-white/80 dark:bg-(--background-light)/80 backdrop-blur-md':
+			type === 'develop',
 	});
 
 	const titleStyles = clsx(

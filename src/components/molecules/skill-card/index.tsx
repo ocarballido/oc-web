@@ -7,7 +7,9 @@ import OcIconVerified from '@/components/atoms/icon/verified';
 
 const OcSkillCard = ({ type, categories }: CMSSkillCard) => {
 	const cardStyles = clsx({
-		'bg-primary-400': type === 'design',
+		'bg-primary-400/80 backdrop-blur-md': type === 'design',
+		'bg-white/80 backdrop-blur-md dark:bg-(--background-light)/80':
+			type === 'develop',
 	});
 
 	const contentStyles = clsx(
