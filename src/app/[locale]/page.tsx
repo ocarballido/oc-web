@@ -32,7 +32,7 @@ export default async function Home({ params }: Props) {
 	const welcomeContent = welcomes[0];
 
 	return (
-		<main className="flex flex-col h-full flex-1 overflow-hidden gap-1 justify-center w-full max-w-[1440px] mx-auto">
+		<main className="flex flex-col h-full flex-1 overflow-hidden gap-1 justify-center w-full max-w-[1440px] mx-auto py-4">
 			<div className="py-1 pr-1 pl-4 rounded-full bg-white dark:bg-[#293b54] w-fit mx-auto flex items-center gap-6">
 				<p className="text-primary-400 font-semibold text-sm tracking-wider uppercase">
 					UI Developer
@@ -44,7 +44,7 @@ export default async function Home({ params }: Props) {
 					iconRight={<OcIconArrowRightAlt />}
 				/>
 			</div>
-			<div className="flex justify-center rounded-2xl overflow-visible relative px-6 pb-4 before:bg-no-repeat before:bg-center before:bg-cover before:xl:bg-size-[100%] before:content-[''] before:w-[100%] before:bg-transparent before:absolute before:top-[50%] before:translate-y-[-50%] before:left-0 before:-z-10 before:bg-[url('/static/splash-light-colored-vertical.webp')] dark:before:bg-[url('/static/splash-dark-colored-vertical.webp')] before:md:bg-[url('/static/splash-light-colored-horizontal.webp')] dark:before:md:bg-[url('/static/splash-dark-colored-horizontal.webp')] before:aspect-auto before:md:h-auto before:md:aspect-square before:h-full">
+			<div className="flex justify-center rounded-2xl overflow-visible relative px-6 before:bg-no-repeat before:bg-center before:bg-cover before:xl:bg-size-[100%] before:content-[''] before:w-[100%] before:bg-transparent before:absolute before:top-[50%] before:translate-y-[-50%] before:left-0 before:-z-10 before:bg-[url('/static/splash-light-colored-vertical.webp')] dark:before:bg-[url('/static/splash-dark-colored-vertical.webp')] before:md:bg-[url('/static/splash-light-colored-horizontal.webp')] dark:before:md:bg-[url('/static/splash-dark-colored-horizontal.webp')] before:aspect-auto before:md:h-auto before:md:aspect-square before:h-full">
 				<div className="shadow-2xl rounded-2xl grid auto-rows-fr md:flex md:flex-row overflow-hidden max-w-[500px] md:max-w-[700px] w-full">
 					{welcomeContent.thinkCards.map((card) => (
 						<OcCardThink
