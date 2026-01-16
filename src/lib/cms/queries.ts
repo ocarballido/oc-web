@@ -76,10 +76,59 @@ export const GET_PROJECT_BY_ID = `
 			}
 			technologies {
 				... on Badge {
-				id
+					id
 					badgeTitle
 				}
 			}
+			problem {
+				... on TitleSubtitleDescription {
+					id
+					title
+					subtitle
+					description
+				}
+			}
+			users {
+				... on TitleSubtitleDescription {
+					id
+					title
+					subtitle
+					description
+				}
+			}
+			solution {
+				... on TitleSubtitleDescription {
+					id
+					title
+					subtitle
+					description
+				}
+			}
+			principles {
+				... on TitleSubtitleDescription {
+					id
+					title
+					subtitle
+					description
+				}
+			}
+			uxDecisions {
+				... on TitleSubtitleDescription {
+					id
+					title
+					subtitle
+					description
+				}
+			}
+			outcome {
+				... on TitleSubtitleDescription {
+					id
+					title
+					subtitle
+					description
+				}
+			}
+			needsTable
 			link
 			thumbnail {
 				url

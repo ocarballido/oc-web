@@ -1,3 +1,4 @@
+import { CMSTitleSubtitleDescription } from '@/lib/cms/types';
 export const PROJECT_TYPES = ['both', 'develop', 'design'] as const;
 
 export type ProjectType = (typeof PROJECT_TYPES)[number];
@@ -67,8 +68,22 @@ export type ProjectDetail = {
 	date: string;
 	images: string[];
 	technologies: { id: string; badgeTitle: string }[];
+	problem?: CMSTitleSubtitleDescription | null;
+	users?: CMSTitleSubtitleDescription | null;
+	solution?: CMSTitleSubtitleDescription | null;
+	principles?: CMSTitleSubtitleDescription | null;
+	uxDecisions?: CMSTitleSubtitleDescription | null;
+	outcome?: CMSTitleSubtitleDescription | null;
+	needsTable?: NeedsTableRow[] | null;
 	link?: string | null;
 	thumbnail?: string | null;
+};
+
+type NeedsTableRow = {
+	id?: string;
+	user?: string;
+	need?: string;
+	solution?: string;
 };
 
 // Welcome types

@@ -1,6 +1,18 @@
 // src/lib/cms/mappers/project.ts
-import type { CMSProject, CMSBadge, CMSImage } from '@/lib/cms/types';
+import type {
+	CMSProject,
+	CMSBadge,
+	CMSImage,
+	CMSTitleSubtitleDescription,
+} from '@/lib/cms/types';
 import type { ProjectDetail } from '@/types/types';
+
+export type ProjectTextBlock = {
+	id?: string;
+	title: string;
+	subtitle: string;
+	description: string;
+};
 
 const isObject = (v: unknown): v is Record<string, unknown> =>
 	typeof v === 'object' && v !== null;
@@ -16,6 +28,18 @@ const isBadge = (x: unknown): x is CMSBadge =>
 	isObject(x) &&
 	typeof (x as CMSBadge).id === 'string' &&
 	!!(x as CMSBadge).id;
+
+const mapTextBlock = (
+	block?: CMSTitleSubtitleDescription | null
+): ProjectTextBlock | undefined =>
+	block
+		? {
+				id: block.id,
+				title: block.title ?? '',
+				subtitle: block.subtitle ?? '',
+				description: block.description ?? '',
+		  }
+		: undefined;
 
 export function mapProject(cms: CMSProject): ProjectDetail {
 	const rawImages = Array.isArray(cms.images) ? cms.images : [];
@@ -45,6 +69,13 @@ export function mapProject(cms: CMSProject): ProjectDetail {
 		date: new Date(cms.date).getFullYear().toString(),
 		images,
 		technologies,
+		problem: mapTextBlock(cms.problem),
+		users: mapTextBlock(cms.users),
+		solution: mapTextBlock(cms.solution),
+		principles: mapTextBlock(cms.principles),
+		uxDecisions: mapTextBlock(cms.uxDecisions),
+		outcome: mapTextBlock(cms.outcome),
+		needsTable: cms.needsTable ?? null,
 		link: cms.link ?? null,
 		thumbnail,
 	};

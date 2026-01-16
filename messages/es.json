@@ -78,5 +78,11 @@
 	},
 	"MoreAboutMe": {
 		"buttonLabel": "Más sobre mi"
+	},
+	"ResearchModal": {
+		"moreDetails": "Saber más",
+		"user": "Usuario",
+		"keyNeeds": "Necesidad clave",
+		"productResponse": "Respuesta del producto"
 	}
 }
