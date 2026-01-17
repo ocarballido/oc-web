@@ -66,7 +66,7 @@ export type ProjectDetail = {
 	code: boolean;
 	design: boolean;
 	date: string;
-	images: string[];
+	images: { url: string; id: string }[];
 	technologies: { id: string; badgeTitle: string }[];
 	problem?: CMSTitleSubtitleDescription | null;
 	users?: CMSTitleSubtitleDescription | null;

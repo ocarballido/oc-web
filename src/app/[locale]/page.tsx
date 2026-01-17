@@ -32,9 +32,9 @@ export default async function Home({ params }: Props) {
 	const welcomeContent = welcomes[0];
 
 	return (
-		<main className="flex flex-col h-full flex-1 overflow-hidden gap-1 justify-center w-full max-w-[1440px] mx-auto py-4">
-			<div className="py-1 pr-1 pl-4 rounded-full bg-white dark:bg-[#293b54] w-fit mx-auto flex items-center gap-6">
-				<p className="text-primary-400 font-semibold text-sm tracking-wider uppercase">
+		<main className="flex flex-col h-full flex-1 overflow-hidden gap-6 justify-center w-full max-w-[1440px] mx-auto py-4">
+			<div className="py-1 pr-1 pl-4 rounded-full bg-white dark:bg-[#293b54] w-fit mx-6 flex items-center gap-3 self-center">
+				<p className="text-primary-400 font-semibold text-xs tracking-wider uppercase">
 					UI Developer
 				</p>
 				<OcButtonLink

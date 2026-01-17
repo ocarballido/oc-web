@@ -73,6 +73,7 @@ export const GET_PROJECT_BY_ID = `
 			design
 			images {
 				url
+				id
 			}
 			technologies {
 				... on Badge {
