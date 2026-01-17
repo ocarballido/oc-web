@@ -78,5 +78,12 @@
 	},
 	"MoreAboutMe": {
 		"buttonLabel": "More about me"
+	},
+	"ResearchModal": {
+		"title": "Research summary",
+		"moreDetails": "Know more",
+		"user": "User",
+		"keyNeeds": "Key need",
+		"productResponse": "Product response"
 	}
 }

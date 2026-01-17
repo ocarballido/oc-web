@@ -10,11 +10,32 @@ export type CMSProject = {
 	design: boolean | null;
 	images: Array<CMSImage | null> | null;
 	technologies: Array<CMSBadge | null> | null;
+	problem?: CMSTitleSubtitleDescription | null;
+	users?: CMSTitleSubtitleDescription | null;
+	solution?: CMSTitleSubtitleDescription | null;
+	principles?: CMSTitleSubtitleDescription | null;
+	uxDecisions?: CMSTitleSubtitleDescription | null;
+	outcome?: CMSTitleSubtitleDescription | null;
+	needsTable?: NeedsTableRow[] | null;
 	link?: string | null;
 	thumbnail?: { url?: string | null } | null;
 };
 
 export type CMSBadge = { id?: string; badgeTitle: string };
+
+export type CMSTitleSubtitleDescription = {
+	id?: string;
+	title?: string;
+	subtitle?: string;
+	description?: string;
+};
+
+type NeedsTableRow = {
+	id?: string;
+	user?: string;
+	need?: string;
+	solution?: string;
+};
 
 export type CMSTrajectory = {
 	id?: string;
