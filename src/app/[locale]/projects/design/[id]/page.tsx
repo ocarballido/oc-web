@@ -74,6 +74,13 @@ export default async function SingleProject({ params }: PageProps) {
 			<OcProjectContent
 				title={project.title ?? 'Proyecto'}
 				images={project.images}
+				problem={project.problem}
+				users={project.users}
+				solution={project.solution}
+				principles={project.principles}
+				uxDecisions={project.uxDecisions}
+				outcome={project.outcome}
+				needsTable={project.needsTable}
 			/>
 		</OcProjectSingle>
 	);
