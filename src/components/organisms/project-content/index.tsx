@@ -59,7 +59,7 @@ const OcProjectContent = ({
 							needsTable) && (
 							<ModalContent
 								buttonText={t('moreDetails')}
-								title="Research"
+								title={t('title')}
 							>
 								<div className="grid grid-cols-1 gap-6">
 									{users && (

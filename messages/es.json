@@ -80,6 +80,7 @@
 		"buttonLabel": "Más sobre mi"
 	},
 	"ResearchModal": {
+		"title": "Resumen investigación",
 		"moreDetails": "Saber más",
 		"user": "Usuario",
 		"keyNeeds": "Necesidad clave",
