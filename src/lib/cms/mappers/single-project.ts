@@ -9,9 +9,30 @@ import type { ProjectDetail } from '@/types/types';
 
 export type ProjectTextBlock = {
 	id?: string;
-	title: string;
-	subtitle: string;
-	description: string;
+	title?: string;
+	subtitle?: string;
+	description?: string;
+	list?: string[];
+};
+
+const mapMultilineList = (value: unknown): string[] | undefined => {
+	// Si ya es array de strings (por ejemplo si ya venía transformado)
+	if (Array.isArray(value)) {
+		const arr = value.filter((v): v is string => typeof v === 'string');
+		const cleaned = arr.map((v) => v.trim()).filter(Boolean);
+		return cleaned.length ? cleaned : undefined;
+	}
+
+	// Si es string (Hygraph multiline típico)
+	if (typeof value === 'string') {
+		const cleaned = value
+			.split(/\n\s*\n/)
+			.map((v) => v.trim())
+			.filter(Boolean);
+		return cleaned.length ? cleaned : undefined;
+	}
+
+	return undefined;
 };
 
 const isObject = (v: unknown): v is Record<string, unknown> =>
@@ -38,6 +59,7 @@ const mapTextBlock = (
 				title: block.title ?? '',
 				subtitle: block.subtitle ?? '',
 				description: block.description ?? '',
+				list: mapMultilineList(block.list),
 			}
 		: undefined;
 

@@ -47,6 +47,7 @@ const OcResearch = ({
 							<OcTitleSubtitle
 								title={users.title}
 								description={users.description}
+								list={users.list}
 							/>
 						)}
 						{needsTable && (
@@ -85,24 +86,28 @@ const OcResearch = ({
 							<OcTitleSubtitle
 								title={solution.title}
 								description={solution.description}
+								list={solution.list}
 							/>
 						)}
 						{principles && (
 							<OcTitleSubtitle
 								title={principles.title}
 								description={principles.description}
+								list={principles.list}
 							/>
 						)}
 						{uxDecisions && (
 							<OcTitleSubtitle
 								title={uxDecisions.title}
 								description={uxDecisions.description}
+								list={uxDecisions.list}
 							/>
 						)}
 						{outcome && (
 							<OcTitleSubtitle
 								title={outcome.title}
 								description={outcome.description}
+								list={outcome.list}
 							/>
 						)}
 					</div>

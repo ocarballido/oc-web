@@ -28,6 +28,7 @@ export type CMSTitleSubtitleDescription = {
 	title?: string;
 	subtitle?: string;
 	description?: string;
+	list?: string[];
 };
 
 type NeedsTableRow = {
