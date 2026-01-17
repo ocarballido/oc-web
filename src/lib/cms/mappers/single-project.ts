@@ -30,7 +30,7 @@ const isBadge = (x: unknown): x is CMSBadge =>
 	!!(x as CMSBadge).id;
 
 const mapTextBlock = (
-	block?: CMSTitleSubtitleDescription | null
+	block?: CMSTitleSubtitleDescription | null,
 ): ProjectTextBlock | undefined =>
 	block
 		? {
@@ -38,12 +38,14 @@ const mapTextBlock = (
 				title: block.title ?? '',
 				subtitle: block.subtitle ?? '',
 				description: block.description ?? '',
-		  }
+			}
 		: undefined;
 
 export function mapProject(cms: CMSProject): ProjectDetail {
 	const rawImages = Array.isArray(cms.images) ? cms.images : [];
-	const images = rawImages.filter(isImage).map((img) => img.url!);
+	const images = rawImages
+		.filter(isImage)
+		.map((img) => ({ url: img.url!, id: img.id! }));
 
 	const rawTechs = Array.isArray(cms.technologies) ? cms.technologies : [];
 	const technologies = rawTechs

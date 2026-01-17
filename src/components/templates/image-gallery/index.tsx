@@ -1,6 +1,7 @@
 import Image from 'next/image';
 
 import { ProjectDetail } from '@/types/types';
+import { OcInView } from '@/components/atoms/in-view';
 
 type ContentProps = Pick<ProjectDetail, 'title' | 'images'>;
 
@@ -21,26 +22,33 @@ const OcImageGallery = ({ images, title }: ContentProps) => {
 					const isLast = index === images?.length - 1;
 
 					return (
-						<div
-							className={`aspect-square overflow-hidden rounded-2xl bg-(--background-light) relative ${
+						<OcInView
+							key={image.id}
+							delay={(index % 4) * 90}
+							durationMs={650}
+							once={false}
+							className={`${
 								isFirst ||
 								index % 3 === 0 ||
 								(isLast && (index - 1) % 3 === 0)
 									? 'md:col-span-2'
 									: ''
 							}`}
-							key={index}
 						>
-							<Image
-								src={image}
-								fill
-								alt={title || 'Proyecto'}
-								className="w-full object-cover"
-								placeholder="blur"
-								blurDataURL={grayDataUrl}
-								sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
-							/>
-						</div>
+							<div
+								className={`aspect-square overflow-hidden bg-(--background-light) rounded-2xl relative`}
+							>
+								<Image
+									src={image.url}
+									fill
+									alt={title || 'Proyecto'}
+									className="w-full object-cover"
+									placeholder="blur"
+									blurDataURL={grayDataUrl}
+									sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+								/>
+							</div>
+						</OcInView>
 					);
 				})}
 		</div>

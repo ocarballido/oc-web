@@ -50,6 +50,7 @@ export type CMSTrajectory = {
 
 export type CMSImage = {
 	url: string | null;
+	id: string | null;
 };
 
 export type CMSSingleProject = CMSProject;
