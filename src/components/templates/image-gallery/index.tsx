@@ -23,7 +23,9 @@ const OcImageGallery = ({ images, title }: ContentProps) => {
 					return (
 						<div
 							className={`aspect-square overflow-hidden rounded-2xl bg-(--background-light) relative ${
-								isFirst || isLast || index % 3 === 0
+								isFirst ||
+								index % 3 === 0 ||
+								(isLast && (index - 1) % 3 === 0)
 									? 'md:col-span-2'
 									: ''
 							}`}
