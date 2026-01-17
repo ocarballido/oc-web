@@ -87,6 +87,7 @@ export const GET_PROJECT_BY_ID = `
 					title
 					subtitle
 					description
+					list
 				}
 			}
 			users {
@@ -95,6 +96,7 @@ export const GET_PROJECT_BY_ID = `
 					title
 					subtitle
 					description
+					list
 				}
 			}
 			solution {
@@ -103,6 +105,7 @@ export const GET_PROJECT_BY_ID = `
 					title
 					subtitle
 					description
+					list
 				}
 			}
 			principles {
@@ -111,6 +114,7 @@ export const GET_PROJECT_BY_ID = `
 					title
 					subtitle
 					description
+					list
 				}
 			}
 			uxDecisions {
@@ -119,6 +123,7 @@ export const GET_PROJECT_BY_ID = `
 					title
 					subtitle
 					description
+					list
 				}
 			}
 			outcome {
@@ -127,6 +132,7 @@ export const GET_PROJECT_BY_ID = `
 					title
 					subtitle
 					description
+					list
 				}
 			}
 			needsTable

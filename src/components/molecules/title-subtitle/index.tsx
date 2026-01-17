@@ -2,10 +2,12 @@ const OcTitleSubtitle = ({
 	title,
 	subtitle,
 	description,
+	list,
 }: {
 	title?: string;
 	subtitle?: string;
 	description?: string;
+	list?: string[];
 }) => {
 	return (
 		<div className="dark:text-[#a0b8e3]">
@@ -17,6 +19,15 @@ const OcTitleSubtitle = ({
 			)}
 			{description && (
 				<p className="opacity-70 font-normal">{description}</p>
+			)}
+			{list && (
+				<ul className="list-disc pl-5">
+					{list.map((item) => (
+						<li key={item} className="opacity-70 font-normal">
+							{item}
+						</li>
+					))}
+				</ul>
 			)}
 		</div>
 	);
