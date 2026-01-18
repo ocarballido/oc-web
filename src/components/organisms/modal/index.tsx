@@ -39,51 +39,51 @@ export function ModalContent({
 			</Dialog.Trigger>
 
 			<Dialog.Portal>
-				<Dialog.Overlay className="fixed inset-0 bg-black/80 z-60 data-[state=open]:animate-[modal-overlay-show_200ms] data-[state=closed]:animate-[modal-overlay-hide_200ms" />
+				<Dialog.Overlay className="fixed inset-0 bg-black/80 z-60 data-[state=open]:animate-[modal-overlay-show_200ms] data-[state=closed]:animate-[modal-overlay-hide_200ms grid items-center justify-center overflow-y-auto">
+					<Dialog.Content
+						className={
+							contentClassName ??
+							'w-full max-w-5xl p-6 z-61 data-[state=open]:animate-[modal-show_200ms] data-[state=closed]:animate-[modal-hide_200ms]'
+						}
+						aria-label={description ? undefined : title}
+						aria-describedby={
+							description ? descriptionId : undefined
+						}
+					>
+						<OcCard className="shadow-xl">
+							<div className="flex items-start justify-between gap-4">
+								<div>
+									<Dialog.Title className="text-3xl text-primary-400">
+										{title}
+									</Dialog.Title>
 
-				<Dialog.Content
-					className={
-						contentClassName ??
-						'fixed left-1/2 top-1/2 w-full max-w-5xl -translate-x-1/2 -translate-y-1/2 p-6 z-61 ' +
-							'max-h-[100dvh] overflow-hidden ' +
-							'data-[state=open]:animate-[modal-show_200ms] data-[state=closed]:animate-[modal-hide_200ms]'
-					}
-					aria-label={description ? undefined : title}
-					aria-describedby={description ? descriptionId : undefined}
-				>
-					<OcCard className="shadow-xl max-h-[90dvh] flex flex-col overflow-hidden">
-						<div className="flex items-start justify-between gap-4">
-							<div>
-								<Dialog.Title className="text-3xl text-primary-400">
-									{title}
-								</Dialog.Title>
+									{description ? (
+										<Dialog.Description className="mt-1 text-sm text-gray-600">
+											{description}
+										</Dialog.Description>
+									) : null}
+								</div>
 
-								{description ? (
-									<Dialog.Description className="mt-1 text-sm text-gray-600">
-										{description}
-									</Dialog.Description>
-								) : null}
+								<Dialog.Close asChild>
+									<OcButtonIcon
+										color="white"
+										icon={<OcIconClose />}
+									/>
+								</Dialog.Close>
 							</div>
 
-							<Dialog.Close asChild>
-								<OcButtonIcon
-									color="white"
-									icon={<OcIconClose />}
-								/>
-							</Dialog.Close>
-						</div>
-
-						<div className="mt-4 flex-1 min-h-0 overflow-y-auto">
-							{children}
-						</div>
-
-						{footer ? (
-							<div className="mt-6 flex justify-end gap-2">
-								{footer}
+							<div className="mt-4 flex-1 min-h-0">
+								{children}
 							</div>
-						) : null}
-					</OcCard>
-				</Dialog.Content>
+
+							{footer ? (
+								<div className="mt-6 flex justify-end gap-2">
+									{footer}
+								</div>
+							) : null}
+						</OcCard>
+					</Dialog.Content>
+				</Dialog.Overlay>
 			</Dialog.Portal>
 		</Dialog.Root>
 	);
