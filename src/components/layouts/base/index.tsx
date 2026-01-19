@@ -1,3 +1,5 @@
+import { GoogleAnalytics } from '@next/third-parties/google';
+
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
@@ -22,6 +24,8 @@ export default async function BaseLayout({
 }) {
 	const { locale } = await params;
 
+	const gaID = process.env.NEXT_PUBLIC_GOOGLE_TAG;
+
 	const messages = await getMessages();
 
 	return (
@@ -35,6 +39,7 @@ export default async function BaseLayout({
 					<OcFooter />
 				</OcThemeProvider>
 			</NextIntlClientProvider>
+			{gaID && <GoogleAnalytics gaId={gaID} />}
 		</body>
 	);
 }
