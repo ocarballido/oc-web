@@ -29,7 +29,7 @@ const OcResearch = ({
 	const t = useTranslations('ResearchModal');
 
 	return (
-		<OcCard className="grid grid-cols-1 gap-3 mb-1">
+		<OcCard className="grid grid-cols-1 gap-3 mb-3">
 			<OcTitleSubtitle
 				title={problem?.title}
 				description={problem?.description}

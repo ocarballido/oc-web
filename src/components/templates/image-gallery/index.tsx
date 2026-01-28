@@ -15,27 +15,32 @@ const OcImageGallery = ({ images, title }: ContentProps) => {
 			: Buffer.from(graySvg).toString('base64'));
 
 	return (
-		<div className="grid grid-cols-1 md:grid-cols-2 gap-1">
+		<div className="grid grid-cols-1 gap-3">
 			{images?.length > 0 &&
 				images?.map((image, index) => {
-					const isFirst = index === 0;
-					const isLast = index === images?.length - 1;
-
 					return (
 						<OcInView
 							key={image.id}
 							delay={(index % 4) * 90}
 							durationMs={650}
 							once={false}
-							className={`${
-								isFirst ||
-								index % 3 === 0 ||
-								(isLast && (index - 1) % 3 === 0)
-									? 'md:col-span-2'
-									: ''
-							}`}
 						>
 							<div
+								className={`overflow-hidden bg-(--background-light) rounded-2xl relative`}
+							>
+								<Image
+									src={image.url}
+									// fill
+									width={1000}
+									height={1000}
+									alt={title || 'Proyecto'}
+									className="w-full object-cover"
+									placeholder="blur"
+									blurDataURL={grayDataUrl}
+									sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+								/>
+							</div>
+							{/* <div
 								className={`aspect-square overflow-hidden bg-(--background-light) rounded-2xl relative`}
 							>
 								<Image
@@ -47,7 +52,7 @@ const OcImageGallery = ({ images, title }: ContentProps) => {
 									blurDataURL={grayDataUrl}
 									sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
 								/>
-							</div>
+							</div> */}
 						</OcInView>
 					);
 				})}
