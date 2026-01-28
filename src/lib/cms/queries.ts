@@ -2,6 +2,7 @@ export const GET_PROJECTS_BY_TYPE = `
 	query GetProjects($design: Boolean, $code: Boolean, $locales: [Locale!]!) {
     projects(
       locales: $locales
+	  first: 30
       where: {
         OR: [
           { design: $design }
