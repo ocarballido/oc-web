@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
 import clsx from 'clsx';
 import { ReactNode } from 'react';
@@ -30,7 +29,7 @@ const OcButtonIconLink = ({
 		{
 			'bg-white hover:bg-primary-10 focus:bg-primary-10 text-primary-400 dark:bg-(--background-light) dark:hover:bg-[#293B54] dark:focus:bg-[#293B54]':
 				color === 'white',
-		}
+		},
 	);
 
 	return (

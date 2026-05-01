@@ -207,3 +207,93 @@ export const GET_SKILLS = `
 		}
 	}
 `;
+
+// ─── PORTFOLIO ITEM ───────────────────────────────────────────────────────────
+// Añadir al final de /src/lib/cms/queries.ts
+
+export const GET_PORTFOLIO_ITEMS = `
+	query GetPortfolioItems($locales: [Locale!]!) {
+		portfolioItems(locales: $locales, orderBy: year_DESC) {
+			title
+			slug
+			portfolioType
+			discipline
+			year
+			roleAndScope
+			featured
+			contextSummary
+			liveUrl
+			coverImage {
+				url
+			}
+		}
+	}
+`;
+
+export const GET_PORTFOLIO_ITEM = `
+	query GetPortfolioItem($slug: String!, $locales: [Locale!]!) {
+		portfolioItem(where: { slug: $slug }, locales: $locales) {
+			title
+			slug
+			portfolioType
+			discipline
+			year
+			roleAndScope
+			stackInContext
+			techStack
+			liveUrl
+			featured
+			coverImage {
+				url
+			}
+
+			contextSummary
+			contextBody { raw }
+			contextTags
+			measurableGoal
+
+			processSummary
+			processTags
+			realUser { raw }
+			criticalFlows { raw }
+			explorationAndDiscarded { raw }
+			informationArchitecture { raw }
+			processImages {
+				url
+			}
+
+			designDecisionsSummary
+			designDecisionsTags
+			designDecisions {
+				decisionTitle
+				decisionBody { raw }
+				decisionImage {
+					url
+				}
+			}
+			visualSystem { raw }
+			edgeCases { raw }
+
+			codeTransitionSummary
+			codeTransitionTags
+			componentArchitecture { raw }
+			whatChangedWhenCoding { raw }
+			tokensAndNaming { raw }
+			handoffAndDocs { raw }
+
+			gallery {
+				url
+			}
+			beforeAfterImages {
+				url
+			}
+			videoUrl
+
+			resultSummary
+			whatChanged { raw }
+			whatIdoDifferently { raw }
+			metrics { raw }
+			nextSteps { raw }
+		}
+	}
+`;
