@@ -27,7 +27,7 @@ const OcMainMenu = ({ className = '', path = '/' }: MainMamuProps) => {
 			/>
 			<OcLinkMenu
 				label={t('projects')}
-				href="/projects/develop"
+				href="/projects"
 				active={path.includes('projects')}
 				className="not-hover:bg-transparent "
 			/>

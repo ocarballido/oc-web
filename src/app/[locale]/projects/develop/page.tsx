@@ -1,6 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import { hasLocale } from 'next-intl';
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 
 import OcProjects from '@/components/organisms/projects';
@@ -31,6 +31,7 @@ type PageProps = {
 };
 
 export default async function ProjectsDevelop({ params }: PageProps) {
+	redirect('/projects');
 	const { locale } = await params;
 
 	const data = await hygraph.request<{ projects: CMSProject[] }>(
@@ -39,7 +40,7 @@ export default async function ProjectsDevelop({ params }: PageProps) {
 			design: false,
 			code: true,
 			locales: [locale, DEFAULT_LOCALE], // ✅ obligatorio ahora
-		}
+		},
 	);
 
 	const cmsProjects = data.projects ?? [];
