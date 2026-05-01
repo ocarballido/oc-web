@@ -1,6 +1,8 @@
 import { getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 
+import Image from 'next/image';
+
 import OcCardThink from '@/components/molecules/card-think';
 import OcButtonLink from '@/components/molecules/button-link';
 
@@ -11,6 +13,7 @@ import { GetWelcomesResponse } from '@/lib/cms/types';
 
 import { DEFAULT_LOCALE } from '@/config/config-constants';
 import OcIconArrowRightAlt from '@/components/atoms/icon/arrow-right-alt';
+import Link from 'next/link';
 
 export const revalidate = 300;
 
@@ -58,6 +61,22 @@ export default async function Home({ params }: Props) {
 					))}
 				</div>
 			</div>
+			<Link
+				className="p-1 rounded-full bg-white dark:bg-[#293b54] w-fit mx-6 flex flex-col items-center gap-0 self-center shadow-xs hover:transition-transform duration-300 ease-out hover:scale-105 relative mt-[90px] mb-3"
+				href="https://www.credly.com/badges/214578bc-46be-4e53-afcf-98426be99261/public_url"
+				target="_blank"
+			>
+				<Image
+					alt="Oscarballido logo"
+					width={144}
+					height={144}
+					src="/static/google-ux-certificate.png"
+					className="absolute top-[-108px]"
+				/>
+				<p className="w-full text-sm text-center text-primary-500 dark:text-[#95add9] font-medium py-2 px-4 bg-primary-10 dark:bg-[#293B54] rounded-full">
+					Google UX Design Certificate
+				</p>
+			</Link>
 		</main>
 	);
 }
