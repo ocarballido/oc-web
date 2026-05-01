@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 
 import type {
 	GetProjectByIdResponse,
@@ -40,6 +40,8 @@ type MetaProps = { params: Promise<{ locale: Locale; id: string }> };
 export async function generateMetadata({
 	params,
 }: MetaProps): Promise<Metadata> {
+	redirect('/projects');
+
 	const { locale, id } = await params;
 	if (!id) notFound();
 

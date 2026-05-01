@@ -109,3 +109,110 @@ export type CMSSkill = {
 export interface GetSkillsResponse {
 	skills: Array<CMSSkill>;
 }
+
+// ─── PORTFOLIO ITEM ───────────────────────────────────────────────────────────
+
+export type CMSPortfolioAsset = {
+	url: string;
+};
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type CMSRichText = { raw: any };
+
+export type CMSPortfolioProjectType = 'personal' | 'cliente' | 'empresa';
+
+export type CMSPortfolioDiscipline = 'design' | 'develop' | 'both';
+
+export type CMSPortfolioDesignDecision = {
+	decisionTitle: string;
+	decisionBody: CMSRichText;
+	decisionImage: CMSPortfolioAsset | null;
+};
+
+export type CMSPortfolioItem = {
+	// META — NON_NULL
+	title: string;
+	slug: string;
+	portfolioType: CMSPortfolioProjectType;
+	year: number;
+	roleAndScope: string;
+	coverImage: CMSPortfolioAsset;
+
+	// META — nullable
+	discipline: CMSPortfolioDiscipline;
+	stackInContext: string | null;
+	techStack: string[];
+	liveUrl: string | null;
+	featured: boolean | null;
+
+	// Bloque 01 — nullable
+	contextSummary: string | null;
+	contextBody: CMSRichText | null;
+	contextTags: string[];
+	measurableGoal: string | null;
+
+	// Bloque 02 — nullable
+	processSummary: string | null;
+	processTags: string[];
+	realUser: CMSRichText | null;
+	criticalFlows: CMSRichText | null;
+	explorationAndDiscarded: CMSRichText | null;
+	informationArchitecture: CMSRichText | null;
+	processImages: CMSPortfolioAsset[];
+
+	// Bloque 03 — nullable
+	designDecisionsSummary: string | null;
+	designDecisionsTags: string[];
+	designDecisions: CMSPortfolioDesignDecision[];
+	visualSystem: CMSRichText | null;
+	edgeCases: CMSRichText | null;
+
+	// Bloque 04 — nullable
+	codeTransitionSummary: string | null;
+	codeTransitionTags: string[];
+	componentArchitecture: CMSRichText | null;
+	whatChangedWhenCoding: CMSRichText | null;
+	tokensAndNaming: CMSRichText | null;
+	handoffAndDocs: CMSRichText | null;
+
+	// Bloque 05
+	gallery: CMSPortfolioAsset[];
+	beforeAfterImages: CMSPortfolioAsset | null;
+	videoUrl: string | null;
+
+	// Bloque 06 — nullable
+	resultSummary: string | null;
+	whatChanged: CMSRichText | null;
+	whatIdoDifferently: CMSRichText | null;
+	metrics: CMSRichText | null;
+	nextSteps: CMSRichText | null;
+};
+
+export type GetPortfolioItemsResponse = {
+	portfolioItems: Pick<
+		CMSPortfolioItem,
+		| 'title'
+		| 'slug'
+		| 'portfolioType'
+		| 'discipline'
+		| 'year'
+		| 'roleAndScope'
+		| 'coverImage'
+		| 'contextSummary'
+		| 'featured'
+		| 'liveUrl'
+	>[];
+};
+
+export type GetPortfolioItemResponse = {
+	portfolioItem: CMSPortfolioItem | null;
+};
+
+export type GetPortfolioItemVariables = {
+	slug: string;
+	locales: ('es' | 'en')[];
+};
+
+export type GetPortfolioItemsVariables = {
+	locales: ('es' | 'en')[];
+};

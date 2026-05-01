@@ -33,7 +33,8 @@
 	},
 	"CardCover": {
 		"recent": "Más reciente",
-		"seeProject": "Ver proyecto"
+		"seeProject": "Ver proyecto",
+		"featured": "Destacado"
 	},
 	"projectFilter": {
 		"develop": "Desarrollo",
@@ -61,8 +62,8 @@
 	},
 	"About": {
 		"title": "Diseñador de formación y Desarrollador por elección.",
-		"subtitle": "Soy un profesional con perfil híbrido, especializado en el diseño de interfaces y el desarrollo frontend. Me gusta transformar ideas visuales en experiencias digitales reales, funcionales y accesibles. Combino creatividad estética y lógica de programación para abordar cada proyecto de forma integral, desde el concepto inicial hasta la implementación en código.",
-		"description": "A lo largo de mi trayectoria he trabajado en proyectos de branding, aplicaciones móviles, web y de escritorio, siempre con un enfoque especial en la creación y mantenimiento de sistemas de diseño. Creo firmemente en la importancia de la consistencia visual y técnica como base para construir productos digitales sólidos, escalables e intuitivos."
+		"subtitle": "Mi especialidad es el diseño de interfaces y la experiencia de usuario. A lo largo de mi carrera he trabajado en sistemas de diseño, aplicaciones web y móvil, y proyectos de producto, siempre con foco en la consistencia visual, la usabilidad y el impacto real en el usuario final.",
+		"description": "Con el tiempo incorporé el desarrollo frontend como disciplina complementaria. No como cambio de rol, sino como extensión natural: entender el código me permite diseñar con criterio técnico, validar decisiones en producción y reducir la fricción entre diseño e implementación. El resultado es un perfil que aporta valor en ambos lados de la pantalla, capaz de llevar un proyecto de Figma a producción, de colaborar con equipos de desarrollo desde el primer sprint, y de tomar decisiones de diseño informadas por las restricciones reales del producto."
 	},
 	"MyWork": {
 		"title": "Cómo trabajo",
@@ -85,5 +86,30 @@
 		"user": "Usuario",
 		"keyNeeds": "Necesidad clave",
 		"productResponse": "Respuesta del producto"
+	},
+	"portfolioNav": {
+		"all": "Todos los proyectos",
+		"visit": "Visitar",
+		"next": "Siguiente",
+		"previous": "Anterior"
+	},
+	"portfolioBlocks": {
+		"context": "Contexto y problema",
+		"process": "Proceso",
+		"design": "Decisiones de diseño",
+		"code": "Diseño → código",
+		"gallery": "Galería",
+		"gallery_summary": "Evidencia visual del proceso y resultado.",
+		"result": "Resultado y reflexión"
+	},
+	"portfolioMeta": {
+		"back": "Proyectos",
+		"visit": "Visitar",
+		"role": "Rol y alcance",
+		"stack": "Stack en contexto",
+		"yearType": "Año · Tipo",
+		"tech": "Tecnologías",
+		"next": "Siguiente",
+		"previous": "Anterior"
 	}
 }

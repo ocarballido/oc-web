@@ -54,7 +54,7 @@ export default async function AboutMe({ params }: Props) {
 					{t('About.description')}
 				</p>
 			</OcCard>
-			<div className="flex justify-center rounded-2xl overflow-visible relative px-6 before:bg-no-repeat before:bg-center before:bg-cover before:xl:bg-size-[100%] before:content-[''] before:w-[100%] before:bg-transparent before:absolute before:top-[50%] before:translate-y-[-50%] before:left-0 before:-z-10 before:bg-[url('/static/splash-light-colored-vertical.webp')] dark:before:bg-[url('/static/splash-dark-colored-vertical.webp')] before:md:bg-[url('/static/splash-light-colored-horizontal.webp')] dark:before:md:bg-[url('/static/splash-dark-colored-horizontal.webp')] before:aspect-auto before:md:h-auto before:md:aspect-square before:h-full">
+			<div className="flex justify-center rounded-2xl overflow-visible relative px-6 before:bg-no-repeat before:bg-center before:bg-cover before:xl:bg-size-[100%] before:content-[''] before:w-[100%] before:bg-transparent before:absolute before:top-[50%] before:translate-y-[-50%] before:left-0 before:-z-10 before:bg-[url('/static/splash-light-colored-vertical.webp')] dark:before:bg-[url('/static/splash-dark-colored-vertical.webp')] before:md:bg-[url('/static/splash-light-colored-horizontal.webp')] dark:before:md:bg-[url('/static/splash-dark-colored-horizontal.webp')] before:aspect-auto before:md:h-auto before:md:aspect-square before:h-full before:scale-y-[-1] before:md:scale-y-[1] before:md:scale-x-[-1]">
 				<div className="rounded-2xl grid auto-rows-fr md:flex md:flex-row overflow-hidden max-w-[500px] md:max-w-[700px] w-full">
 					{skills.map((skill, index) => (
 						<OcSkillCard
@@ -65,7 +65,7 @@ export default async function AboutMe({ params }: Props) {
 					))}
 				</div>
 			</div>
-			<div className="grid grid-cols-1 md:grid-cols-3 gap-1 rounded-xl max-w-[500px] md:max-w-[700px] self-center mx-6 sm:mx-auto relative z-10 dark:text-[#a0b8e3] mb-6">
+			{/* <div className="grid grid-cols-1 md:grid-cols-3 gap-1 rounded-xl max-w-[500px] md:max-w-[700px] self-center mx-6 sm:mx-auto relative z-10 dark:text-[#a0b8e3] mb-6">
 				<div className="p-4 rounded-xl text-center bg-white dark:bg-(--background-light)">
 					<h3 className="mb-2 font-medium text-base/6 text-primary-400">
 						{t('MyWork.title')}
@@ -90,7 +90,7 @@ export default async function AboutMe({ params }: Props) {
 						{t('MyFit.description')}
 					</p>
 				</div>
-			</div>
+			</div> */}
 		</main>
 	);
 }
