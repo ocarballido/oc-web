@@ -65,7 +65,7 @@ export default async function AboutMe({ params }: Props) {
 					))}
 				</div>
 			</div>
-			<div className="grid grid-cols-1 md:grid-cols-3 gap-1 rounded-xl max-w-[500px] md:max-w-[700px] self-center mx-6 sm:mx-auto relative z-10 dark:text-[#a0b8e3] mb-6">
+			{/* <div className="grid grid-cols-1 md:grid-cols-3 gap-1 rounded-xl max-w-[500px] md:max-w-[700px] self-center mx-6 sm:mx-auto relative z-10 dark:text-[#a0b8e3] mb-6">
 				<div className="p-4 rounded-xl text-center bg-white dark:bg-(--background-light)">
 					<h3 className="mb-2 font-medium text-base/6 text-primary-400">
 						{t('MyWork.title')}
@@ -90,7 +90,7 @@ export default async function AboutMe({ params }: Props) {
 						{t('MyFit.description')}
 					</p>
 				</div>
-			</div>
+			</div> */}
 		</main>
 	);
 }

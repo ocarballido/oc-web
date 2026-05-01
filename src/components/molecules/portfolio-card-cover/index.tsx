@@ -55,7 +55,7 @@ const OcPortfolioCardCover = ({
 			/>
 
 			<div className="bg-white dark:bg-(--background) bg rounded-2xl px-3 py-1 text-xs font-semibold tracking-wide uppercase mb-1 w-fit text-primary-400 absolute top-3 left-3">
-				{t('recent')}
+				{t('featured')}
 			</div>
 
 			<div className="flex flex-col gap-3 p-5 bg-white dark:bg-(--background-light) relative rounded-xl">

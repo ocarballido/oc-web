@@ -33,7 +33,8 @@
 	},
 	"CardCover": {
 		"recent": "More recent",
-		"seeProject": "View project"
+		"seeProject": "View project",
+		"featured": "Featured"
 	},
 	"projectFilter": {
 		"develop": "Develop",
