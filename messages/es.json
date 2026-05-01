@@ -85,5 +85,30 @@
 		"user": "Usuario",
 		"keyNeeds": "Necesidad clave",
 		"productResponse": "Respuesta del producto"
+	},
+	"portfolioNav": {
+		"all": "Todos los proyectos",
+		"visit": "Visitar",
+		"next": "Siguiente",
+		"previous": "Anterior"
+	},
+	"portfolioBlocks": {
+		"context": "Contexto y problema",
+		"process": "Proceso",
+		"design": "Decisiones de diseño",
+		"code": "Diseño → código",
+		"gallery": "Galería",
+		"gallery_summary": "Evidencia visual del proceso y resultado.",
+		"result": "Resultado y reflexión"
+	},
+	"portfolioMeta": {
+		"back": "Proyectos",
+		"visit": "Visitar",
+		"role": "Rol y alcance",
+		"stack": "Stack en contexto",
+		"yearType": "Año · Tipo",
+		"tech": "Tecnologías",
+		"next": "Siguiente",
+		"previous": "Anterior"
 	}
 }

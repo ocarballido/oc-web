@@ -85,5 +85,30 @@
 		"user": "User",
 		"keyNeeds": "Key need",
 		"productResponse": "Product response"
+	},
+	"portfolioNav": {
+		"all": "All projects",
+		"visit": "Visit",
+		"next": "Next",
+		"previous": "Previous"
+	},
+	"portfolioBlocks": {
+		"context": "Context & problem",
+		"process": "Process",
+		"design": "Design decisions",
+		"code": "Design → code",
+		"gallery": "Gallery",
+		"gallery_summary": "Visual evidence of the process and outcome.",
+		"result": "Results & reflection"
+	},
+	"portfolioMeta": {
+		"back": "Projects",
+		"visit": "Visit",
+		"role": "Role & scope",
+		"stack": "Stack in context",
+		"yearType": "Year · Type",
+		"tech": "Technologies",
+		"next": "Next",
+		"previous": "Previous"
 	}
 }
