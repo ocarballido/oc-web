@@ -1,17 +1,12 @@
-import { useTranslations } from 'next-intl';
-
 import clsx from 'clsx';
 
 import OcBadgeIndicator from '../badge-indicator';
 import OcBadge from '../badge';
-import OcButtonLink from '../button-link';
 import OcQuote from '../quote';
 
 import type { ThinkCard } from '@/types/types';
 
-const OcCardThink = ({ type, title, description, tools, link }: ThinkCard) => {
-	const t = useTranslations('HomeThinkCard');
-
+const OcCardThink = ({ type, title, description, tools }: ThinkCard) => {
 	const cardStyles = clsx({
 		'bg-primary-400/80 backdrop-blur-md': type === 'design',
 		'bg-white/80 dark:bg-(--background-light)/80 backdrop-blur-md':
@@ -24,7 +19,7 @@ const OcCardThink = ({ type, title, description, tools, link }: ThinkCard) => {
 		},
 		{
 			'text-white': type === 'design',
-		}
+		},
 	);
 
 	return (
@@ -52,20 +47,6 @@ const OcCardThink = ({ type, title, description, tools, link }: ThinkCard) => {
 						/>
 					))}
 			</div>
-			<OcButtonLink
-				label={t('seeProjects')}
-				href={link || ''}
-				color={type === 'develop' ? 'primary' : 'white'}
-				className={`hidden dark:flex ${
-					type === 'design' && 'dark:bg-white dark:!text-primary-400'
-				}`}
-			/>
-			<OcButtonLink
-				label={t('seeProjects')}
-				href={link || ''}
-				color={type === 'develop' ? 'primary' : 'white'}
-				className="block dark:hidden"
-			/>
 		</div>
 	);
 };

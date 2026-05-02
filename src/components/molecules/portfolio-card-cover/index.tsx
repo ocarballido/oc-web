@@ -40,7 +40,7 @@ const OcPortfolioCardCover = ({
 
 	return (
 		<OcCard
-			className={`hover:shadow-2xl hover:-translate-y-2 transition-all relative !pt-60 !pl-3 !pr-3 !pb-3 overflow-hidden flex items-end dark:text-[#95add9] ${
+			className={`hover:shadow-2xl hover:-translate-y-2 transition-all relative !pt-60 !pl-2 !pr-2 !pb-2 overflow-hidden flex items-end dark:text-[#95add9] ${
 				className ?? ''
 			}`}
 		>
