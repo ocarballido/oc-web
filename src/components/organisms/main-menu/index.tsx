@@ -14,8 +14,8 @@ const OcMainMenu = ({ className = '', path = '/' }: MainMamuProps) => {
 
 	const cvHref =
 		locale === 'en'
-			? '/static/docs/CV_Oscar_Carballido_EN-2025.pdf'
-			: '/static/docs/CV_Oscar_Carballido_ES-2025.pdf';
+			? '/static/docs/CVCL_Oscar_Carballido_EN.pdf'
+			: '/static/docs/CVCL_Oscar_Carballido_ES.pdf';
 
 	return (
 		<nav className={`${className}`}>
