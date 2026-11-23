@@ -213,7 +213,7 @@ export const GET_SKILLS = `
 
 export const GET_PORTFOLIO_ITEMS = `
 	query GetPortfolioItems($locales: [Locale!]!) {
-		portfolioItems(locales: $locales, orderBy: year_DESC) {
+		portfolioItems(locales: $locales, orderBy: year_DESC, first: 100) {
 			title
 			slug
 			portfolioType
