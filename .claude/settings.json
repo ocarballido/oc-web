@@ -1,0 +1,23 @@
+{
+	"hooks": {
+		"PostToolUse": [
+			{
+				"matcher": "Write|Edit",
+				"hooks": [
+					{
+						"type": "command",
+						"command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/lint-file.sh",
+						"timeout": 60,
+						"statusMessage": "Running ESLint on edited file..."
+					},
+					{
+						"type": "command",
+						"command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/check-i18n-keys.sh",
+						"timeout": 15,
+						"statusMessage": "Checking i18n keys..."
+					}
+				]
+			}
+		]
+	}
+}
