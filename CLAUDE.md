@@ -8,7 +8,7 @@ Personal portfolio (https://www.oscarballido.com): Next.js 15 App Router, React 
 
 - `npm run dev` and `npm run build` both run with `--turbopack`.
 - There are no tests. Verify changes with `npm run lint` and `npx tsc --noEmit`. `npm run build` needs `HYGRAPH_API_ENDPOIN` in `.env` and queries the live CMS.
-- No formatter is configured. Don't run Prettier (its defaults would rewrite whole files); match the existing style by hand: tabs, single quotes, semicolons.
+- A hook formats every edited file with Prettier (`.prettierrc`) and then lints it; fix any ESLint problems it reports. `npm run format` formats the whole repo.
 
 ## Architecture
 
