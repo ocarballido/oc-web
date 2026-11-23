@@ -7,7 +7,8 @@ Personal portfolio (https://www.oscarballido.com): Next.js 15 App Router, React 
 ## Commands
 
 - `npm run dev` and `npm run build` both run with `--turbopack`.
-- There are no tests. Verify changes with `npm run lint` and `npx tsc --noEmit`. `npm run build` needs `HYGRAPH_API_ENDPOIN` in `.env` and queries the live CMS.
+- Verify changes with `npm test`, `npm run lint` and `npx tsc --noEmit`. `npm run build` needs `HYGRAPH_API_ENDPOIN` in `.env` and queries the live CMS.
+- Tests are Vitest (`vitest.config.mts`), colocated as `*.test.ts`, and currently cover only the CMS mappers (no component rendering). Run one file with `npx vitest run <path>`.
 - A hook formats every edited file with Prettier (`.prettierrc`) and then lints it; fix any ESLint problems it reports. `npm run format` formats the whole repo.
 
 ## Architecture

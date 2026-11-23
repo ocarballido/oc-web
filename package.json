@@ -8,7 +8,9 @@
 		"start": "next start",
 		"lint": "eslint",
 		"format": "prettier --write .",
-		"format:check": "prettier --check ."
+		"format:check": "prettier --check .",
+		"test": "vitest run",
+		"test:watch": "vitest"
 	},
 	"dependencies": {
 		"@graphcms/rich-text-react-renderer": "^0.6.2",
@@ -34,6 +36,7 @@
 		"eslint-config-next": "15.5.3",
 		"prettier": "3.10.1",
 		"tailwindcss": "4.1.13",
-		"typescript": "5"
+		"typescript": "5",
+		"vitest": "4.1.12"
 	}
 }

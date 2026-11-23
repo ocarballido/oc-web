@@ -11,7 +11,7 @@ Reference implementations: `src/app/[locale]/about-me/page.tsx` and `src/app/[lo
 
 2. **CMS types** in `src/lib/cms/types.ts`: a `CMS<Thing>` type mirroring the query (fields nullable, as Hygraph returns them) plus a `Get<Thing>Response` wrapper.
 
-3. **Mapper** in `src/lib/cms/mappers/<thing>.ts`: `to<Thing>(cms: CMS<Thing>): <Thing>` converting to the app type in `src/types/types.ts`, with `?? ''`/`?? undefined` fallbacks so components never receive `null`. Skip the mapper only if the CMS shape is already what the component needs.
+3. **Mapper** in `src/lib/cms/mappers/<thing>.ts`: `to<Thing>(cms: CMS<Thing>): <Thing>` converting to the app type in `src/types/types.ts`, with `?? ''`/`?? undefined` fallbacks so components never receive `null`. Skip the mapper only if the CMS shape is already what the component needs. Add `<thing>.test.ts` next to it covering the null fallbacks (see `mappers/projects.test.ts`).
 
 4. **Route** `src/app/[locale]/<route>/page.tsx` (async server component). Example for a hypothetical `talks` page:
 
@@ -44,4 +44,4 @@ Reference implementations: `src/app/[locale]/about-me/page.tsx` and `src/app/[lo
 
 7. **Navigation:** for a top-level page, add an `<OcLinkMenu label={t('<key>')} href="/<route>" active={path === '/<route>'} />` entry in `src/components/organisms/main-menu/index.tsx`, with the label key in both messages files.
 
-8. **Verify:** `npm run lint` and `npx tsc --noEmit`. To check the data, run `npm run dev` (needs `HYGRAPH_API_ENDPOIN` in `.env`) and open both `/es/<route>` and `/en/<route>`.
+8. **Verify:** `npm test`, `npm run lint` and `npx tsc --noEmit`. To check the data, run `npm run dev` (needs `HYGRAPH_API_ENDPOIN` in `.env`) and open both `/es/<route>` and `/en/<route>`.
