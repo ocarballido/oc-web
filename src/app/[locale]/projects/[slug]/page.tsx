@@ -78,7 +78,7 @@ export default async function PortfolioItemPage({ params }: PageProps) {
 	]);
 
 	const currentIndex = allItems.findIndex(
-		(i: { slug: string }) => i.slug === slug,
+		(i: { slug: string }) => i.slug === slug
 	);
 	const prevItem = currentIndex > 0 ? allItems[currentIndex - 1] : null;
 	const nextItem =

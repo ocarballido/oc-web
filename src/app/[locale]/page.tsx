@@ -39,7 +39,7 @@ export default async function Home({ params }: Props) {
 		}),
 		hygraph.request<GetPortfolioItemsResponse, GetPortfolioItemsVariables>(
 			GET_PORTFOLIO_ITEMS,
-			{ locales: [locale, DEFAULT_LOCALE] },
+			{ locales: [locale, DEFAULT_LOCALE] }
 		),
 	]);
 
@@ -100,7 +100,7 @@ export default async function Home({ params }: Props) {
 									{...item}
 									locale={locale}
 								/>
-							),
+							)
 						)}
 					</div>
 					<div className="flex flex-col sm:flex-row gap-3 justify-center">

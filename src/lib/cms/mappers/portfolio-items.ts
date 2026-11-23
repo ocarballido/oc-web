@@ -188,7 +188,7 @@ export function mapPortfolioCard(
 		| 'contextSummary'
 		| 'featured'
 		| 'liveUrl'
-	>,
+	>
 ): PortfolioCard {
 	return {
 		title: cms.title,

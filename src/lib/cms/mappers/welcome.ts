@@ -41,7 +41,7 @@ export function mapWelcome(cms: CMSWelcome): Welcome {
 	const content = Array.isArray(cms.content)
 		? cms.content.filter(
 				(s): s is string => typeof s === 'string' && s.trim().length > 0
-		  )
+			)
 		: [];
 
 	const tcRaw = cms.thinkCard;
