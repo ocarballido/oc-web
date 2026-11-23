@@ -42,7 +42,7 @@ export default async function ProjectsDesign({ params }: PageProps) {
 			design: true,
 			code: false,
 			locales: [locale, DEFAULT_LOCALE], // ✅ locale + fallback
-		},
+		}
 	);
 
 	const cmsProjects = data.projects ?? [];

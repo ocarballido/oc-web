@@ -51,7 +51,7 @@ const isBadge = (x: unknown): x is CMSBadge =>
 	!!(x as CMSBadge).id;
 
 const mapTextBlock = (
-	block?: CMSTitleSubtitleDescription | null,
+	block?: CMSTitleSubtitleDescription | null
 ): ProjectTextBlock | undefined =>
 	block
 		? {

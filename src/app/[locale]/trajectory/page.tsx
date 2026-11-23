@@ -32,11 +32,11 @@ export default async function Trajectory({ params }: Props) {
 		GET_TRAJECTORIES,
 		{
 			locales: [locale, DEFAULT_LOCALE], // si tu enum en Hygraph es ES/EN
-		},
+		}
 	);
 
 	const cmsTrajectories = [...(data.trajectories ?? [])].sort(
-		(a, b) => b.begin - a.begin,
+		(a, b) => b.begin - a.begin
 	);
 
 	if (!hasLocale(routing.locales, locale)) {

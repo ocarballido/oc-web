@@ -19,7 +19,7 @@ const OcCardThink = ({ type, title, description, tools }: ThinkCard) => {
 		},
 		{
 			'text-white': type === 'design',
-		},
+		}
 	);
 
 	return (

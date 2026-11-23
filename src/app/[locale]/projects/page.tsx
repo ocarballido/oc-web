@@ -74,7 +74,7 @@ export default async function ProjectsPage({ params }: PageProps) {
 							>
 								<OcPortfolioCard {...item} locale={locale} />
 							</OcInView>
-						),
+						)
 					)}
 				</div>
 			</div>

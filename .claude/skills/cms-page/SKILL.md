@@ -13,28 +13,30 @@ Reference implementations: `src/app/[locale]/about-me/page.tsx` and `src/app/[lo
 
 3. **Mapper** in `src/lib/cms/mappers/<thing>.ts`: `to<Thing>(cms: CMS<Thing>): <Thing>` converting to the app type in `src/types/types.ts`, with `?? ''`/`?? undefined` fallbacks so components never receive `null`. Skip the mapper only if the CMS shape is already what the component needs.
 
-4. **Route** `src/app/[locale]/<route>/page.tsx` (async server component):
-   ```tsx
-   export async function generateMetadata() {
-   	const t = await getTranslations('Metadata<Name>');
-   	return { title: t('title') };
-   }
+4. **Route** `src/app/[locale]/<route>/page.tsx` (async server component). Example for a hypothetical `talks` page:
 
-   export const revalidate = 300;
+    ```tsx
+    export async function generateMetadata() {
+    	const t = await getTranslations('MetadataTalks');
+    	return { title: t('title') };
+    }
 
-   type Props = { params: Promise<{ locale: 'es' | 'en' }> };
+    export const revalidate = 300;
 
-   export default async function <Name>({ params }: Props) {
-   	const { locale } = await params;
-   	if (!hasLocale(routing.locales, locale)) notFound();
+    type Props = { params: Promise<{ locale: 'es' | 'en' }> };
 
-   	const data = await hygraph.request<Get<Thing>Response>(GET_<THING>, {
-   		locales: [locale, DEFAULT_LOCALE],
-   	});
-   	// map, then notFound() if the data is empty
-   }
-   ```
-   Imports: `hygraph` from `@/lib/cms/client`, `routing` from `@/i18n/routing`, `DEFAULT_LOCALE` from `@/config/config-constants`.
+    export default async function Talks({ params }: Props) {
+    	const { locale } = await params;
+    	if (!hasLocale(routing.locales, locale)) notFound();
+
+    	const data = await hygraph.request<GetTalksResponse>(GET_TALKS, {
+    		locales: [locale, DEFAULT_LOCALE],
+    	});
+    	// map, then notFound() if the data is empty
+    }
+    ```
+
+    Imports: `hygraph` from `@/lib/cms/client`, `routing` from `@/i18n/routing`, `DEFAULT_LOCALE` from `@/config/config-constants`.
 
 5. **Images:** Hygraph asset URLs must match `images.remotePatterns` in `next.config.ts`. If a new asset host shows up, add it there.
 
